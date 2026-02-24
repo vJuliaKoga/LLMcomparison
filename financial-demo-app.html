@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - 金融デモシステム</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .role-badge {
+            background: #3498db;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .role-badge.admin {
+            background: #e74c3c;
+        }
+        .role-badge.auditor {
+            background: #f39c12;
+        }
+        .content {
+            padding: 30px;
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .balance {
+            font-size: 32px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .card-number {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #34495e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .success {
+            background: #efe;
+            border: 1px solid #cfc;
+            color: #3c3;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            background: #f8f9fa; /* 背景色を追加 */
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ddd; /* ボーダーを追加 */
+            background: white; /* 背景色を追加 */
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            border-radius: 5px 5px 0 0; /* 上部のみ角丸 */
+            color: #2c3e50; /* テキスト色を明示 */
+            font-weight: 500; /* フォント太さを追加 */
+        }
+        .tab:hover {
+            background: #e9ecef; /* ホバー時の背景色 */
+            border-color: #adb5bd; /* ホバー時のボーダー色 */
+        }
+        .tab.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+            font-weight: bold;
+            background: white; /* アクティブタブは白背景 */
+            border-color: #ddd; /* ボーダーを表示 */
+            border-bottom-color: #667eea; /* 下部のみ強調色 */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .transaction-form {
+            max-width: 500px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .logout-btn {
+            background: #e74c3c;
+        }
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+        .amount-input {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .mfa-code {
+            max-width: 200px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+        .session-timer {
+            background: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .audit-log {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            padding: 10px;
+            border-left: 3px solid #3498db;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+        }
+        .log-entry.warning {
+            border-left-color: #f39c12;
+        }
+        .log-entry.error {
+            border-left-color: #e74c3c;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <div class="header">
+            <h1>🏦 SecureBank</h1>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <span class="session-timer" id="sessionTimer">セッション: 15:00</span>
+                <span id="userName"></span>
+                <span class="role-badge" id="roleBadge"></span>
+                <button class="logout-btn" onclick="logout()">ログアウト</button>
+            </div>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <div class="content">
+            <!-- ログイン画面 -->
+            <div id="loginScreen">
+                <div class="login-form">
+                    <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">ログイン</h2>
+                    <div id="loginError" class="error hidden"></div>
+                    
+                    <div class="form-group">
+                        <label for="username">ユーザーID</label>
+                        <input type="text" id="username" placeholder="例: customer01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">パスワード</label>
+                        <input type="password" id="password" placeholder="パスワードを入力">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">役割</label>
+                        <select id="role">
+                            <option value="customer">一般顧客</option>
+                            <option value="admin">管理者</option>
+                            <option value="auditor">監査者</option>
+                        </select>
+                    </div>
+                    
+                    <button onclick="login()" style="width: 100%; margin-top: 10px;">ログイン</button>
+                    
+                    <div style="margin-top: 30px; padding: 15px; background: #e8f4f8; border-radius: 5px; font-size: 12px;">
+                        <strong>テストアカウント:</strong><br>
+                        👤 customer01 / pass123 (一般顧客)<br>
+                        👤 admin01 / admin123 (管理者)<br>
+                        👤 auditor01 / audit123 (監査者)
+                    </div>
+                </div>
+            </div>
+
+            <!-- MFA画面 -->
+            <div id="mfaScreen" class="hidden">
+                <div class="login-form">
+                    <h2 style="text-align: center; margin-bottom: 20px;">多要素認証</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                        認証コードを入力してください
+                    </p>
+                    <div id="mfaError" class="error hidden"></div>
+                    <div class="form-group">
+                        <label for="mfaCode">認証コード（6桁）</label>
+                        <input type="text" id="mfaCode" class="mfa-code" maxlength="6" placeholder="000000">
+                    </div>
+                    <button onclick="verifyMFA()" style="width: 100%;">認証</button>
+                    <p style="text-align: center; margin-top: 15px; color: #999; font-size: 12px;">
+                        テスト用コード: 123456
+                    </p>
+                </div>
+            </div>
+
+            <!-- ダッシュボード -->
+            <div id="dashboard" class="hidden">
+                <!-- タブ -->
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('overview')">概要</button>
+                    <button class="tab" onclick="switchTab('transactions')">取引履歴</button>
+                    <button class="tab" onclick="switchTab('transfer')">振込</button>
+                    <button class="tab" onclick="switchTab('cards')">カード管理</button>
+                    <button class="tab" id="auditTab" onclick="switchTab('audit')" style="display: none;">監査ログ</button>
+                </div>
+
+                <!-- 概要タブ -->
+                <div id="tabOverview" class="tab-content active">
+                    <div class="dashboard">
+                        <div class="card">
+                            <h3>💰 口座残高</h3>
+                            <div class="balance" id="balance">¥0</div>
+                            <p style="margin-top: 10px; color: #666;">口座番号: <span id="accountNumber"></span></p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>📊 今月の取引</h3>
+                            <p style="font-size: 18px; margin-top: 10px;">
+                                入金: <span style="color: #27ae60;" id="monthlyDeposit">¥0</span><br>
+                                出金: <span style="color: #e74c3c;" id="monthlyWithdraw">¥0</span>
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>💳 クレジットカード</h3>
+                            <div class="card-number" id="cardNumber">****-****-****-****</div>
+                            <p style="margin-top: 10px; color: #666;">有効期限: <span id="cardExpiry"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 取引履歴タブ -->
+                <div id="tabTransactions" class="tab-content">
+                    <h3>取引履歴</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>日時</th>
+                                <th>種別</th>
+                                <th>説明</th>
+                                <th>金額</th>
+                                <th>残高</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionList"></tbody>
+                    </table>
+                </div>
+
+                <!-- 振込タブ -->
+                <div id="tabTransfer" class="tab-content">
+                    <h3>振込</h3>
+                    <div id="transferMessage"></div>
+                    <div class="transaction-form">
+                        <div class="form-group">
+                            <label for="transferTo">振込先口座番号</label>
+                            <input type="text" id="transferTo" placeholder="1234567890" maxlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="transferAmount">振込金額（円）</label>
+                            <input type="number" id="transferAmount" class="amount-input" placeholder="10000" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="transferMemo">メモ</label>
+                            <textarea id="transferMemo" rows="3" placeholder="振込内容"></textarea>
+                        </div>
+                        <p style="color: #666; font-size: 12px; margin-bottom: 10px;">
+                            ⚠️ 1回の振込上限: ¥1,000,000<br>
+                            ⚠️ 管理者承認が必要な金額: ¥100,000以上
+                        </p>
+                        <button onclick="transfer()">振込実行</button>
+                    </div>
+                </div>
+
+                <!-- カード管理タブ -->
+                <div id="tabCards" class="tab-content">
+                    <h3>カード情報</h3>
+                    <div class="card">
+                        <h4>クレジットカード詳細</h4>
+                        <p><strong>カード番号:</strong> <span id="fullCardNumber"></span></p>
+                        <p><strong>名義:</strong> <span id="cardHolder"></span></p>
+                        <p><strong>有効期限:</strong> <span id="fullCardExpiry"></span></p>
+                        <p><strong>CVV:</strong> <span id="cvv">***</span> <button onclick="toggleCVV()">表示</button></p>
+                        <p><strong>利用限度額:</strong> <span id="cardLimit"></span></p>
+                    </div>
+                </div>
+
+                <!-- 監査ログタブ（管理者・監査者のみ） -->
+                <div id="tabAudit" class="tab-content">
+                    <h3>監査ログ</h3>
+                    <div class="audit-log" id="auditLog"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // アプリケーションの状態管理
+        const appState = {
+            currentUser: null,
+            sessionTimer: null,
+            sessionDuration: 900, // 15分（秒）
+            accounts: {
+                'customer01': {
+                    password: 'pass123',
+                    role: 'customer',
+                    name: '山田太郎',
+                    accountNumber: '1234567890',
+                    balance: 1500000,
+                    cardNumber: '4532-1234-5678-9012',
+                    cardExpiry: '12/25',
+                    cvv: '123',
+                    cardLimit: 500000,
+                    transactions: [
+                        { date: '2024-01-15 14:30', type: '入金', desc: '給与', amount: 350000, balance: 1500000 },
+                        { date: '2024-01-14 09:15', type: '出金', desc: 'コンビニATM', amount: -20000, balance: 1150000 },
+                        { date: '2024-01-12 18:45', type: '振込', desc: '家賃支払い', amount: -80000, balance: 1170000 }
+                    ]
+                },
+                'admin01': {
+                    password: 'admin123',
+                    role: 'admin',
+                    name: '管理者 花子',
+                    accountNumber: '9876543210',
+                    balance: 5000000,
+                    cardNumber: '5412-7534-8642-9753',
+                    cardExpiry: '08/26',
+                    cvv: '456',
+                    cardLimit: 2000000,
+                    transactions: [
+                        { date: '2024-01-15 10:00', type: '入金', desc: 'システム管理費', amount: 500000, balance: 5000000 }
+                    ]
+                },
+                'auditor01': {
+                    password: 'audit123',
+                    role: 'auditor',
+                    name: '監査人 次郎',
+                    accountNumber: '5555555555',
+                    balance: 2000000,
+                    cardNumber: '3782-822463-10005',
+                    cardExpiry: '03/27',
+                    cvv: '789',
+                    cardLimit: 1000000,
+                    transactions: []
+                }
+            },
+            auditLogs: [],
+            loginAttempts: {}
+        };
+
+        // ログイン機能
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const errorDiv = document.getElementById('loginError');
+
+            // 入力バリデーション
+            if (!username || !password) {
+                showError(errorDiv, '⚠️ ユーザーIDとパスワードを入力してください');
+                return;
+            }
+
+            // ログイン試行回数チェック（セキュリティ対策）
+            if (!appState.loginAttempts[username]) {
+                appState.loginAttempts[username] = { count: 0, lockUntil: null };
+            }
+
+            const attempts = appState.loginAttempts[username];
+            if (attempts.lockUntil && new Date() < attempts.lockUntil) {
+                const remainingTime = Math.ceil((attempts.lockUntil - new Date()) / 1000);
+                showError(errorDiv, `🔒 アカウントがロックされています。残り${remainingTime}秒`);
+                addAuditLog('error', `ロック中のログイン試行: ${username}`);
+                return;
+            }
+
+            // 認証チェック
+            const account = appState.accounts[username];
+            if (!account || account.password !== password || account.role !== role) {
+                attempts.count++;
+                if (attempts.count >= 3) {
+                    attempts.lockUntil = new Date(Date.now() + 30000); // 30秒ロック
+                    showError(errorDiv, '🔒 ログイン試行回数超過。30秒間ロックされます');
+                    addAuditLog('error', `ログイン試行回数超過: ${username}`);
+                } else {
+                    showError(errorDiv, `❌ 認証失敗（残り${3 - attempts.count}回）`);
+                    addAuditLog('warning', `ログイン失敗: ${username}`);
+                }
+                return;
+            }
+
+            // ログイン成功 → MFA画面へ
+            appState.tempUser = account;
+            appState.tempUsername = username;
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('mfaScreen').classList.remove('hidden');
+            addAuditLog('info', `ログイン成功（MFA待ち）: ${username}`);
+        }
+
+        // MFA認証
+        function verifyMFA() {
+            const code = document.getElementById('mfaCode').value;
+            const errorDiv = document.getElementById('mfaError');
+
+            if (code !== '123456') {
+                showError(errorDiv, '❌ 認証コードが正しくありません');
+                addAuditLog('warning', `MFA失敗: ${appState.tempUsername}`);
+                return;
+            }
+
+            // MFA成功
+            appState.currentUser = appState.tempUser;
+            appState.currentUsername = appState.tempUsername;
+            appState.loginAttempts[appState.tempUsername] = { count: 0, lockUntil: null };
+
+            document.getElementById('mfaScreen').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('userInfo').style.display = 'flex';
+
+            loadDashboard();
+            startSessionTimer();
+            addAuditLog('info', `MFA認証成功: ${appState.currentUsername}`);
+        }
+
+        // ダッシュボード読み込み
+        function loadDashboard() {
+            const user = appState.currentUser;
+            
+            // ユーザー情報表示
+            document.getElementById('userName').textContent = user.name;
+            const roleBadge = document.getElementById('roleBadge');
+            roleBadge.textContent = getRoleName(user.role);
+            roleBadge.className = `role-badge ${user.role}`;
+
+            // 監査タブの表示制御
+            if (user.role === 'admin' || user.role === 'auditor') {
+                document.getElementById('auditTab').style.display = 'block';
+            }
+
+            // 口座情報
+            document.getElementById('balance').textContent = formatCurrency(user.balance);
+            document.getElementById('accountNumber').textContent = user.accountNumber;
+
+            // 今月の取引集計
+            const monthlyStats = calculateMonthlyStats(user.transactions);
+            document.getElementById('monthlyDeposit').textContent = formatCurrency(monthlyStats.deposit);
+            document.getElementById('monthlyWithdraw').textContent = formatCurrency(Math.abs(monthlyStats.withdraw));
+
+            // カード情報
+            document.getElementById('cardNumber').textContent = maskCardNumber(user.cardNumber);
+            document.getElementById('cardExpiry').textContent = user.cardExpiry;
+            document.getElementById('fullCardNumber').textContent = user.cardNumber;
+            document.getElementById('cardHolder').textContent = user.name;
+            document.getElementById('fullCardExpiry').textContent = user.cardExpiry;
+            document.getElementById('cardLimit').textContent = formatCurrency(user.cardLimit);
+
+            // 取引履歴
+            loadTransactions();
+            
+            // 監査ログ
+            if (user.role === 'admin' || user.role === 'auditor') {
+                loadAuditLogs();
+            }
+        }
+
+        // 取引履歴読み込み
+        function loadTransactions() {
+            const tbody = document.getElementById('transactionList');
+            tbody.innerHTML = '';
+            
+            appState.currentUser.transactions.forEach(tx => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${tx.date}</td>
+                    <td>${tx.type}</td>
+                    <td>${tx.desc}</td>
+                    <td style="color: ${tx.amount >= 0 ? '#27ae60' : '#e74c3c'}; font-weight: bold;">
+                        ${formatCurrency(tx.amount)}
+                    </td>
+                    <td>${formatCurrency(tx.balance)}</td>
+                `;
+            });
+        }
+
+        // 振込処理
+        function transfer() {
+            const to = document.getElementById('transferTo').value.trim();
+            const amount = parseInt(document.getElementById('transferAmount').value);
+            const memo = document.getElementById('transferMemo').value.trim();
+            const msgDiv = document.getElementById('transferMessage');
+
+            // バリデーション
+            if (!to || !/^\d{10}$/.test(to)) {
+                showError(msgDiv, '❌ 振込先口座番号は10桁の数字で入力してください');
+                return;
+            }
+
+            if (!amount || amount <= 0) {
+                showError(msgDiv, '❌ 振込金額を正しく入力してください');
+                return;
+            }
+
+            if (amount > 1000000) {
+                showError(msgDiv, '❌ 1回の振込上限（¥1,000,000）を超えています');
+                addAuditLog('warning', `振込上限超過: ${appState.currentUsername}, 金額: ${amount}`);
+                return;
+            }
+
+            if (amount > appState.currentUser.balance) {
+                showError(msgDiv, '❌ 残高不足です');
+                return;
+            }
+
+            if (to === appState.currentUser.accountNumber) {
+                showError(msgDiv, '❌ 自分の口座には振込できません');
+                return;
+            }
+
+            // 高額振込の承認チェック
+            if (amount >= 100000 && appState.currentUser.role === 'customer') {
+                showError(msgDiv, '⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。');
+                addAuditLog('warning', `承認待ち振込: ${appState.currentUsername} → ${to}, 金額: ${amount}`);
+                return;
+            }
+
+            // 振込実行
+            appState.currentUser.balance -= amount;
+            appState.currentUser.transactions.unshift({
+                date: new Date().toLocaleString('ja-JP'),
+                type: '振込',
+                desc: `${to} ${memo}`,
+                amount: -amount,
+                balance: appState.currentUser.balance
+            });
+
+            document.getElementById('balance').textContent = formatCurrency(appState.currentUser.balance);
+            loadTransactions();
+            
+            msgDiv.className = 'success';
+            msgDiv.textContent = '✅ 振込が完了しました';
+            msgDiv.style.display = 'block';
+
+            // フォームリセット
+            document.getElementById('transferTo').value = '';
+            document.getElementById('transferAmount').value = '';
+            document.getElementById('transferMemo').value = '';
+
+            addAuditLog('info', `振込実行: ${appState.currentUsername} → ${to}, 金額: ${amount}`);
+
+            setTimeout(() => { msgDiv.style.display = 'none'; }, 3000);
+        }
+
+        // CVV表示切り替え
+        function toggleCVV() {
+            const cvvSpan = document.getElementById('cvv');
+            if (cvvSpan.textContent === '***') {
+                cvvSpan.textContent = appState.currentUser.cvv;
+                addAuditLog('warning', `CVV表示: ${appState.currentUsername}`);
+            } else {
+                cvvSpan.textContent = '***';
+            }
+        }
+
+        // 監査ログ追加
+        function addAuditLog(level, message) {
+            appState.auditLogs.push({
+                timestamp: new Date().toLocaleString('ja-JP'),
+                level: level,
+                message: message
+            });
+        }
+
+        // 監査ログ読み込み
+        function loadAuditLogs() {
+            const logDiv = document.getElementById('auditLog');
+            logDiv.innerHTML = '';
+            
+            appState.auditLogs.slice().reverse().forEach(log => {
+                const entry = document.createElement('div');
+                entry.className = `log-entry ${log.level}`;
+                entry.innerHTML = `
+                    <strong>[${log.timestamp}]</strong> ${log.message}
+                `;
+                logDiv.appendChild(entry);
+            });
+        }
+
+        // セッションタイマー
+        function startSessionTimer() {
+            let remaining = appState.sessionDuration;
+            const timerDiv = document.getElementById('sessionTimer');
+
+            appState.sessionTimer = setInterval(() => {
+                remaining--;
+                const minutes = Math.floor(remaining / 60);
+                const seconds = remaining % 60;
+                timerDiv.textContent = `セッション: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                if (remaining <= 60) {
+                    timerDiv.style.background = '#e74c3c';
+                }
+
+                if (remaining <= 0) {
+                    clearInterval(appState.sessionTimer);
+                    alert('⏱️ セッションタイムアウトしました');
+                    logout();
+                }
+            }, 1000);
+        }
+
+        // ログアウト
+        function logout() {
+            if (appState.sessionTimer) {
+                clearInterval(appState.sessionTimer);
+            }
+            addAuditLog('info', `ログアウト: ${appState.currentUsername}`);
+            
+            appState.currentUser = null;
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('userInfo').style.display = 'none';
+            document.getElementById('loginScreen').classList.remove('hidden');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        // タブ切り替え
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1)).classList.add('active');
+
+            if (tabName === 'audit') {
+                loadAuditLogs();
+            }
+        }
+
+        // ヘルパー関数
+        function formatCurrency(amount) {
+            return '¥' + amount.toLocaleString('ja-JP');
+        }
+
+        function maskCardNumber(cardNumber) {
+            const parts = cardNumber.split('-');
+            return parts.map((p, i) => i < 3 ? '****' : p).join('-');
+        }
+
+        function getRoleName(role) {
+            const names = { customer: '一般顧客', admin: '管理者', auditor: '監査者' };
+            return names[role] || role;
+        }
+
+        function calculateMonthlyStats(transactions) {
+            const now = new Date();
+            const thisMonth = transactions.filter(tx => {
+                const txDate = new Date(tx.date);
+                return txDate.getMonth() === now.getMonth();
+            });
+
+            return {
+                deposit: thisMonth.filter(tx => tx.amount > 0).reduce((sum, tx) => sum + tx.amount, 0),
+                withdraw: thisMonth.filter(tx => tx.amount < 0).reduce((sum, tx) => sum + tx.amount, 0)
+            };
+        }
+
+        function showError(element, message) {
+            element.textContent = message;
+            element.classList.remove('hidden');
+            setTimeout(() => element.classList.add('hidden'), 5000);
+        }
+
+        // 初期化
+        addAuditLog('info', 'システム起動');
+    </script>
+</body>
+</html>
