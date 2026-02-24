@@ -2,58 +2,91 @@
 prompts:
   - file://prompts/hybrid-test-generation.txt
 
-# 評価するLLMモデル
+# 評価するLLMモデル（ここをopenrouter向けに差し替え予定）
 providers:
-  - id: openai:gpt-4o
+  # 無料モデル例
+  - id: openrouter:meta-llama/llama-4-scout:free
     config:
       temperature: 0.4
-      n: 2
-  
-  - id: openai:gpt-4o-creative
-    config:
-      temperature: 0.8
-      n: 2
+      max_tokens: 2000
 
-  - id: anthropic:claude-3-5-sonnet-20241022
+  - id: openrouter:meta-llama/llama-4-maverick:free
     config:
       temperature: 0.4
-      n: 2
+      max_tokens: 2000
 
-# テストケース
+  - id: openrouter:google/gemini-2.0-flash-exp:free
+    config:
+      temperature: 0.4
+      max_tokens: 2000
+
+  - id: openrouter:deepseek/deepseek-v3-base:free
+    config:
+      temperature: 0.4
+      max_tokens: 2000
+
 tests:
   # テスト1: ログイン機能
-  - description: "ログイン機能の網羅的テスト"
+  - description: "ログイン機能のE2E（JUnit+Selenium生成）"
     vars:
       specification: file://specs/securebank-spec.md
       source_code: file://financial-demo-app.html
       feature: "ログイン機能（基本認証、MFA、ログイン試行制限）"
     assert:
-      - type: javascript
-        value: output.match(/TC-\d+/g) && output.match(/TC-\d+/g).length >= 10
+      # (A) テストケース一覧の存在
       - type: contains-all
         value:
+          - "テスト設計（テストケース一覧）"
           - "テストケースID"
           - "期待結果"
+          - "実装根拠"
+
+      # (B) JUnit5コードブロックの存在
+      - type: javascript
+        value: |
+          /```java[\s\S]*org\.junit\.jupiter[\s\S]*```/m.test(output)
+
+      # Selenium(WebDriver)の利用
+      - type: contains-all
+        value:
+          - "WebDriver"
+          - "WebDriverWait"
+          - "@Test"
+          - "@BeforeEach"
+          - "@AfterEach"
+
+      # テスト数が最低限ある（@Testが3つ以上）
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          m.length >= 3
+
       - type: llm-rubric
-        value: "境界値・異常系・セキュリティ・状態遷移がバランス良く含まれている"
+        value: "状態遷移・ロック・MFA・異常系/境界値/セキュリティがバランス良く含まれ、JUnitのテストが実行可能な形で提示されている"
 
   # テスト2: 振込機能
-  - description: "振込機能の境界値・異常系"
+  - description: "振込機能のE2E（境界値・異常系・承認フロー）"
     vars:
       specification: file://specs/securebank-spec.md
       source_code: file://financial-demo-app.html
       feature: "振込機能（全バリデーション、承認フロー含む）"
     assert:
       - type: javascript
-        value: output.match(/TC-\d+/g) && output.match(/TC-\d+/g).length >= 12
+        value: |
+          /```java[\s\S]*WebDriver[\s\S]*```/m.test(output)
+
       - type: contains-all
         value:
           - "残高不足"
-          - "上限超過"
-          - "1,000,000"
+          - "上限"
+          - "承認"
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          m.length >= 3
 
   # テスト3: 権限制御
-  - description: "役割ベースアクセス制御"
+  - description: "役割ベースアクセス制御（監査ログ）"
     vars:
       specification: file://specs/securebank-spec.md
       source_code: file://financial-demo-app.html
@@ -64,6 +97,8 @@ tests:
           - "admin"
           - "auditor"
           - "customer"
+      - type: javascript
+        value: |
+          /```java[\s\S]*@Test[\s\S]*```/m.test(output)
 
-# 結果出力先
 outputPath: ./results/evaluation-results.json
