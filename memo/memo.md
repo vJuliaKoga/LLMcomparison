@@ -1,5 +1,5 @@
 
-実際の使い方
+使い方
 ステップ1: プロンプトファイルを作成
 
 prompts/hybrid-test-generation.txt
@@ -248,16 +248,3 @@ tests:
       - type: contains
         value: "TC-"
 `
-
-まとめ
-
-| 質問 | 回答 |
-|------|------|
-| {{specification}} は全文貼り付け？ | いいえ。Promptfooの変数参照 |
-| どう使う？ | promptfoo.yaml の vars で file://` 指定 |
-| ファイル参照以外の方法は？ | 直接記述 or 複数行インライン |
-| 推奨方法は？ | ファイル参照（管理しやすい） |
-
-promptfoo が自動的にファイルを読み込んで、プロンプトに挿入してくれます！
-
-他に不明点があればお気軽にどうぞ🚀

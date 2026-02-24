@@ -1,0 +1,69 @@
+# プロンプトファイルを指定
+prompts:
+  - file://prompts/hybrid-test-generation.txt
+
+# 評価するLLMモデル
+providers:
+  - id: openai:gpt-4o
+    config:
+      temperature: 0.4
+      n: 2
+  
+  - id: openai:gpt-4o-creative
+    config:
+      temperature: 0.8
+      n: 2
+
+  - id: anthropic:claude-3-5-sonnet-20241022
+    config:
+      temperature: 0.4
+      n: 2
+
+# テストケース
+tests:
+  # テスト1: ログイン機能
+  - description: "ログイン機能の網羅的テスト"
+    vars:
+      specification: file://specs/securebank-spec.md
+      source_code: file://financial-demo-app.html
+      feature: "ログイン機能（基本認証、MFA、ログイン試行制限）"
+    assert:
+      - type: javascript
+        value: output.match(/TC-\d+/g) && output.match(/TC-\d+/g).length >= 10
+      - type: contains-all
+        value:
+          - "テストケースID"
+          - "期待結果"
+      - type: llm-rubric
+        value: "境界値・異常系・セキュリティ・状態遷移がバランス良く含まれている"
+
+  # テスト2: 振込機能
+  - description: "振込機能の境界値・異常系"
+    vars:
+      specification: file://specs/securebank-spec.md
+      source_code: file://financial-demo-app.html
+      feature: "振込機能（全バリデーション、承認フロー含む）"
+    assert:
+      - type: javascript
+        value: output.match(/TC-\d+/g) && output.match(/TC-\d+/g).length >= 12
+      - type: contains-all
+        value:
+          - "残高不足"
+          - "上限超過"
+          - "1,000,000"
+
+  # テスト3: 権限制御
+  - description: "役割ベースアクセス制御"
+    vars:
+      specification: file://specs/securebank-spec.md
+      source_code: file://financial-demo-app.html
+      feature: "監査ログ機能（役割別アクセス制御）"
+    assert:
+      - type: contains-all
+        value:
+          - "admin"
+          - "auditor"
+          - "customer"
+
+# 結果出力先
+outputPath: ./results/evaluation-results.json
