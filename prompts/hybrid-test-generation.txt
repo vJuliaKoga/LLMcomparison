@@ -58,3 +58,31 @@
 
 (C) 仕様と実装の不整合一覧（あれば）
 - 箇条書きで列挙し、E2E設計への影響も一言添える
+
+(D) 自己検証（Validation Checklist）
+- 次の形式で必ず出力すること（機械検証用）:
+  total_cases: <数値>
+  category_counts:
+    正常系: <数値>
+    異常系: <数値>
+    境界値: <数値>
+    セキュリティ: <数値>
+  duplicate_case_ids: <true/false>
+  has_java_code_block: <true/false>
+  junit_annotations:
+    has_before_each: <true/false>
+    has_after_each: <true/false>
+    test_count: <数値>
+  selenium_elements:
+    has_webdriver: <true/false>
+    has_webdriverwait: <true/false>
+
+- 条件:
+  - total_cases >= 15
+  - 各カテゴリ >= 3
+  - duplicate_case_ids は false
+  - has_java_code_block は true
+  - junit_annotations.test_count >= 3
+  - selenium_elements はすべて true
+
+- もし条件を満たせない場合は、(A)(B) を修正してから (D) を出力すること。
