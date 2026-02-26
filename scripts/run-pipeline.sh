@@ -12,17 +12,17 @@ set -euo pipefail
 RESULTS_JSON="./results/evaluation-results.json"
 VALIDATION_SCRIPT="./validation/validate-output.mjs"
 
-# ─── Step 1: promptfoo eval ───────────────────────────────────────────────
+# Step 1: promptfoo eval ───────────────────────────────────────────────
 echo "=== [1/3] promptfoo eval 実行 ==="
 npx promptfoo eval --config prompts/promptfoo.yaml
 echo ""
 
-# ─── Step 2: 各モデルの出力を results/{model}/ に保存 ─────────────────────
+# Step 2: 各モデルの出力を results/{model}/ に保存 ─────────────────────
 echo "=== [2/3] 出力の抽出・保存 ==="
 node scripts/extract-outputs.mjs "$RESULTS_JSON"
 echo ""
 
-# ─── Step 3: validate-output.mjs で型精査 ─────────────────────────────────
+# Step 3: validate-output.mjs で型精査 ─────────────────────────────────
 echo "=== [3/3] validate-output.mjs による型精査 ==="
 
 PASS=0

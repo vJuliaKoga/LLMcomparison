@@ -1,0 +1,15 @@
+{
+  "name": "llm-comparison",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "eval": "promptfoo eval --config prompts/promptfoo.yaml",
+    "eval:view": "promptfoo view",
+    "extract": "node scripts/extract-outputs.mjs",
+    "validate": "bash scripts/run-pipeline.sh",
+    "pipeline": "npm run eval && npm run extract"
+  },
+  "devDependencies": {
+    "promptfoo": "^0.120.25"
+  }
+}

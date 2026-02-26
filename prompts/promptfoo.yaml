@@ -2,8 +2,17 @@
 prompts:
   - file://prompts/hybrid-test-generation.txt
 
-# OpenRouter モデル
+# llm-rubric の採点モデル = OpenAI エンタープライズ API（OPENAI_API_KEY_ENTERPRISE）
+defaultTest:
+  options:
+    provider:
+      id: openai:gpt-4o
+      config:
+        apiKey: "{{env.OPENAI_API_KEY_ENTERPRISE}}"
+
 providers:
+
+  # OpenRouter 無料枠（OPENROUTER_API_KEY） ──────────────────────────────
   - id: openrouter:meta-llama/llama-4-scout:free
     config:
       temperature: 0.4
@@ -21,6 +30,19 @@ providers:
 
   - id: openrouter:deepseek/deepseek-v3-base:free
     config:
+      temperature: 0.4
+      max_tokens: 4000
+
+  # OpenAI 個人 API（OPENAI_API_KEY） ──────────────────────────────────
+  - id: openai:gpt-4o
+    config:
+      apiKey: "{{env.OPENAI_API_KEY}}"
+      temperature: 0.4
+      max_tokens: 4000
+
+  - id: openai:gpt-4o-mini
+    config:
+      apiKey: "{{env.OPENAI_API_KEY}}"
       temperature: 0.4
       max_tokens: 4000
 

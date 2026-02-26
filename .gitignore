@@ -1,0 +1,12 @@
+# 環境変数（APIキーを含む）
+.env
+.env.local
+
+# Promptfoo キャッシュ
+.promptfoo/
+
+# Node
+node_modules/
+
+# 生成された評価結果（任意でコミット対象外に）
+# results/evaluation-results.json
