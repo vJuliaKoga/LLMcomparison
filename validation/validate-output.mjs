@@ -1,6 +1,12 @@
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
+
+// スクリプトファイルと同じディレクトリにある schema.json を使う
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SCHEMA_PATH = path.join(__dirname, "schema.json");
 
 function extractSections(text) {
 	// (A)(B)(C) をざっくり切り出し（Cは任意）
@@ -45,10 +51,10 @@ function parseTestCases(sectionA) {
 		const category = (ch.match(/カテゴリ:\s*\[(正常系|異常系|境界値|セキュリティ)\]/) || [])[1];
 		const priority = (ch.match(/優先度:\s*\[(高|中|低)\]/) || [])[1];
 
-		const preconditions = (ch.match(/前提条件:\s*([\s\S]*?)\nテスト手順:/) || [])[1] ? .trim();
-		const stepsRaw = (ch.match(/テスト手順:\s*([\s\S]*?)\n期待結果:/) || [])[1] ? .trim();
-		const expected = (ch.match(/期待結果:\s*([\s\S]*?)\n実装根拠:/) || [])[1] ? .trim();
-		const evidence = (ch.match(/実装根拠:\s*([\s\S]*)$/) || [])[1] ? .trim();
+		const preconditions = (ch.match(/前提条件:\s*([\s\S]*?)\nテスト手順:/) || [])[1]?.trim();
+		const stepsRaw = (ch.match(/テスト手順:\s*([\s\S]*?)\n期待結果:/) || [])[1]?.trim();
+		const expected = (ch.match(/期待結果:\s*([\s\S]*?)\n実装根拠:/) || [])[1]?.trim();
+		const evidence = (ch.match(/実装根拠:\s*([\s\S]*)$/) || [])[1]?.trim();
 
 		const steps = (stepsRaw || "")
 			.split(/\n\d+\.\s*/g)
@@ -127,7 +133,7 @@ function main() {
 	};
 
 	// JSON Schema validation
-	const schema = JSON.parse(fs.readFileSync("schema.json", "utf8"));
+	const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, "utf8"));
 	const ajv = new Ajv({
 		allErrors: true,
 		strict: true
@@ -137,7 +143,7 @@ function main() {
 	const ok = validate(parsed);
 	if (!ok) {
 		console.error("❌ Schema validation failed:");
-		for (const err of validate.errors ? ? []) {
+		for (const err of validate.errors ?? []) {
 			console.error(`- ${err.instancePath || "(root)"} ${err.message}`);
 		}
 		process.exit(1);

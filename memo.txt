@@ -1,0 +1,95 @@
+### validate-output.mjs とJUnit MCP の役割分担
+現在の validate-output.mjs はテキスト構造の型精査（@Test の数、セクション存在確認等）。
+> JUnit MCP の validate_syntax / compile と重複する部分がある。
+
+
+```yaml
+validate-output.mjs  ← LLM 出力の「テキスト構造」検証（正規表現ベース）
+JUnit MCP compile    ← 実際の javac コンパイル（構文の正しさ）
+```
+
+のように役割分担も考えたが、
+重複する領域を増やすことでガードレールを強くする目標で敢えて重複させることとする。
+（技術的にはJUnitMCPに統合することが可能）
+
+
+
+# junit-validator MCP の起動方法
+## 1. Claude Code の再起動で自動ロード
+.mcp.json がプロジェクトルートにあるので、Claude Code を再起動するだけで自動的にサーバーが起動します。
+
+認識されているか確認するには /mcp コマンドを実行：
+
+```shell
+/mcp
+```
+junit-validator が表示されれば OK。
+
+## 2. MCP ツールの呼び出し方
+
+Claude Code 上で自然言語 or ツール名で直接呼べます。
+
+**validate_syntax（構文チェック）**
+
+```shell
+results/llama-4-scout/ログイン機能E2E.java の構文を validate_syntax でチェックして
+```
+
+**compile（javacコンパイル）**
+
+```
+results/llama-4-scout/ログイン機能E2E.java を compile してください
+```
+※ JDK 未インストールの場合は status: "skipped" が返り、後続処理は止まりません。
+
+**validate_spec（シナリオカバレッジ）**
+
+```
+validate_spec で results/llama-4-scout/ログイン機能E2E.txt を
+feature "ログイン機能（基本認証、MFA、ログイン試行制限）" で検証して
+```
+
+**extract_actions（Playwright 用アクション抽出）**
+
+```
+results/llama-4-scout/ログイン機能E2E.java から extract_actions で
+アクションを抽出して
+```
+
+## 3. 手動起動で動作確認したい場合
+
+```
+# プロジェクトルートから
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+  | node mcp/junit-validator/index.mjs
+
+```
+4ツールの JSON が返れば正常動作しています（確認済み）。
+
+
+## 次タスクで必要なもの（メモ）
+Playwright MCP を追加するときは .mcp.json にこれを追記するだけです：
+
+"playwright": {
+  "command": "npx",
+  "args": ["@playwright/mcp@latest"],
+  "cwd": "d:/Github/LLM/LLMcomparison"
+}
+
+
+# ToDoリスト
+# 1. Playwright MCP のインストール（次タスク）
+npx @playwright/mcp@latest
+
+# 2. promptfoo eval → 出力抽出
+npx promptfoo eval --config prompts/promptfoo.yaml
+node scripts/extract-outputs.mjs
+
+# 3. JUnit MCP で検証（Cline から）
+# → validate_syntax / compile / validate_spec / extract_actions を呼ぶ
+
+# 4. extract_actions 出力を playwright-bridge.mjs に渡す
+node scripts/playwright-bridge.mjs results/llama-4-scout/extract-actions-output.json
+
+# 5. 生成されたプランを Cline に渡す
+# → "playwright-plan.json を読んで Playwright MCP で検証して"

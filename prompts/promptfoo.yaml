@@ -7,22 +7,22 @@ providers:
   - id: openrouter:meta-llama/llama-4-scout:free
     config:
       temperature: 0.4
-      max_tokens: 2000
+      max_tokens: 4000
 
   - id: openrouter:meta-llama/llama-4-maverick:free
     config:
       temperature: 0.4
-      max_tokens: 2000
+      max_tokens: 4000
 
   - id: openrouter:google/gemini-2.0-flash-exp:free
     config:
       temperature: 0.4
-      max_tokens: 2000
+      max_tokens: 4000
 
   - id: openrouter:deepseek/deepseek-v3-base:free
     config:
       temperature: 0.4
-      max_tokens: 2000
+      max_tokens: 4000
 
 tests:
 

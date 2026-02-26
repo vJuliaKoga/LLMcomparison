@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "junit-validator": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["mcp/junit-validator/index.mjs"],
+      "cwd": "d:/Github/LLM/LLMcomparison"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "cwd": "d:/Github/LLM/LLMcomparison"
+    }
+  }
+}
