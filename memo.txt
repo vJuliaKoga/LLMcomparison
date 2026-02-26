@@ -93,3 +93,7 @@ node scripts/playwright-bridge.mjs results/llama-4-scout/extract-actions-output.
 
 # 5. 生成されたプランを Cline に渡す
 # → "playwright-plan.json を読んで Playwright MCP で検証して"
+
+
+＃OpenRouter
+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
