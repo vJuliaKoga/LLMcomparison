@@ -21,7 +21,7 @@ import { compile } from "./tools/compile.mjs";
 import { validateSpec } from "./tools/validate-spec.mjs";
 import { extractActions } from "./tools/extract-actions.mjs";
 
-// ── ツール定義 ─────────────────────────────────────────────────────────────
+// ツール定義 ─────────────────────────────────────────────────────────────
 const TOOLS = [
   {
     name: "validate_syntax",
@@ -102,7 +102,7 @@ const TOOLS = [
   },
 ];
 
-// ── ツールハンドラ ─────────────────────────────────────────────────────────
+// ツールハンドラ ─────────────────────────────────────────────────────────
 async function handleTool(name, args) {
   switch (name) {
     case "validate_syntax": {
@@ -153,7 +153,7 @@ async function handleTool(name, args) {
   }
 }
 
-// ── MCP サーバー起動 ───────────────────────────────────────────────────────
+// MCP サーバー起動 ───────────────────────────────────────────────────────
 const server = new Server(
   { name: "junit-validator", version: "1.0.0" },
   { capabilities: { tools: {} } }
