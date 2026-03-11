@@ -1,0 +1,228 @@
+
+We are generating JUnit 5 + Selenium E2E test code for the audit log functionality (RBAC access control).
+ We have two main scenarios to cover:
+  1. Admin and Auditor can view the audit log tab.
+  2. Customer cannot view the audit log tab.
+
+ We'll create two test methods:
+  - testAdminCanViewAuditLog: Admin logs in and verifies that the audit log tab is visible and contains some logs.
+  - testCustomerCannotViewAuditLog: Customer logs in and verifies that the audit log tab is not visible.
+
+ We'll also note that the audit log should display events in descending order (newest first) and with appropriate border colors.
+
+ However, note that the UI structure context says:
+   - The audit log tab is only visible for admin and auditor roles.
+   - The audit log container is "#auditLog".
+
+ Steps for each test:
+
+ For testAdminCanViewAuditLog:
+  1. Login as admin.
+  2. Verify that the audit log tab is visible (using the selector "#auditTab").
+  3. Click on the audit log tab.
+  4. Verify that the audit log container is visible.
+  5. Verify that the logs are displayed in descending order (newest first). We can check the first log's timestamp is greater than the next one? 
+     But note: we don't have a way to generate logs in the test. So we might skip the order check for now, or rely on the fact that the system has some logs.
+  6. Also, we can check that the border colors are present (blue for info, orange for warning, red for error). But again, we don't control the logs.
+
+ However, the problem is that we don't have a way to generate logs in the test. So we might focus on the visibility and the presence of the container.
+
+ Alternatively, we can note that the system might have some default logs (like system startup). We can check that there is at least one log entry.
+
+ But the specification says: 
+   - The audit log records events such as login success, login failure, etc.
+
+ We can try to trigger an event that will be logged? For example, we can do a transfer and then check the log? But that would be a separate test.
+
+ Since the requirement is to test the audit log functionality (RBAC access control), we focus on the access control and the display of the log.
+
+ We'll do:
+  - For admin: 
+        login -> check audit tab visible -> click -> check audit log container visible -> check that there is at least one log entry (if we can assume there are logs)
+  - For customer:
+        login -> check audit tab is not visible.
+
+ However, note that the UI structure context says:
+   - The audit log tab is hidden for customer.
+
+ But what about the audit log container? It should not be present at all for customer? Or it might be present but not visible? 
+ The context says: 
+   - "audit_log_container": "#auditLog"
+   - "visible_roles": ["admin","auditor"]
+   - "hidden_roles": ["customer"]
+
+ So we can check that for customer, the audit log container is not present? Or not visible? The context says "hidden_roles", so we can check that it is not visible.
+
+ However, the tab itself is not visible for customer, so we don't even need to check the container? But to be safe, we can check that the container is not visible.
+
+ But note: the tab is not present for customer? The context says the tab is hidden for customer. So we can check the tab.
+
+ Let's design:
+
+ Test 1: Admin can view audit log
+   Steps:
+     1. Login as admin.
+     2. Check that the audit tab is visible (using "#auditTab").
+     3. Click on the audit tab.
+     4. Check that the audit log container (#auditLog) is visible.
+     5. Check that there is at least one log entry (we can check the presence of an element inside the container, e.g., a log row).
+
+ Test 2: Customer cannot view audit log
+   Steps:
+     1. Login as customer.
+     2. Check that the audit tab is not visible (using "#auditTab").
+     3. (Optional) Check that the audit log container is not visible? But note: the tab is not there, so we don't expect the container to be visible. However, we can check that the container is not present? Or not visible? 
+        Since the tab is not visible, we don't expect the container to be visible. But to be safe, we can check that the container is not visible.
+
+ However, the context says the audit log container is hidden for customer. So we can check that the container is not visible.
+
+ But note: the container might be present in the DOM but hidden? We can check that it is not displayed.
+
+ We'll do:
+     3. Check that the audit log container (#auditLog) is not visible.
+
+ But wait: the container might not be in the DOM at all? We can check for presence? The context doesn't specify. We'll check visibility.
+
+ However, the context says the tab is hidden for customer. So we don't even need to check the container? But to be thorough, we can check both.
+
+ But note: the requirement is to test the access control. The tab being hidden is the primary control. The container being hidden is a consequence.
+
+ We'll do:
+
+   For customer:
+     - Check that the audit tab is not visible.
+     - Check that the audit log container is not visible.
+
+ But note: the container might be in the DOM but hidden? We can check that it is not displayed.
+
+ However, the context says the container is hidden for customer. So we can check that it is not displayed.
+
+ Implementation:
+
+   We'll use:
+     - driver.findElement(By.id("auditTab")) for the tab.
+     - driver.findElement(By.id("auditLog")) for the container.
+
+   For visibility, we can use:
+        element.isDisplayed()
+
+   But note: the tab might be present but not visible? We can check that the tab is not displayed.
+
+   Similarly, the container might be present but not displayed.
+
+   However, the context says the tab is hidden for customer. So we can check that the tab is not displayed.
+
+   And the container is also hidden for customer, so we check that the container is not displayed.
+
+ But note: the container might not be in the DOM at all? We can check for presence? We can use:
+
+        try {
+            WebElement tab = driver.findElement(By.id("auditTab"));
+            assertFalse(tab.isDisplayed(), "Audit tab should not be visible for customer");
+        } catch (NoSuchElementException e) {
+            // If the element is not present, that's also acceptable? But the context says it's hidden, so it might be present but hidden.
+            // We'll consider that if it's not present, then it's not visible -> pass.
+        }
+
+   Similarly for the container.
+
+   However, the context says the tab is hidden for customer. It doesn't specify if it's present or not. We'll assume it's present but hidden.
+
+   So we can check:
+
+        WebElement auditTab = driver.findElement(By.id("auditTab"));
+        assertFalse(auditTab.isDisplayed(), "Audit tab should not be visible for customer");
+
+        WebElement auditLog = driver.findElement(By.id("auditLog"));
+        assertFalse(auditLog.isDisplayed(), "Audit log container should not be visible for customer");
+
+   But if the container is not present, we get a NoSuchElementException. We can handle that by:
+
+        List<WebElement> auditTabs = driver.findElements(By.id("auditTab"));
+        if (!auditTabs.isEmpty()) {
+            assertFalse(auditTabs.get(0).isDisplayed(), "Audit tab should not be visible for customer");
+        }
+
+        Similarly for the container.
+
+   However, the context says the tab is hidden for customer. So we expect it to be present? Or not? The context doesn't specify.
+
+   We'll assume that the tab is present but hidden for customer? Because the context says "hidden_for".
+
+   So we can check that the tab is present and not displayed.
+
+   But note: the context says the tab is hidden for customer. So we can check that the tab is present and not displayed.
+
+   Similarly, the container is present and not displayed.
+
+   However, the context says the container is hidden for customer. So we can check that the container is present and not displayed.
+
+   But what if the container is not present? Then we get an exception. We can catch that and consider it as not visible? 
+
+   We'll do:
+
+        // For the tab
+        WebElement auditTab = driver.findElement(By.id("auditTab"));
+        assertFalse(auditTab.isDisplayed(), "Audit tab should not be visible for customer");
+
+        // For the container
+        WebElement auditLog = driver.findElement(By.id("auditLog"));
+        assertFalse(auditLog.isDisplayed(), "Audit log container should not be visible for customer");
+
+   But if the container is not present, we get an exception. We can handle it by:
+
+        try {
+            WebElement auditLog = driver.findElement(By.id("auditLog"));
+            assertFalse(auditLog.isDisplayed(), "Audit log container should not be visible for customer");
+        } catch (NoSuchElementException e) {
+            // If the element is not present, then it's not visible -> pass.
+        }
+
+   However, the context says the container is hidden for customer. It doesn't specify if it's present or not. We'll assume it's present but hidden.
+
+   But note: the context says the container is hidden for customer. So we expect it to be present? 
+
+   We'll do:
+
+        // For the container, we expect it to be present but hidden? 
+        // But the context doesn't specify. We'll check that it is not displayed, and if it's present, that's okay as long as it's hidden.
+
+        // We can check that the container is not displayed, and if it's present, that's acceptable? But if it's not present, that's also acceptable? 
+        // Actually, the context says "hidden_roles", meaning it should be hidden. So if it's not present, it's hidden? 
+
+        // We'll check that the container is not displayed. If it's not present, then it's not displayed -> pass.
+
+        // We can use:
+        List<WebElement> auditLogs = driver.findElements(By.id("auditLog"));
+        if (!auditLogs.isEmpty()) {
+            assertFalse(auditLogs.get(0).isDisplayed(), "Audit log container should not be visible for customer");
+        }
+
+   Similarly for the tab? The context says the tab is hidden for customer. So we expect it to be present? 
+
+   We'll do the same for the tab:
+
+        List<WebElement> auditTabs = driver.findElements(By.id("auditTab"));
+        if (!auditTabs.isEmpty()) {
+            assertFalse(auditTabs.get(0).isDisplayed(), "Audit tab should not be visible for customer");
+        }
+
+   But note: the context says the tab is hidden for customer. So we expect it to be present? 
+
+   We'll assume that the tab is present but hidden. So we can check that it is present and not displayed.
+
+   However, the context says the tab is hidden for customer. So we can check that it is present and not displayed.
+
+   But what if the tab is not present? Then we get an empty list. We can consider that as acceptable? 
+
+   We'll do:
+
+        // For the tab: we expect it to be present and hidden? 
+        // But the context says "hidden_for", so it should be present? 
+
+        // We'll check that the tab is present and not displayed.
+
+        WebElement auditTab = driver.findElement(By.id("auditTab"));
+        assertFalse(auditTab.isDisplayed(), "Audit tab should not be visible for customer");
+
+   And if it's not present, we get an exception. We can catch that and fail

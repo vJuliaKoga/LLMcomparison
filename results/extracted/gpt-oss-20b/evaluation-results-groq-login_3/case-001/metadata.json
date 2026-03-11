@@ -1,0 +1,28 @@
+{
+  "source_json_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\groq\\evaluation-results-groq-login_3.json",
+  "source_json_file": "evaluation-results-groq-login_3.json",
+  "source_json_stem": "evaluation-results-groq-login_3",
+  "entry_index": 0,
+  "provider_id": "groq:openai/gpt-oss-20b",
+  "provider_label": "Groq-GPT-OSS-20B",
+  "model_dir": "gpt-oss-20b",
+  "description": "ログイン機能E2E（groq・単体）",
+  "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）",
+  "specification": "file://..\\..\\..\\specs\\securebank-spec-login.md",
+  "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+  "output_txt_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\gpt-oss-20b\\evaluation-results-groq-login_3\\case-001\\output.txt",
+  "java_paths": [
+    "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\gpt-oss-20b\\evaluation-results-groq-login_3\\case-001\\LoginE2ETest.java"
+  ],
+  "java_public_class_names": [
+    "LoginE2ETest"
+  ],
+  "java_block_count": 1,
+  "summary": {
+    "hasJavaFence": true,
+    "hasAnyFence": true,
+    "hasSelfValidationSection": false,
+    "testAnnotationCount": 3
+  },
+  "extracted_at": "2026-03-11T05:55:07.780Z"
+}

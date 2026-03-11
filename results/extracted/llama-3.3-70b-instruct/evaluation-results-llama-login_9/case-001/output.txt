@@ -1,0 +1,91 @@
+### (A) JUnit 5 + Selenium E2Eテストコード
+```java
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SecureBankLoginTest {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeEach
+    void setup() {
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 10);
+        String baseUrl = System.getenv("BASE_URL");
+        if (baseUrl == null) {
+            baseUrl = "http://localhost:8080";
+        }
+        driver.get(baseUrl + "#loginScreen");
+    }
+
+    @AfterEach
+    void tearDown() {
+        driver.quit();
+    }
+
+    @Test
+    void testSuccessfulLogin() {
+        // 入力
+        driver.findElement(By.cssSelector("#username")).sendKeys("customer01");
+        driver.findElement(By.cssSelector("#password")).sendKeys("pass123");
+        driver.findElement(By.cssSelector("#role")).sendKeys("customer");
+        driver.findElement(By.cssSelector("button")).click();
+
+        // MFA
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#mfaCode")));
+        driver.findElement(By.cssSelector("#mfaCode")).sendKeys("123456");
+        driver.findElement(By.cssSelector("button")).click();
+
+        // ダッシュボード表示
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#dashboard")));
+        assertEquals("ダッシュボード", driver.findElement(By.cssSelector("#dashboard")).getText());
+    }
+
+    @Test
+    void testFailedLogin() {
+        // 入力
+        driver.findElement(By.cssSelector("#username")).sendKeys("customer01");
+        driver.findElement(By.cssSelector("#password")).sendKeys("wrongpass");
+        driver.findElement(By.cssSelector("#role")).sendKeys("customer");
+        driver.findElement(By.cssSelector("button")).click();
+
+        // エラーメッセージ
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        assertEquals("認証失敗（残り2回）", driver.findElement(By.cssSelector("#loginError")).getText());
+    }
+
+    @Test
+    void testAccountLock() {
+        // 3回失敗
+        for (int i = 0; i < 3; i++) {
+            driver.findElement(By.cssSelector("#username")).sendKeys("customer01");
+            driver.findElement(By.cssSelector("#password")).sendKeys("wrongpass");
+            driver.findElement(By.cssSelector("#role")).sendKeys("customer");
+            driver.findElement(By.cssSelector("button")).click();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        }
+
+        // ロックメッセージ
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        assertEquals("アカウントがロックされています。残り30秒", driver.findElement(By.cssSelector("#loginError")).getText());
+    }
+}
+```
+
+### (B) 仕様と実装の不整合・不足情報
+- ログイン試行制限のロック時間が30秒なのに対し、ロック中の再試行のエラーメッセージが「残りX秒」であることの整合性
+- MFAの認証コードが6桁の数字であることのバリデーション
+- ログイン成功/失敗やMFA成功/失敗の監査ログ記録の実装
+- ロール不一致時のエラーメッセージの定義
+- セッションタイムアウトの実装

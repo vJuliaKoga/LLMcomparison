@@ -1,0 +1,15 @@
+assert:
+  - type: contains
+    value: "```java"
+
+  - type: contains-all
+    value:
+      - "admin"
+      - "auditor"
+      - "customer"
+
+  - type: javascript
+    value: "/```java[\\s\\S]*@Test[\\s\\S]*```/m.test(output)"
+
+  - type: javascript
+    value: "!output.includes('assertTrue(true)')"

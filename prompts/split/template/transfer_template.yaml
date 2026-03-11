@@ -1,0 +1,27 @@
+assert:
+  - type: contains
+    value: "```java"
+
+  - type: javascript
+    value: "output.includes('WebDriver')"
+
+  - type: contains-all
+    value:
+      - "WebDriver"
+      - "WebDriverWait"
+      - "@Test"
+      - "@BeforeEach"
+      - "@AfterEach"
+
+  - type: javascript
+    value: |
+      const m = output.match(/@Test/g) || [];
+      return m.length >= 2;
+
+  - type: javascript
+    value: |
+      const blocks = output.match(/```java[\s\S]*?```/g) || [];
+      return !blocks.join('\n').includes('Thread.sleep');
+
+  - type: javascript
+    value: "!output.includes('assertTrue(true)')"

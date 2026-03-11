@@ -1,0 +1,317 @@
+{
+  "evalId": "eval-AnV-2026-03-08T23:16:43",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-03-08T23:16:43.432Z",
+    "prompts": [
+      {
+        "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "label": "prompts\\split\\gemma\\hybrid-test-generation-gemma.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "id": "864f2505b267c1b47a3941316ad6fbef7edbbca49b12b5e05d26cf0b28e3d41e",
+        "provider": "Gemma-3n-4B-Free",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 6,
+          "assertFailCount": 0,
+          "totalLatencyMs": 36,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 3528,
+            "total": 3528,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains",
+                "value": "```java"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains-all",
+                "value": [
+                  "WebDriver",
+                  "WebDriverWait",
+                  "@Test",
+                  "@BeforeEach",
+                  "@AfterEach"
+                ]
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!output.includes('assertTrue(true)')"
+              }
+            }
+          ]
+        },
+        "id": "7b4b06b4-90dc-4bb4-8c12-31238d43a1e4",
+        "latencyMs": 36,
+        "namedScores": {},
+        "prompt": {
+          "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n# SecureBank デモシステム テスト仕様書（ログイン機能抜粋）\r\n\r\n## 1. 対象\r\n\r\nログイン機能（基本認証、ログイン試行制限、多要素認証、監査ログ記録）\r\n\r\n## 2. テスト対象アカウント\r\n\r\n| 役割     | ユーザーID | パスワード |\r\n| -------- | ---------- | ---------- |\r\n| 一般顧客 | customer01 | pass123    |\r\n| 管理者   | admin01    | admin123   |\r\n| 監査者   | auditor01  | audit123   |\r\n\r\n## 3. 機能仕様\r\n\r\n### 3.1 基本認証\r\n\r\n- 入力項目: ユーザーID、パスワード、役割選択\r\n- 検証項目:\r\n  - ユーザーIDとパスワードの一致\r\n  - 選択した役割とアカウント役割の一致\r\n  - 空欄チェック\r\n\r\n### 3.2 ログイン試行制限\r\n\r\n- 制限回数: 3回まで\r\n- ロック時間: 30秒\r\n- 動作:\r\n  - 3回失敗後、30秒間すべてのログイン試行を拒否\r\n  - ロック中のメッセージ: \"🔒 アカウントがロックされています。残りX秒\"\r\n\r\n### 3.3 多要素認証（MFA）\r\n\r\n- タイミング: 基本認証成功後\r\n- 認証コード: 6桁の数字（テスト用: 123456）\r\n- 失敗時: エラーメッセージ表示、ログイン不可\r\n\r\n### 3.4 監査ログ記録\r\n\r\n- ログイン成功/失敗\r\n- MFA成功/失敗\r\n- ログイン試行回数超過\r\n\r\n## 4. エラーハンドリング\r\n\r\n### 4.1 主要エラーメッセージ\r\n\r\n| エラー分類       | メッセージ                                 | トリガー条件        |\r\n| ---------------- | ------------------------------------------ | ------------------- |\r\n| 入力不足         | \"ユーザーIDとパスワードを入力してください\" | ログイン時、空欄    |\r\n| 認証失敗         | \"認証失敗（残りX回）\"                      | ID/パスワード不一致 |\r\n| アカウントロック | \"アカウントがロックされています。残りX秒\"  | 3回失敗後           |\r\n| MFA失敗          | \"認証コードが正しくありません\"             | MFA不一致           |\r\n\r\n## 5. セキュリティ\r\n\r\n- パスワードは入力時に type=\"password\" でマスク\r\n- すべての認証失敗を監査ログに記録\r\n\r\n## 6. テスト観点\r\n\r\n- 正常系: 正しい資格情報 + 正しいMFAでログイン成功\r\n- 異常系: 認証失敗、MFA失敗\r\n- 境界値: 失敗3回目でロック\r\n- セキュリティ: ロック中再試行、役割不一致\n\n【UI構造コンテキスト】\n{\"app\":{\"name\":\"SecureBank Demo\",\"locale\":\"ja-JP\",\"base_assumption\":\"http://localhost:8080\",\"initial_screen\":\"#loginScreen\",\"post_login_flow\":[{\"login_success\":\"#mfaScreen を表示\"},{\"mfa_success\":\"#dashboard と #userInfo を表示\"}]},\"accounts\":{\"customer\":{\"username\":\"customer01\",\"password\":\"pass123\",\"role_value\":\"customer\",\"role_label\":\"一般顧客\",\"account_number\":\"1234567890\",\"balance\":1500000},\"admin\":{\"username\":\"admin01\",\"password\":\"admin123\",\"role_value\":\"admin\",\"role_label\":\"管理者\",\"account_number\":\"9876543210\",\"balance\":5000000},\"auditor\":{\"username\":\"auditor01\",\"password\":\"audit123\",\"role_value\":\"auditor\",\"role_label\":\"監査者\",\"account_number\":\"5555555555\",\"balance\":2000000}},\"login\":{\"screen\":\"#loginScreen\",\"fields\":{\"username\":\"#username\",\"password\":\"#password\",\"role\":\"#role\"},\"actions\":{\"submit_button_text\":\"ログイン\"},\"feedback\":{\"error_container\":\"#loginError\"},\"validations\":[{\"condition\":\"username または password が空\",\"message\":\"⚠️ ユーザーIDとパスワードを入力してください\"},{\"condition\":\"認証失敗 1〜2 回目\",\"message_pattern\":\"❌ 認証失敗（残りN回）\"},{\"condition\":\"認証失敗 3 回目\",\"message\":\"🔒 ログイン試行回数超過。30秒間ロックされます\"},{\"condition\":\"ロック中に再試行\",\"message_pattern\":\"🔒 アカウントがロックされています。残りN秒\"}],\"security_rules\":[\"username 単位で loginAttempts を保持\",\"認証失敗 3 回で 30 秒ロック\",\"ロック中のログイン試行は監査ログへ error 記録\"],\"state_transitions\":[{\"success\":\"#loginScreen hidden -> #mfaScreen visible\"}]},\"mfa\":{\"screen\":\"#mfaScreen\",\"field\":\"#mfaCode\",\"maxlength\":6,\"actions\":{\"submit_button_text\":\"認証\"},\"feedback\":{\"error_container\":\"#mfaError\"},\"rules\":{\"valid_code\":\"123456\",\"invalid_message\":\"❌ 認証コードが正しくありません\",\"success_effects\":[\"\\\"#mfaScreen\\\" を非表示\",\"\\\"#dashboard\\\" を表示\",\"\\\"#userInfo\\\" を表示\",\"ユーザー情報を画面に反映\"]}},\"navigation\":{\"tabs\":{\"overview\":\"概要\",\"transactions\":\"取引履歴\",\"transfer\":\"振込\",\"cards\":\"カード管理\",\"audit\":{\"label\":\"監査ログ\",\"selector\":\"#auditTab\",\"visible_for\":[\"admin\",\"auditor\"],\"hidden_for\":[\"customer\"]}}},\"transfer\":{\"tab_selector\":\"#tabTransfer\",\"fields\":{\"to\":\"#transferTo\",\"amount\":\"#transferAmount\",\"memo\":\"#transferMemo\"},\"feedback\":{\"message_container\":\"#transferMessage\",\"success_message\":\"✅ 振込が完了しました\"},\"validations\":[{\"condition\":\"振込先口座番号が空 または 10 桁数字でない\",\"message\":\"❌ 振込先口座番号は10桁の数字で入力してください\"},{\"condition\":\"amount が空 または 0 以下\",\"message\":\"❌ 振込金額を正しく入力してください\"},{\"condition\":\"amount > 1000000\",\"message\":\"❌ 1回の振込上限（¥1,000,000）を超えています\"},{\"condition\":\"amount > currentUser.balance\",\"message\":\"❌ 残高不足です\"},{\"condition\":\"to == currentUser.accountNumber\",\"message\":\"❌ 自分の口座には振込できません\"},{\"condition\":\"currentUser.role == customer かつ amount >= 100000\",\"message\":\"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\"}],\"success_effects\":[\"currentUser.balance から amount を減算\",\"transactionList の先頭へ振込履歴を追加\",\"\\\"#balance\\\" を更新\",\"入力欄をクリア\"],\"audit_log_events\":[\"warning: 振込上限超過\",\"warning: 承認待ち振込\",\"info: 振込実行\"]},\"rbac_audit\":{\"audit_log_container\":\"#auditLog\",\"visible_roles\":[\"admin\",\"auditor\"],\"hidden_roles\":[\"customer\"],\"audit_events_examples\":[\"システム起動\",\"ログイン失敗\",\"ロック中のログイン試行\",\"MFA失敗\",\"MFA認証成功\",\"承認待ち振込\",\"振込実行\",\"CVV表示\",\"ログアウト\"]},\"session\":{\"timer_selector\":\"#sessionTimer\",\"initial_seconds\":900,\"timeout_behavior\":[\"残り 60 秒以下で背景色変更\",\"0 秒で alert 表示後 logout()\"]},\"other_useful_elements\":{\"user_info\":{\"user_name\":\"#userName\",\"role_badge\":\"#roleBadge\",\"account_number\":\"#accountNumber\",\"balance\":\"#balance\"},\"transactions\":{\"table_body\":\"#transactionList\"},\"cards\":{\"masked_number\":\"#cardNumber\",\"full_number\":\"#fullCardNumber\",\"card_holder\":\"#cardHolder\",\"card_limit\":\"#cardLimit\",\"cvv\":\"#cvv\"}},\"known_implementation_notes\":[\"switchTab() は event.target 前提で動くため、実ブラウザ操作ベースのクリックで呼ぶこと\",\"showError() は 5 秒後に hidden を再付与する\",\"transfer success message は 3 秒後に非表示化される\",\"logout() 後も role 選択値は明示リセットしていない\"]}\n\n【対象機能】\nログイン機能（基本認証、MFA、ログイン試行制限）\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "label": "prompts\\split\\gemma\\hybrid-test-generation-gemma.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "config": {}
+        },
+        "promptId": "864f2505b267c1b47a3941316ad6fbef7edbbca49b12b5e05d26cf0b28e3d41e",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openrouter:google/gemma-3n-e4b-it:free",
+          "label": "Gemma-3n-4B-Free"
+        },
+        "response": {
+          "output": "```java\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\nimport org.openqa.selenium.By;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.chrome.ChromeDriver;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport org.openqa.selenium.support.expectedLocations.ExpectedLocations;\nimport java.time.Duration;\n\npublic class SecureBankLoginTest {\n\n    private WebDriver driver;\n\n    @BeforeEach\n    public void setUp() {\n        // ChromeDriver の設定 (必要に応じてパスを指定)\n        System.setProperty(\"webdriver.chrome.driver\", \"chromedriver\");\n        driver = new ChromeDriver();\n        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));\n    }\n\n    @AfterEach\n    public void tearDown() {\n        driver.quit();\n    }\n\n    @Test\n    public void testSuccessfulLogin() {\n        String baseUrl = System.getenv(\"BASE_URL\") != null ? System.getenv(\"BASE_URL\") : \"http://localhost:8080\";\n        driver.get(baseUrl + \"/loginScreen\");\n\n        // 入力\n        driver.findElement(By.id(\"username\")).sendKeys(\"customer01\");\n        driver.findElement(By.id(\"password\")).sendKeys(\"pass123\");\n        driver.findElement(By.id(\"role\")).click(); // 一般顧客を選択\n\n        // 実行\n        driver.findElement(By.id(\"submit_button\")).click();\n\n        // 検証\n        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));\n        wait.until(ExpectedLocations.visibilityOfElementLocated(By.id(\"mfaScreen\"))); // MFA画面遷移確認\n        driver.findElement(By.id(\"mfaCode\")).sendKeys(\"123456\");\n        driver.findElement(By.id(\"mfaSubmit\")).click();\n\n        wait.until(ExpectedLocations.visibilityOfElementLocated(By.id(\"dashboard\"))); // ダッシュボード画面遷移確認\n        driver.findElement(By.id(\"userName\")).sendKeys(\"customer01\");\n        driver.findElement(By.id(\"accountNumber\")).sendKeys(\"1234567890\");\n        driver.findElement(By.id(\"balance\")).sendKeys(\"1500000\");\n\n    }\n\n    @Test\n    public void testLoginAttemptLimit() {\n        String baseUrl = System.getenv(\"BASE_URL\") != null ? System.getenv(\"BASE_URL\") : \"http://localhost:8080\";\n        driver.get(baseUrl + \"/loginScreen\");\n\n        // ログイン試行\n        for (int i = 0; i < 4; i++) {\n            driver.findElement(By.id(\"username\")).sendKeys(\"customer01\");\n            driver.findElement(By.id(\"password\")).sendKeys(\"pass123\");\n            driver.findElement(By.id(\"submit_button\")).click();\n\n            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));\n            wait.until(ExpectedLocations.visibilityOfElementLocated(By.id(\"loginError\")));\n            String errorMessage = driver.findElement(By.id(\"loginError\")).getText();\n            assert errorMessage.contains(\"認証失敗\");\n            driver.findElement(By.id(\"loginError\")).clear();\n        }\n\n        // ログイン試行制限後の状態確認\n        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));\n        wait.until(ExpectedLocations.visibilityOfElementLocated(By.id(\"loginError\")));\n        String errorMessage = driver.findElement(By.id(\"loginError\")).getText();\n        assert errorMessage.contains(\"アカウントがロックされています\");\n\n    }\n\n    @Test\n    public void testInvalidCredentials() {\n        String baseUrl = System.getenv(\"BASE_URL\") != null ? System.getenv(\"BASE_URL\") : \"http://localhost:8080\";\n        driver.get(baseUrl + \"/loginScreen\");\n\n        // 無効なユーザーIDとパスワードでログイン試行\n        driver.findElement(By.id(\"username\")).sendKeys(\"invalidUser\");\n        driver.findElement(By.id(\"password\")).sendKeys(\"invalidPassword\");\n        driver.findElement(By.id(\"submit_button\")).click();\n\n        // 検証\n        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));\n        wait.until(ExpectedLocations.visibilityOfElementLocated(By.id(\"loginError\")));\n        String errorMessage = driver.findElement(By.id(\"loginError\")).getText();\n        assert errorMessage.contains(\"⚠️ ユーザーIDとパスワードを入力してください\");\n    }\n}\n```\n\n(B) 仕様と実装の不整合・不足情報\n- MFA認証コード入力画面の存在確認テストが不足している。\n- ログイン試行制限後のロック画面のメッセージ内容の検証が不足している。\n- 監査ログ記録の検証が不足している。\n- 役割選択の検証が不足している。\n- ログイン成功後の画面遷移の検証が不足している。\n- 振込機能のテストが不足している。\n- セキュリティに関するテスト（パスワードマスク、監査ログ記録）の検証が不足している。\n",
+          "tokenUsage": {
+            "cached": 3528,
+            "total": 3528
+          },
+          "cached": true,
+          "finishReason": "stop"
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "ログイン機能E2E（gemma・単体）",
+          "vars": {
+            "specification": "file://..\\..\\..\\specs\\securebank-spec-login.md",
+            "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+            "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+          },
+          "assert": [
+            {
+              "type": "contains",
+              "value": "```java"
+            },
+            {
+              "type": "javascript",
+              "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+            },
+            {
+              "type": "contains-all",
+              "value": [
+                "WebDriver",
+                "WebDriverWait",
+                "@Test",
+                "@BeforeEach",
+                "@AfterEach"
+              ]
+            },
+            {
+              "type": "javascript",
+              "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+            },
+            {
+              "type": "javascript",
+              "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+            },
+            {
+              "type": "javascript",
+              "value": "!output.includes('assertTrue(true)')"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "specification": "file://..\\..\\..\\specs\\securebank-spec-login.md",
+          "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+          "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 3528,
+        "total": 3528,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 79,
+      "evaluationDurationMs": 79
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "file://C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\prompts\\split\\gemma\\hybrid-test-generation-gemma.txt"
+    ],
+    "providers": [
+      {
+        "id": "openrouter:google/gemma-3n-e4b-it:free",
+        "label": "Gemma-3n-4B-Free",
+        "config": {
+          "temperature": 0.2,
+          "max_tokens": 1800
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "ログイン機能E2E（gemma・単体）",
+        "vars": {
+          "specification": "file://../../../specs/securebank-spec-login.md",
+          "ui_context": "file://../../../specs/financial-demo-app-context.yaml",
+          "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "```java"
+          },
+          {
+            "type": "javascript",
+            "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+          },
+          {
+            "type": "contains-all",
+            "value": [
+              "WebDriver",
+              "WebDriverWait",
+              "@Test",
+              "@BeforeEach",
+              "@AfterEach"
+            ]
+          },
+          {
+            "type": "javascript",
+            "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+          },
+          {
+            "type": "javascript",
+            "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+          },
+          {
+            "type": "javascript",
+            "value": "!output.includes('assertTrue(true)')"
+          }
+        ]
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "outputPath": [
+      ".\\results\\gemma\\evaluation-results-gemma-login_2.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {
+      "maxConcurrency": 1,
+      "delay": 6000
+    }
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.26",
+    "nodeVersion": "v24.14.0",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-03-08T23:16:43.666Z",
+    "evaluationCreatedAt": "2026-03-08T23:16:43.432Z"
+  }
+}

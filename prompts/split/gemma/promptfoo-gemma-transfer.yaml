@@ -1,0 +1,50 @@
+prompts:
+  - file://hybrid-test-generation-gemma.txt
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 6000
+
+providers:
+  - id: openrouter:google/gemma-3n-e4b-it:free
+    label: "Gemma-3n-4B-Free"
+    config:
+      temperature: 0.2
+      max_tokens: 1800
+
+tests:
+  - description: "振込機能E2E（gemma・単体）"
+    vars:
+      specification: file://../../../specs/securebank-spec-transfer.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "振込機能（全バリデーション、承認フロー含む）"
+
+    assert:
+      - type: contains
+        value: "```java"
+
+      - type: javascript
+        value: "output.includes('WebDriver')"
+
+      - type: contains-all
+        value:
+          - "WebDriver"
+          - "WebDriverWait"
+          - "@Test"
+          - "@BeforeEach"
+          - "@AfterEach"
+
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          return m.length >= 2;
+
+      - type: javascript
+        value: |
+          const blocks = output.match(/```java[\s\S]*?```/g) || [];
+          return !blocks.join('\n').includes('Thread.sleep');
+
+      - type: javascript
+        value: "!output.includes('assertTrue(true)')"
+
+outputPath: ./../../../results/gemma/evaluation-results-gemma-transfer.json

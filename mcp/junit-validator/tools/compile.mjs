@@ -2,9 +2,9 @@
  * compile.mjs
  *
  * javac を使って .java ファイルをコンパイルする。
- * Java / 依存 JAR がない場合は SKIPPED を返し、後続処理を止めない。
+ * Java / 依存 JAR がない場合は skipped を返し、後続処理を止めない。
  *
- * Input : { filePath: string, classpath?: string }
+ * Input : { filePath: string, classpath?: string|string[] }
  * Output: { status: "ok"|"error"|"skipped", output: string, errors: string[] }
  */
 
@@ -29,63 +29,156 @@ async function isJavacAvailable() {
   }
 }
 
+function extractPublicClassName(code) {
+  const match = code.match(/\bpublic\s+class\s+([A-Za-z_][A-Za-z0-9_]*)\b/);
+  return match?.[1] ?? null;
+}
+
+function normalizeClasspath(classpath) {
+  if (Array.isArray(classpath)) {
+    return classpath.filter(Boolean).join(path.delimiter);
+  }
+
+  const raw = String(classpath ?? "").trim();
+  if (!raw) {
+    return "";
+  }
+
+  let parts;
+  if (path.delimiter === ";") {
+    parts = raw
+      .replace(/\r?\n/g, ";")
+      .replace(/,/g, ";")
+      .split(";");
+  } else {
+    parts = raw
+      .replace(/\r?\n/g, ";")
+      .replace(/,/g, ";")
+      .split(/[;:]/);
+  }
+
+  return parts
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join(path.delimiter);
+}
+
+function buildMissingDependencyHints(rawOutput) {
+  const hints = [];
+  const text = String(rawOutput || "");
+
+  if (/package\s+org\.junit\.jupiter\.api\s+does not exist/i.test(text)) {
+    hints.push("JUnit 5 の JAR が classpath に含まれていません。");
+  }
+  if (/package\s+org\.openqa\.selenium\s+does not exist/i.test(text)) {
+    hints.push("Selenium の JAR が classpath に含まれていません。");
+  }
+  if (/cannot find symbol/i.test(text) && /WebDriver|WebDriverWait|ChromeDriver|By/.test(text)) {
+    hints.push("Selenium 関連のシンボルを解決できません。依存 JAR を確認してください。");
+  }
+  if (/cannot find symbol/i.test(text) && /BeforeEach|AfterEach|Test/.test(text)) {
+    hints.push("JUnit 関連のシンボルを解決できません。依存 JAR を確認してください。");
+  }
+
+  return hints;
+}
+
+function stageSourceFile(originalFilePath, tmpRootDir) {
+  const originalCode = fs.readFileSync(originalFilePath, "utf8");
+  const publicClassName = extractPublicClassName(originalCode);
+  const originalBaseName = path.basename(originalFilePath, ".java");
+  const stagedBaseName = publicClassName || originalBaseName;
+  const stagedFileName = `${stagedBaseName}.java`;
+  const stagedFilePath = path.join(tmpRootDir, stagedFileName);
+
+  fs.writeFileSync(stagedFilePath, originalCode, "utf8");
+
+  return {
+    code: originalCode,
+    publicClassName,
+    originalBaseName,
+    stagedFilePath,
+    stagedFileName,
+    fileNameAdjusted: Boolean(publicClassName && publicClassName !== originalBaseName),
+  };
+}
+
 /**
- * @param {string} filePath  .java ファイルの絶対パス
- * @param {string} [classpath]  追加クラスパス（セミコロン区切り, Windows）
+ * @param {string} filePath  .java ファイルのパス
+ * @param {string|string[]} [classpath]  追加クラスパス
  */
 export async function compile(filePath, classpath = "") {
   if (!fs.existsSync(filePath)) {
     return {
       status: "error",
       output: "",
-      errors: [`File not found: ${filePath}`],
+      errors: [`ファイルが見つかりません: ${filePath}`],
     };
   }
 
-  // javac 存在確認
   if (!(await isJavacAvailable())) {
     return {
       status: "skipped",
-      output: "javac not found. Install JDK to enable compilation.",
+      output: "javac が見つかりません。JDK をインストールしてください。",
       errors: [],
     };
   }
 
-  // 一時ディレクトリに出力（元ディレクトリを汚さない）
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "junit-compile-"));
+  const normalizedClasspath = normalizeClasspath(classpath);
 
   try {
-    const args = ["-d", tmpDir];
-    if (classpath) {
-      args.push("-cp", classpath);
+    const staged = stageSourceFile(filePath, tmpDir);
+    const args = ["-encoding", "UTF-8", "-d", tmpDir];
+
+    if (normalizedClasspath) {
+      args.push("-cp", normalizedClasspath);
     }
-    args.push(filePath);
+
+    args.push(staged.stagedFilePath);
 
     const { stdout, stderr } = await execFileAsync("javac", args, {
       timeout: 30_000,
     });
 
-    const combined = [stdout, stderr].filter(Boolean).join("\n");
+    const notes = [];
+    if (staged.fileNameAdjusted) {
+      notes.push(
+        `public class 名に合わせて一時ファイル名を補正しました: ${staged.stagedFileName}`
+      );
+    }
+    if (normalizedClasspath && normalizedClasspath !== String(classpath ?? "").trim()) {
+      notes.push(`classpath を ${process.platform} 向けに正規化しました。`);
+    }
+
+    const combined = [stdout, stderr, ...notes].filter(Boolean).join("\n").trim();
+
     return {
       status: "ok",
-      output: combined || "Compilation successful.",
+      output: combined || "コンパイル成功",
       errors: [],
     };
   } catch (err) {
-    // javac はエラーを stderr に出力し exit code != 0
-    const raw = err.stderr ?? err.message ?? String(err);
+    const stderr = err?.stderr ?? "";
+    const stdout = err?.stdout ?? "";
+    const raw = [stdout, stderr].filter(Boolean).join("\n") || err.message || String(err);
     const errors = raw
       .split("\n")
-      .map((l) => l.trim())
+      .map((line) => line.trim())
       .filter(Boolean);
+
+    if (err?.code === "ETIMEDOUT") {
+      errors.unshift("javac が 30 秒でタイムアウトしました");
+    }
+
+    errors.push(...buildMissingDependencyHints(raw));
 
     return {
       status: "error",
       output: raw,
-      errors,
+      errors: [...new Set(errors)],
     };
   } finally {
-    // 一時ディレクトリを削除
     fs.rmSync(tmpDir, { recursive: true, force: true });
   }
 }

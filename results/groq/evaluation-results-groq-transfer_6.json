@@ -1,0 +1,379 @@
+{
+  "evalId": "eval-jYP-2026-03-08T23:13:24",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-03-08T23:13:24.659Z",
+    "prompts": [
+      {
+        "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "label": "prompts\\split\\groq\\hybrid-test-generation-groq.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "id": "c354c0f242f70eccd595623ce40fd57e197e2c2e09390f583eefcaced24badd8",
+        "provider": "Groq-GPT-OSS-20B",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 6,
+          "assertFailCount": 0,
+          "totalLatencyMs": 2817,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 4911,
+            "total": 4911,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains",
+                "value": "```java"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output.includes('WebDriver')"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains-all",
+                "value": [
+                  "WebDriver",
+                  "WebDriverWait",
+                  "@Test",
+                  "@BeforeEach",
+                  "@AfterEach"
+                ]
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!output.includes('assertTrue(true)')"
+              }
+            }
+          ]
+        },
+        "id": "5503850b-aefe-4de3-8add-321d6089a665",
+        "latencyMs": 2817,
+        "namedScores": {},
+        "prompt": {
+          "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n# SecureBank デモシステム テスト仕様書（振込機能抜粋）\r\n\r\n## 1. 対象\r\n\r\n振込機能（入力、バリデーション、承認フロー、成功時処理、監査ログ）\r\n\r\n## 2. 前提\r\n\r\n- ログイン済みユーザーが振込タブを操作する\r\n- 一般顧客、管理者、監査者の口座情報が存在する\r\n\r\n## 3. 入力項目\r\n\r\n- 振込先口座番号: 10桁の数字のみ\r\n- 振込金額: 正の整数\r\n- メモ: 任意（文字列）\r\n\r\n## 4. バリデーションルール\r\n\r\n| 検証項目     | 条件            | エラーメッセージ                               |\r\n| ------------ | --------------- | ---------------------------------------------- |\r\n| 口座番号形式 | 10桁の数字      | \"振込先口座番号は10桁の数字で入力してください\" |\r\n| 金額必須     | 0より大きい     | \"振込金額を正しく入力してください\"             |\r\n| 振込上限     | ≤ ¥1,000,000    | \"1回の振込上限（¥1,000,000）を超えています\"    |\r\n| 残高チェック | 金額 ≤ 残高     | \"残高不足です\"                                 |\r\n| 自己振込禁止 | 振込先 ≠ 自口座 | \"自分の口座には振込できません\"                 |\r\n\r\n## 5. 承認フロー\r\n\r\n- 条件: 金額 ≥ ¥100,000 かつ 役割 = 一般顧客\r\n- 動作: 振込実行せず、「承認待ち」状態に追加\r\n- メッセージ: \"¥100,000以上の振込は管理者承認が必要です\"\r\n\r\n## 6. 成功時の処理\r\n\r\n- 残高から振込金額を減算\r\n- 取引履歴に追加（種別: 振込、金額: マイナス値）\r\n- 画面の残高表示を更新\r\n- 成功メッセージ表示（3秒後に自動消去）\r\n- 監査ログ記録\r\n\r\n## 7. 監査ログ\r\n\r\n### 7.1 記録対象イベント\r\n\r\n| レベル  | イベント例                 |\r\n| ------- | -------------------------- |\r\n| warning | 承認待ち振込、振込上限超過 |\r\n| info    | 振込実行                   |\r\n\r\n## 8. テストデータ\r\n\r\n| ユーザーID | 役割     | 残高       | 口座番号   |\r\n| ---------- | -------- | ---------- | ---------- |\r\n| customer01 | customer | ¥1,500,000 | 1234567890 |\r\n| admin01    | admin    | ¥5,000,000 | 9876543210 |\r\n| auditor01  | auditor  | ¥2,000,000 | 5555555555 |\r\n\r\n## 9. テスト観点\r\n\r\n- 正常系: 条件を満たす振込成功\r\n- 異常系: 口座番号不正、金額不正、残高不足、自己振込\r\n- 境界値: 1円、100,000円、1,000,000円、1,000,001円\r\n- セキュリティ/業務ルール: 高額振込の承認待ち\n\n【UI構造コンテキスト】\n{\"app\":{\"name\":\"SecureBank Demo\",\"locale\":\"ja-JP\",\"base_assumption\":\"http://localhost:8080\",\"initial_screen\":\"#loginScreen\",\"post_login_flow\":[{\"login_success\":\"#mfaScreen を表示\"},{\"mfa_success\":\"#dashboard と #userInfo を表示\"}]},\"accounts\":{\"customer\":{\"username\":\"customer01\",\"password\":\"pass123\",\"role_value\":\"customer\",\"role_label\":\"一般顧客\",\"account_number\":\"1234567890\",\"balance\":1500000},\"admin\":{\"username\":\"admin01\",\"password\":\"admin123\",\"role_value\":\"admin\",\"role_label\":\"管理者\",\"account_number\":\"9876543210\",\"balance\":5000000},\"auditor\":{\"username\":\"auditor01\",\"password\":\"audit123\",\"role_value\":\"auditor\",\"role_label\":\"監査者\",\"account_number\":\"5555555555\",\"balance\":2000000}},\"login\":{\"screen\":\"#loginScreen\",\"fields\":{\"username\":\"#username\",\"password\":\"#password\",\"role\":\"#role\"},\"actions\":{\"submit_button_text\":\"ログイン\"},\"feedback\":{\"error_container\":\"#loginError\"},\"validations\":[{\"condition\":\"username または password が空\",\"message\":\"⚠️ ユーザーIDとパスワードを入力してください\"},{\"condition\":\"認証失敗 1〜2 回目\",\"message_pattern\":\"❌ 認証失敗（残りN回）\"},{\"condition\":\"認証失敗 3 回目\",\"message\":\"🔒 ログイン試行回数超過。30秒間ロックされます\"},{\"condition\":\"ロック中に再試行\",\"message_pattern\":\"🔒 アカウントがロックされています。残りN秒\"}],\"security_rules\":[\"username 単位で loginAttempts を保持\",\"認証失敗 3 回で 30 秒ロック\",\"ロック中のログイン試行は監査ログへ error 記録\"],\"state_transitions\":[{\"success\":\"#loginScreen hidden -> #mfaScreen visible\"}]},\"mfa\":{\"screen\":\"#mfaScreen\",\"field\":\"#mfaCode\",\"maxlength\":6,\"actions\":{\"submit_button_text\":\"認証\"},\"feedback\":{\"error_container\":\"#mfaError\"},\"rules\":{\"valid_code\":\"123456\",\"invalid_message\":\"❌ 認証コードが正しくありません\",\"success_effects\":[\"\\\"#mfaScreen\\\" を非表示\",\"\\\"#dashboard\\\" を表示\",\"\\\"#userInfo\\\" を表示\",\"ユーザー情報を画面に反映\"]}},\"navigation\":{\"tabs\":{\"overview\":\"概要\",\"transactions\":\"取引履歴\",\"transfer\":\"振込\",\"cards\":\"カード管理\",\"audit\":{\"label\":\"監査ログ\",\"selector\":\"#auditTab\",\"visible_for\":[\"admin\",\"auditor\"],\"hidden_for\":[\"customer\"]}}},\"transfer\":{\"tab_selector\":\"#tabTransfer\",\"fields\":{\"to\":\"#transferTo\",\"amount\":\"#transferAmount\",\"memo\":\"#transferMemo\"},\"feedback\":{\"message_container\":\"#transferMessage\",\"success_message\":\"✅ 振込が完了しました\"},\"validations\":[{\"condition\":\"振込先口座番号が空 または 10 桁数字でない\",\"message\":\"❌ 振込先口座番号は10桁の数字で入力してください\"},{\"condition\":\"amount が空 または 0 以下\",\"message\":\"❌ 振込金額を正しく入力してください\"},{\"condition\":\"amount > 1000000\",\"message\":\"❌ 1回の振込上限（¥1,000,000）を超えています\"},{\"condition\":\"amount > currentUser.balance\",\"message\":\"❌ 残高不足です\"},{\"condition\":\"to == currentUser.accountNumber\",\"message\":\"❌ 自分の口座には振込できません\"},{\"condition\":\"currentUser.role == customer かつ amount >= 100000\",\"message\":\"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\"}],\"success_effects\":[\"currentUser.balance から amount を減算\",\"transactionList の先頭へ振込履歴を追加\",\"\\\"#balance\\\" を更新\",\"入力欄をクリア\"],\"audit_log_events\":[\"warning: 振込上限超過\",\"warning: 承認待ち振込\",\"info: 振込実行\"]},\"rbac_audit\":{\"audit_log_container\":\"#auditLog\",\"visible_roles\":[\"admin\",\"auditor\"],\"hidden_roles\":[\"customer\"],\"audit_events_examples\":[\"システム起動\",\"ログイン失敗\",\"ロック中のログイン試行\",\"MFA失敗\",\"MFA認証成功\",\"承認待ち振込\",\"振込実行\",\"CVV表示\",\"ログアウト\"]},\"session\":{\"timer_selector\":\"#sessionTimer\",\"initial_seconds\":900,\"timeout_behavior\":[\"残り 60 秒以下で背景色変更\",\"0 秒で alert 表示後 logout()\"]},\"other_useful_elements\":{\"user_info\":{\"user_name\":\"#userName\",\"role_badge\":\"#roleBadge\",\"account_number\":\"#accountNumber\",\"balance\":\"#balance\"},\"transactions\":{\"table_body\":\"#transactionList\"},\"cards\":{\"masked_number\":\"#cardNumber\",\"full_number\":\"#fullCardNumber\",\"card_holder\":\"#cardHolder\",\"card_limit\":\"#cardLimit\",\"cvv\":\"#cvv\"}},\"known_implementation_notes\":[\"switchTab() は event.target 前提で動くため、実ブラウザ操作ベースのクリックで呼ぶこと\",\"showError() は 5 秒後に hidden を再付与する\",\"transfer success message は 3 秒後に非表示化される\",\"logout() 後も role 選択値は明示リセットしていない\"]}\n\n【対象機能】\n振込機能（全バリデーション、承認フロー含む）\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "label": "prompts\\split\\groq\\hybrid-test-generation-groq.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "config": {}
+        },
+        "promptId": "c354c0f242f70eccd595623ce40fd57e197e2c2e09390f583eefcaced24badd8",
+        "promptIdx": 0,
+        "provider": {
+          "id": "groq:openai/gpt-oss-20b",
+          "label": "Groq-GPT-OSS-20B"
+        },
+        "response": {
+          "output": "Thinking: We need to produce Java code with JUnit5 and Selenium. Use ChromeDriver. Use @BeforeEach to set up driver, navigate to base URL, login as customer01, MFA, navigate to transfer tab. Then tests: 1) Successful transfer small amount (e.g., 5000). 2) Validation: invalid account number. 3) High amount requiring approval (>=100k). Maybe 3 tests.\n\nNeed to use WebDriverWait for elements. Use selectors from UI context: login fields: #username, #password, #role. Submit button text \"ログイン\" maybe button with text. Use By.xpath(\"//button[text()='ログイン']\"). For MFA: #mfaCode, submit button text \"認証\". Use By.xpath(\"//button[text()='認証']\"). For transfer: tab selector #tabTransfer. Fields: #transferTo, #transferAmount, #transferMemo. Message container: #transferMessage. Success message: \"✅ 振込が完了しました\". Validation messages: \"❌ 振込先口座番号は10桁の数字で入力してください\", \"❌ 振込金額を正しく入力してください\", \"❌ 1回の振込上限（¥1,000,000）を超えています\", \"❌ 残高不足です\", \"❌ 自分の口座には振込できません\", \"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\"\n\nAlso need to check that after successful transfer, balance updates: #balance. We can assert that new balance equals old minus amount.\n\nAlso need to check that after high amount, message container shows approval message.\n\nAlso need to check that invalid account number shows error message.\n\nWe need to use explicit waits for elements to be visible.\n\nWe need to use System.getenv(\"BASE_URL\") or default.\n\nWe need to close driver after each test.\n\nAlso need to handle potential dynamic content: success message disappears after 3 seconds. But we can wait for it to be visible and then assert text.\n\nAlso need to handle that after transfer, input fields cleared. But not necessary.\n\nAlso need to handle that after login, we need to click transfer tab. Use By.id(\"tabTransfer\") maybe.\n\nAlso need to handle that after login, we need to wait for #dashboard and #userInfo visible.\n\nAlso need to handle that after MFA, we need to wait for #dashboard and #userInfo visible.\n\nAlso need to handle that after login, we need to click role selection? The login screen has role field #role. We need to set role to \"customer\" maybe. The role field might be a select. We can send keys \"customer\" or select by visible text. Use By.id(\"role\") and sendKeys(\"customer\") or use Select.\n\nBetter to use Select: new Select(driver.findElement(By.id(\"role\"))).selectByVisibleText(\"一般顧客\") maybe. But the role field may be a select with options. The UI context says role field id #role. We can just sendKeys(\"customer\") maybe. But to be safe, we can use Select.\n\nLet's design login method:\n\nprivate void login(String username, String password, String roleLabel) { ... }\n\nBut we can just inline.\n\nAlso need to handle that after login, we need to wait for #mfaScreen visible. Then enter code 123456.\n\nAfter MFA, wait for #dashboard and #userInfo visible.\n\nThen click transfer tab: By.id(\"tabTransfer\") maybe.\n\nNow tests:\n\nTest 1: testSuccessfulTransferSmallAmount\n\n- Get initial balance: find element #balance, get text, parse number (remove \"¥\" and commas). Use Long.parseLong.\n\n- Input to: #transferTo with \"9876543210\" (admin account). Input amount: 5000. Input memo: \"Test transfer\". Click submit: maybe button with text \"振込\" or \"送信\"? Not specified. The UI context doesn't give submit button id. We need to find button with text \"振込\" maybe. Use By.xpath(\"//button[contains(text(),'振込')]\") or maybe \"送信\". But we can guess \"振込\". Use By.xpath(\"//button[contains(text(),'振込')]\").\n\n- Wait for #transferMessage visible. Assert contains \"✅ 振込が完了しました\".\n\n- Wait for #balance updated. Get new balance, parse, assert equals old - 5000.\n\nTest 2: testInvalidAccountNumber\n\n- Input to: #transferTo with \"12345\" (invalid). Input amount: 1000. Input memo: \"Invalid\". Click submit.\n\n- Wait for #transferMessage visible. Assert contains \"❌ 振込先口座番号は10桁の数字で入力してください\".\n\nTest 3: testHighAmountApproval\n\n- Input to: #transferTo with \"9876543210\". Input amount: 100000. Input memo: \"High amount\". Click submit.\n\n- Wait for #transferMessage visible. Assert contains \"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\".\n\nAlso maybe check that balance unchanged.\n\nAlso need to parse balance.\n\nAlso need to handle that after high amount, no success message.\n\nAlso need to handle that after high amount, maybe no balance change.\n\nAlso need to handle that after high amount, the message container shows the approval message.\n\nAlso need to handle that after high amount, the input fields may not be cleared.\n\nAlso need to handle that after high amount, the transfer is not executed.\n\nAlso need to handle that after high amount, the message container may show the approval message.\n\nNow we need to produce code.\n\nAlso need to include imports.\n\nAlso need to include @Test annotation.\n\nAlso need to include @BeforeEach and @AfterEach.\n\nAlso need to include WebDriverWait.\n\nAlso need to include Duration.\n\nAlso need to include ChromeOptions maybe.\n\nAlso need to include System.setProperty for webdriver.chrome.driver maybe.\n\nBut we can just comment that ChromeDriver path should be set.\n\nAlso need to include driver.manage().timeouts().implicitlyWait? Not needed.\n\nAlso need to use driver.findElement(By.id(...)).clear() before sendKeys.\n\nAlso need to parse balance: remove \"¥\" and commas. Use replaceAll(\"[^\\\\d]\", \"\").\n\nAlso need to convert to long.\n\nAlso need to assert using Assertions.assertEquals.\n\nAlso need to use assertTrue for message contains.\n\nAlso need to use assertNotEquals for balance difference.\n\nAlso need to use wait.until(ExpectedConditions.visibilityOfElementLocated(...)).\n\nAlso need to use wait.until(ExpectedConditions.textToBePresentInElementLocated(..., \"✅ 振込が完了しました\")) maybe.\n\nAlso need to use wait.until(ExpectedConditions.invisibilityOfElementLocated(...)) for success message after 3 seconds? Not needed.\n\nAlso need to use wait for #transferMessage visible.\n\nAlso need to use wait for #balance visible.\n\nAlso need to use wait for #dashboard visible after login.\n\nAlso need to use wait for #mfaScreen visible.\n\nAlso need to use wait for #transferMessage visible after each transfer.\n\nAlso need to use wait for #balance updated after transfer.\n\nAlso need to use wait for #transferMessage visible after high amount.\n\nAlso need to use wait for #transferMessage visible after invalid account.\n\nAlso need to use wait for #transferMessage visible after high amount.\n\nAlso need to use wait for #transferMessage visible after invalid account.\n\nAlso need to use wait for #transferMessage visible after high amount.\n\nAlso need to use wait for #transferMessage visible after invalid account.\n\nOk.\n\nNow produce code.\n\nAlso need to produce (B) section: list of discrepancies or missing info.\n\nPotential missing info:\n\n- The selector for the transfer submit button is not specified. We guessed by text \"振込\". Might need clarification.\n\n- The exact text for success message is \"✅ 振込が完了しました\" but we need to confirm.\n\n- The role selection mechanism: whether role field is a select or input.\n\n- The presence of a button to submit transfer: not specified.\n\n- The format of balance display: we assume \"¥1,500,000\" but may include other formatting.\n\n- The presence of a message container for validation errors: we assume #transferMessage.\n\n- The presence of a success message container: we assume #transferMessage.\n\n- The presence of a button to navigate to transfer tab: we assume #tabTransfer.\n\n- The presence of a button to submit transfer: we guess.\n\n- The presence of a button to click after entering fields: we guess.\n\n- The presence of a \"送信\" button maybe.\n\n- The presence of a \"振込\" button.\n\n- The presence of a \"送金\" button.\n\n- The presence of a \"送金\" button.\n\n- The presence of a \"送金\" button.\n\n- The presence of a \"送金\" button.\n\n- The presence of a \"送金\" button.\n\nOk.\n\nNow produce final answer.\n\n```java\nimport org.junit.jupiter.api.*;\nimport org.openqa.selenium.*;\nimport org.openqa.selenium.chrome.*;\nimport org.openqa.selenium.support.ui.*;\n\nimport java.time.Duration;\n\n@TestInstance(TestInstance.Lifecycle.PER_METHOD)\npublic class TransferE2ETest {\n\n    private WebDriver driver;\n    private WebDriverWait wait;\n    private static final String BASE_URL = System.getenv().getOrDefault(\"BASE_URL\", \"http://localhost:8080\");\n\n    @BeforeEach\n    void setUp() {\n        // System.setProperty(\"webdriver.chrome.driver\", \"/path/to/chromedriver\");\n        ChromeOptions options = new ChromeOptions();\n        options.addArguments(\"--headless\"); // optional\n        driver = new ChromeDriver(options);\n        wait = new WebDriverWait(driver, Duration.ofSeconds(10));\n        driver.get",
+          "tokenUsage": {
+            "cached": 4911,
+            "total": 4911
+          },
+          "cached": true,
+          "latencyMs": 2817,
+          "finishReason": "length",
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9d8e8b645dc4d8cf-NRT",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Sun, 08 Mar 2026 02:52:36 GMT",
+                "server": "cloudflare",
+                "set-cookie": "__cf_bm=SBzgUl4aScL0TEi0v6JSfajxZKQLTFlb5wOcryVgMl8-1772938353.3402216-1.0.1.1-RKacdapsGbtaEnHASAuw_tahptL2V_pj8bOFGPVV38W02IpVJvMShzVtb0RgCmNZjrEo_DB_tpBwLc1dxnTn9FsGxMU9zuBXX1HVhd4GhQxh5X9xdC4mli2Kq2vxZMn.; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sun, 08 Mar 2026 03:22:36 GMT",
+                "strict-transport-security": "max-age=15552000",
+                "transfer-encoding": "chunked",
+                "vary": "Origin",
+                "via": "1.1 google",
+                "x-groq-region": "dls",
+                "x-ratelimit-limit-requests": "1000",
+                "x-ratelimit-limit-tokens": "8000",
+                "x-ratelimit-remaining-requests": "999",
+                "x-ratelimit-remaining-tokens": "5136",
+                "x-ratelimit-reset-requests": "1m26.4s",
+                "x-ratelimit-reset-tokens": "21.48s",
+                "x-request-id": "req_01kk5nrpqkfqs80y8zhnkd68c4"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "振込機能E2E（groq・単体）",
+          "vars": {
+            "specification": "file://..\\..\\..\\specs\\securebank-spec-transfer.md",
+            "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+            "feature": "振込機能（全バリデーション、承認フロー含む）"
+          },
+          "assert": [
+            {
+              "type": "contains",
+              "value": "```java"
+            },
+            {
+              "type": "javascript",
+              "value": "output.includes('WebDriver')"
+            },
+            {
+              "type": "contains-all",
+              "value": [
+                "WebDriver",
+                "WebDriverWait",
+                "@Test",
+                "@BeforeEach",
+                "@AfterEach"
+              ]
+            },
+            {
+              "type": "javascript",
+              "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+            },
+            {
+              "type": "javascript",
+              "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+            },
+            {
+              "type": "javascript",
+              "value": "!output.includes('assertTrue(true)')"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "specification": "file://..\\..\\..\\specs\\securebank-spec-transfer.md",
+          "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+          "feature": "振込機能（全バリデーション、承認フロー含む）"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9d8e8b645dc4d8cf-NRT",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Sun, 08 Mar 2026 02:52:36 GMT",
+              "server": "cloudflare",
+              "set-cookie": "__cf_bm=SBzgUl4aScL0TEi0v6JSfajxZKQLTFlb5wOcryVgMl8-1772938353.3402216-1.0.1.1-RKacdapsGbtaEnHASAuw_tahptL2V_pj8bOFGPVV38W02IpVJvMShzVtb0RgCmNZjrEo_DB_tpBwLc1dxnTn9FsGxMU9zuBXX1HVhd4GhQxh5X9xdC4mli2Kq2vxZMn.; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sun, 08 Mar 2026 03:22:36 GMT",
+              "strict-transport-security": "max-age=15552000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin",
+              "via": "1.1 google",
+              "x-groq-region": "dls",
+              "x-ratelimit-limit-requests": "1000",
+              "x-ratelimit-limit-tokens": "8000",
+              "x-ratelimit-remaining-requests": "999",
+              "x-ratelimit-remaining-tokens": "5136",
+              "x-ratelimit-reset-requests": "1m26.4s",
+              "x-ratelimit-reset-tokens": "21.48s",
+              "x-request-id": "req_01kk5nrpqkfqs80y8zhnkd68c4"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 4911,
+        "total": 4911,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 65,
+      "evaluationDurationMs": 65
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "file://C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\prompts\\split\\groq\\hybrid-test-generation-groq.txt"
+    ],
+    "providers": [
+      {
+        "id": "groq:openai/gpt-oss-20b",
+        "label": "Groq-GPT-OSS-20B",
+        "config": {
+          "temperature": 0.2,
+          "max_tokens": 1200
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "振込機能E2E（groq・単体）",
+        "vars": {
+          "specification": "file://../../../specs/securebank-spec-transfer.md",
+          "ui_context": "file://../../../specs/financial-demo-app-context.yaml",
+          "feature": "振込機能（全バリデーション、承認フロー含む）"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "```java"
+          },
+          {
+            "type": "javascript",
+            "value": "output.includes('WebDriver')"
+          },
+          {
+            "type": "contains-all",
+            "value": [
+              "WebDriver",
+              "WebDriverWait",
+              "@Test",
+              "@BeforeEach",
+              "@AfterEach"
+            ]
+          },
+          {
+            "type": "javascript",
+            "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+          },
+          {
+            "type": "javascript",
+            "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+          },
+          {
+            "type": "javascript",
+            "value": "!output.includes('assertTrue(true)')"
+          }
+        ]
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "outputPath": [
+      ".\\results\\groq\\evaluation-results-groq-transfer_6.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {
+      "maxConcurrency": 1,
+      "delay": 25000
+    }
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.26",
+    "nodeVersion": "v24.14.0",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-03-08T23:13:24.844Z",
+    "evaluationCreatedAt": "2026-03-08T23:13:24.659Z"
+  }
+}

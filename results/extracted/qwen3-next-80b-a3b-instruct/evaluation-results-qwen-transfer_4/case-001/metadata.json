@@ -1,0 +1,28 @@
+{
+  "source_json_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\qwen\\evaluation-results-qwen-transfer_4.json",
+  "source_json_file": "evaluation-results-qwen-transfer_4.json",
+  "source_json_stem": "evaluation-results-qwen-transfer_4",
+  "entry_index": 0,
+  "provider_id": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+  "provider_label": "Qwen3-Next-80B-Free",
+  "model_dir": "qwen3-next-80b-a3b-instruct",
+  "description": "振込機能E2E（qwen・単体）",
+  "feature": "振込機能（全バリデーション、承認フロー含む）",
+  "specification": "file://..\\..\\..\\specs\\securebank-spec-transfer.md",
+  "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+  "output_txt_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\qwen3-next-80b-a3b-instruct\\evaluation-results-qwen-transfer_4\\case-001\\output.txt",
+  "java_paths": [
+    "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\qwen3-next-80b-a3b-instruct\\evaluation-results-qwen-transfer_4\\case-001\\TransferE2ETest.java"
+  ],
+  "java_public_class_names": [
+    "TransferE2ETest"
+  ],
+  "java_block_count": 1,
+  "summary": {
+    "hasJavaFence": true,
+    "hasAnyFence": true,
+    "hasSelfValidationSection": false,
+    "testAnnotationCount": 3
+  },
+  "extracted_at": "2026-03-11T05:55:08.043Z"
+}

@@ -1,0 +1,39 @@
+prompts:
+- file://hybrid-test-generation-cohere.txt
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 6000
+providers:
+- id: https://api.cohere.com/v2/chat
+  config:
+    method: POST
+    headers:
+      Authorization: Bearer {{env.COHERE_API_KEY}}
+      Content-Type: application/json
+    body:
+      model: command-r7b-12-2024
+      messages:
+      - role: user
+        content: '{{prompt}}'
+      temperature: 0.2
+      max_tokens: 1800
+    transformResponse: json.message.content[0].text
+tests:
+- description: RBAC（監査ログ）E2E（cohere・単体）
+  vars:
+    specification: file://../../../specs/securebank-spec-rbac.md
+    ui_context: file://../../../specs/financial-demo-app-context.yaml
+    feature: 監査ログ機能（役割別アクセス制御）
+  assert:
+  - type: contains
+    value: '```java'
+  - type: contains-all
+    value:
+    - admin
+    - auditor
+    - customer
+  - type: javascript
+    value: /```java[\s\S]*@Test[\s\S]*```/m.test(output)
+  - type: javascript
+    value: '!output.includes(''assertTrue(true)'')'
+outputPath: ./../../../results/cohere/evaluation-results-cohere-rbac.json

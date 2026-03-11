@@ -1,0 +1,260 @@
+
+We are generating JUnit 5 + Selenium E2E test code for the login functionality.
+ The test will cover:
+  1. Successful login with correct credentials and MFA.
+  2. Failed login due to incorrect password (and account lock after 3 attempts).
+  3. Failed MFA after successful basic authentication.
+
+ We are using:
+  - JUnit 5 (org.junit.jupiter)
+  - Selenium 4 (WebDriver)
+  - ChromeDriver (we'll set up in the code with comments)
+
+ We are not using Page Object pattern to keep it simple in one file.
+
+ Steps for each test:
+  - Set up the driver (in @BeforeEach)
+  - Clean up after each test (in @AfterEach)
+
+ We'll use WebDriverWait for explicit waits.
+
+ Important: We are using the selectors from the UI structure context.
+
+ Let's extract the necessary information from the UI structure context for login:
+
+ Login Screen:
+   - Screen: #loginScreen
+   - Fields:
+        username: #username
+        password: #password
+        role: #role
+   - Submit button: with text "ログイン"
+   - Error container: #loginError
+
+ MFA Screen:
+   - Screen: #mfaScreen
+   - Field: #mfaCode (maxlength=6)
+   - Submit button: with text "認証"
+   - Error container: #mfaError
+
+ After successful MFA, we should see:
+   - #mfaScreen hidden
+   - #dashboard visible
+   - #userInfo visible
+
+ We have test accounts:
+   - customer01, pass123, role: customer (or "一般顧客")
+   - admin01, admin123, role: admin (or "管理者")
+   - auditor01, audit123, role: auditor (or "監査者")
+
+ We'll use the customer account for the successful login test.
+
+ For the failed login test, we'll try to log in with wrong password and then check the error and account lock.
+
+ We'll also test MFA failure.
+
+ We are going to write 3 tests:
+
+  Test 1: Successful Login (with MFA)
+    Steps:
+      1. Open the base URL.
+      2. Enter username, password, and select role (customer).
+      3. Click login.
+      4. Wait for MFA screen to appear.
+      5. Enter MFA code (123456).
+      6. Click authenticate.
+      7. Wait for dashboard and user info to appear.
+
+  Test 2: Failed Login (Account Lock)
+    Steps:
+      1. Open the base URL.
+      2. Enter username, password (wrong), and select role (customer).
+      3. Click login -> expect error message.
+      4. Repeat step 2 and 3 two more times (total 3 failures).
+      5. On the third failure, expect account lock message.
+      6. Try to log in again immediately -> expect account lock message with countdown.
+
+  Test 3: Failed MFA
+    Steps:
+      1. Open the base URL.
+      2. Enter correct username, password, and role.
+      3. Click login -> go to MFA screen.
+      4. Enter wrong MFA code (e.g., 000000).
+      5. Click authenticate -> expect error message.
+      6. Check that we are still on MFA screen.
+
+ We'll use the following base URL: 
+   BASE_URL = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080"
+
+ We'll use ChromeDriver. We'll set up the driver in @BeforeEach and quit in @AfterEach.
+
+ Note: We are not using any test framework for assertions other than JUnit's assertions.
+
+ Let's code accordingly.
+
+ However, note: The requirement says to output only 2-3 tests. We are doing 3 tests.
+
+ But note: The requirement says "代表的な2〜3件だけ実装する", so we are doing 3.
+
+ We'll write the code in one class.
+
+ Also, note: We are to avoid fixed sleeps and use WebDriverWait.
+
+ We'll use the following waits:
+   - For elements to be visible: ExpectedConditions.visibilityOfElementLocated
+   - For elements to be hidden: ExpectedConditions.invisibilityOfElementLocated (or we can check for presence of another element)
+
+ For the account lock countdown, we might need to wait for the message to change? But we are not testing the countdown in detail.
+
+ We'll write the tests.
+
+ Important: We must reset the state between tests? The requirement says that after logout, the role selection is not reset. 
+   But we are not logging out in the tests? We are only testing login. We are not testing logout.
+
+ However, for the account lock test, we are making 3 failed attempts. We must reset the state for the next test? 
+   But the requirement says that the login attempts are per username. So if we run the tests in the same browser session, 
+   the state might persist. We are not using a fresh browser for each test? 
+
+ We are using the same driver instance for all tests in the class. So we must reset the state.
+
+ How to reset? We can try to log out? But we don't have a logout button in the UI context? 
+
+ Alternatively, we can clear the cookies and session storage? 
+
+ But note: The requirement says that after logout, the role selection is not reset. So we don't have to worry about that.
+
+ However, for the account lock, we are locking the account for 30 seconds. We cannot wait 30 seconds in the test.
+
+ We have two options:
+   1. Use a different username for each test? But we only have one customer account in the test data.
+   2. Reset the state by clearing the browser's local storage and session storage? 
+
+ We'll do:
+
+   In @AfterEach, we can do:
+      driver.manage().deleteAllCookies();
+      // Also clear local storage and session storage if possible.
+
+   But note: The account lock might be stored in the server? Or in the browser? 
+
+   The requirement says: "username 単位で loginAttempts を保持" - it doesn't specify if it's server-side or client-side.
+
+   Since we are doing E2E, we assume the server state. We cannot reset the server state from the test.
+
+   Therefore, we must use different usernames for each test? But we only have one customer account.
+
+   Alternatively, we can use the admin account for the failed login test? But then we are testing with a different role.
+
+   We are required to test with the customer account? 
+
+   We have three accounts: customer, admin, auditor.
+
+   We can use:
+      Test 1: customer (successful)
+      Test 2: admin (failed login and lock) -> but then we are testing with admin, which might have different behavior?
+      Test 3: customer again? but then we have the lock from test2? 
+
+   Alternatively, we can use the same account for test1 and test3? But test2 would lock it.
+
+   We need to avoid the lock affecting the next test.
+
+   We can use the auditor account for test2? Then we are testing with a different role, but the lock mechanism should be the same.
+
+   But the requirement says the lock is per username. So we can use:
+
+      Test 1: customer (successful)
+      Test 2: auditor (failed login and lock) -> then we lock the auditor account? 
+      Test 3: customer (successful) -> but then we are not testing the lock on the same account? 
+
+   We want to test the lock on the same account? 
+
+   Alternatively, we can use the same account for test2 and then wait for the lock to expire? But we don't want to wait 30 seconds.
+
+   We can use a different approach: in the test2, we are going to lock the account and then we are going to reset the state by clearing the server state? 
+   But we don't have an API to reset.
+
+   Given the constraints, we will use:
+
+      Test 1: customer (successful)
+      Test 2: customer (failed login 3 times) -> then we lock the customer account. Then we try to log in again and expect the lock message.
+      Test 3: customer (successful) -> but this will fail because the account is locked? 
+
+   We cannot do that.
+
+   We must reset the state. Since we don't have an API, we can use a different account for each test? 
+
+   We have three accounts. We can assign:
+
+      Test 1: customer (successful)
+      Test 2: admin (failed login and lock) -> then we lock the admin account? 
+      Test 3: auditor (successful) -> but then we are not testing MFA failure? 
+
+   We want to test MFA failure? We can do that with the customer account? But then we have to do it after test1? 
+
+   We can do:
+
+      Test 1: customer (successful) -> then we log out? But we don't have a logout button? 
+
+   We don't have a logout button in the UI context? 
+
+   We are stuck.
+
+   Let me re-read the UI context: 
+        "post_login_flow": [{"login_success": "#mfaScreen を表示"}, ...]
+        and after MFA success: "#dashboard と #userInfo を表示"
+
+   We don't have a logout button in the provided context? 
+
+   We must assume that there is a logout button? Or we can close the browser? 
+
+   We are using the same driver for all tests. We can close the browser and reopen? But that would be slow.
+
+   Alternatively, we can use the same account for test1 and test3? But test2 locks the account? 
+
+   We can use the same account for test1 and test3? But then test2 must use a different account? 
+
+   We'll do:
+
+      Test 1: customer (successful) -> then we don't log out, but we clear the session? 
+      Test 2: admin (failed login 3 times) -> then we lock the admin account? 
+      Test 3: customer (successful) -> then we do MFA failure? 
+
+   But test3 is MFA failure? We can do that with the customer account? 
+
+   However, after test1, the customer account is logged in? We need to log out? 
+
+   We don't have a logout button. We can try to close the browser and reopen? 
+
+   We are using the same driver instance? We can't close and reopen in the same test class? 
+
+   We can do:
+
+      In @BeforeEach, we open the base URL and clear the cookies and session storage? 
+
+   But that might not reset the server state.
+
+   Given the complexity, we will change the test design:
+
+      We will use only one test for the lock? And we will use a different account for each test? 
+
+   We have three accounts. We can do:
+
+      Test 1: customer (successful login and MFA)
+      Test 2: admin (failed login 3 times and then lock) -> then we try to log in again and expect lock message.
+      Test 3: auditor (successful login and then MFA failure) -> we enter wrong MFA code.
+
+   This way, we don't have to reset the state because we are using different accounts.
+
+   But note: the lock is per username. So if we use the admin account for test2, we lock the admin account. Then in test3, we use the auditor account, which is not locked.
+
+   This is acceptable.
+
+   So we'll do:
+
+      Test 1: customer (successful)
+      Test 2: admin (failed login 3 times and then lock)
+      Test 3: auditor (successful basic auth but failed MFA)
+
+   We'll use:
+
+     

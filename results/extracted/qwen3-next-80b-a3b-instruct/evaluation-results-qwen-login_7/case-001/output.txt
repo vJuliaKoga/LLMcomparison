@@ -1,0 +1,111 @@
+```java
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SecureBankLoginE2ETest {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private final String baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080";
+
+    @BeforeEach
+    void setUp() {
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+    }
+
+    @AfterEach
+    void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Test
+    void 正常系_一般顧客が正しい認証情報とMFAでログイン成功する() {
+        driver.get(baseUrl + "#loginScreen");
+
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("pass123");
+        Select roleSelect = new Select(driver.findElement(By.id("role")));
+        roleSelect.selectByValue("customer");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mfaScreen")));
+        driver.findElement(By.id("mfaCode")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[text()='認証']")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard")));
+        assertTrue(driver.findElement(By.id("dashboard")).isDisplayed());
+        assertEquals("一般顧客", driver.findElement(By.id("roleBadge")).getText());
+    }
+
+    @Test
+    void 異常系_認証失敗3回でアカウントがロックされる() {
+        driver.get(baseUrl + "#loginScreen");
+
+        for (int i = 0; i < 3; i++) {
+            driver.findElement(By.id("username")).clear();
+            driver.findElement(By.id("password")).clear();
+            driver.findElement(By.id("username")).sendKeys("customer01");
+            driver.findElement(By.id("password")).sendKeys("wrongpass");
+            driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+            if (i < 2) {
+                String errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError"))).getText();
+                assertTrue(errorMsg.matches("❌ 認証失敗（残り\\d回）"));
+            } else {
+                String errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError"))).getText();
+                assertEquals("🔒 ログイン試行回数超過。30秒間ロックされます", errorMsg);
+            }
+        }
+
+        // ロック中にもう1回試行
+        driver.findElement(By.id("username")).clear();
+        driver.findElement(By.id("password")).clear();
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("pass123");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        String lockMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError"))).getText();
+        assertTrue(lockMsg.matches("🔒 アカウントがロックされています。残り\\d秒"));
+    }
+
+    @Test
+    void 異常系_MFA認証コードが不正でログイン失敗する() {
+        driver.get(baseUrl + "#loginScreen");
+
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("pass123");
+        Select roleSelect = new Select(driver.findElement(By.id("role")));
+        roleSelect.selectByValue("customer");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mfaScreen")));
+        driver.findElement(By.id("mfaCode")).sendKeys("000000");
+        driver.findElement(By.xpath("//button[text()='認証']")).click();
+
+        String mfaError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mfaError"))).getText();
+        assertEquals("❌ 認証コードが正しくありません", mfaError);
+        assertTrue(driver.findElement(By.id("mfaScreen")).isDisplayed());
+    }
+}
+```
+
+(B) 仕様と実装の不整合・不足情報
+- ログイン失敗時の残り回数（N）が動的でテスト側で予測できない（例: "残り2回" など）ため、正規表現でマッチさせる必要あり（実装済み）
+- ロック解除後の再試行が30秒待たないと検証できないが、テスト時間短縮のため未実装
+- MFA成功後の #userInfo の内容検証（ユーザー名・口座番号）が仕様に記載されているが、テストでは省略
+- ログイン試行回数はユーザー単位で保持とあるが、テスト環境で回数カウンタをリセットする手段が不明
+- ログアウト後のrole選択値がリセットされないという実装ノートがあるが、テストで影響を考慮していない
+- 監査ログの記録内容を検証する手段（DOM/API）がUI構造に明示されていない

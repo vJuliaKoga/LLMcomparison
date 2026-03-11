@@ -1,0 +1,198 @@
+Thinking: We need to produce JUnit 5 + Selenium E2E tests for login functionality. Provide 2-3 scenarios: normal login success with MFA, login failure due to wrong password, login lock after 3 failures. Also maybe role mismatch. Use selectors from UI context: login screen: #username, #password, #role, submit button text "ログイン" maybe button with text. error container #loginError. MFA screen: #mfaScreen, field #mfaCode, submit button text "認証", error container #mfaError. After success, dashboard visible #dashboard and #userInfo.
+
+We need to use WebDriverWait for visibility. Use System.getenv("BASE_URL") else default.
+
+Implement @BeforeEach to init ChromeDriver, navigate to base URL + "/login" maybe base assumption: base_assumption "http://localhost:8080". initial_screen "#loginScreen". So we navigate to base URL.
+
+We need to locate login button: maybe by xpath contains text "ログイン". Use By.xpath("//button[contains(text(),'ログイン')]").
+
+Similarly MFA submit: //button[contains(text(),'認証')].
+
+We need to assert that after successful login, #dashboard is visible.
+
+Also test lock: after 3 failures, error message contains "🔒 アカウントがロックされています。残り" maybe pattern. Use contains.
+
+Also test role mismatch: choose role not matching account. For example, user customer01 but select role "管理者". Expect error message "❌ 認証失敗（残りN回）" maybe. But spec says role mismatch triggers authentication failure. So we can test that.
+
+Also need to handle waiting for error container to appear.
+
+Also need to handle clearing fields between tests.
+
+We need to use ChromeDriver. Provide comment for options.
+
+Also need to close driver after each test.
+
+Let's craft code.
+
+We need to import necessary packages: org.junit.jupiter.api.*, org.openqa.selenium.*, org.openqa.selenium.chrome.*, org.openqa.selenium.support.ui.*.
+
+Define class LoginE2ETest.
+
+Define WebDriver driver; WebDriverWait wait; String baseUrl.
+
+@BeforeEach: set up driver: new ChromeDriver(); driver.manage().window().maximize(); baseUrl = System.getenv("BASE_URL"); if null, default. driver.get(baseUrl); wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+AfterEach: driver.quit();
+
+Helper methods: login(String username, String password, String role) that fills fields and clicks login. Wait for error or mfa screen.
+
+Test 1: testSuccessfulLoginWithMFA: login with correct credentials and role, then wait for #mfaScreen, enter code 123456, click, wait for #dashboard visible, assert.
+
+Test 2: testLoginFailureWrongPassword: login with wrong password, wait for error container, assert contains "❌ 認証失敗". Also check attempts remaining maybe 2.
+
+Test 3: testAccountLockAfterThreeFailures: loop 3 times wrong password, after third attempt, error contains lock message. Then attempt again within lock period, error contains lock message. Use wait for error container.
+
+Also maybe test role mismatch: but we already have 3 tests. 3 is enough.
+
+Now produce code.
+
+Also need to handle dynamic wait for error container: wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+
+Also for MFA error: #mfaError.
+
+Also for dashboard: wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#dashboard")));
+
+Also for mfa screen: wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#mfaScreen")));
+
+Also for login screen: maybe we can check #loginScreen visible.
+
+Also we need to handle clearing fields: driver.findElement(By.cssSelector("#username")).clear(); etc.
+
+Also we need to handle role selection: maybe a select element with id #role. Use Select class.
+
+Let's implement.
+
+Also we need to handle potential stale element after navigation.
+
+Now produce code.
+
+After code, produce (B) list of inconsistencies: maybe missing explicit lock duration, missing role mismatch error message, missing MFA error container ID? But we have #mfaError. Provide 3-6 items.
+
+Let's list:
+
+- Lock duration (30 seconds) not verifiable in test due to time constraints.
+- Role mismatch error message not explicitly defined; assumption uses authentication failure message.
+- MFA success event not visible; we only check dashboard.
+- No explicit locator for login button; we assume button with text "ログイン".
+- No explicit locator for MFA submit button; assume button with text "認証".
+- The test cannot verify audit log entries.
+
+We can list 5 items.
+
+Now produce final answer.
+
+```java
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.support.ui.*;
+
+import java.time.Duration;
+import java.util.List;
+
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+public class LoginE2ETest {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private String baseUrl;
+
+    @BeforeEach
+    void setUp() {
+        // ChromeDriver executable must be on PATH or set via System.setProperty
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        baseUrl = System.getenv("BASE_URL");
+        if (baseUrl == null || baseUrl.isEmpty()) {
+            baseUrl = "http://localhost:8080";
+        }
+        driver.get(baseUrl);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    @AfterEach
+    void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    // Helper to perform basic login
+    private void performLogin(String username, String password, String role) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginScreen")));
+
+        WebElement userField = driver.findElement(By.cssSelector("#username"));
+        WebElement passField = driver.findElement(By.cssSelector("#password"));
+        WebElement roleSelect = driver.findElement(By.cssSelector("#role"));
+
+        userField.clear();
+        userField.sendKeys(username);
+        passField.clear();
+        passField.sendKeys(password);
+        new org.openqa.selenium.support.ui.Select(roleSelect).selectByVisibleText(role);
+
+        // Click the login button (text "ログイン")
+        driver.findElement(By.xpath("//button[contains(text(),'ログイン')]")).click();
+    }
+
+    @Test
+    void testSuccessfulLoginWithMFA() {
+        performLogin("customer01", "pass123", "一般顧客");
+
+        // Wait for MFA screen
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#mfaScreen")));
+
+        WebElement mfaField = driver.findElement(By.cssSelector("#mfaCode"));
+        mfaField.clear();
+        mfaField.sendKeys("123456");
+
+        // Click MFA submit button (text "認証")
+        driver.findElement(By.xpath("//button[contains(text(),'認証')]")).click();
+
+        // Dashboard should be visible after successful MFA
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#dashboard")));
+        Assertions.assertTrue(driver.findElement(By.cssSelector("#dashboard")).isDisplayed(),
+                "Dashboard should be displayed after successful login and MFA");
+    }
+
+    @Test
+    void testLoginFailureWrongPassword() {
+        performLogin("customer01", "wrongpass", "一般顧客");
+
+        WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        Assertions.assertTrue(error.getText().contains("❌ 認証失敗"),
+                "Error message should indicate authentication failure");
+    }
+
+    @Test
+    void testAccountLockAfterThreeFailures() {
+        // First failure
+        performLogin("customer01", "wrongpass", "一般顧客");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+
+        // Second failure
+        performLogin("customer01", "wrongpass", "一般顧客");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+
+        // Third failure – should trigger lock
+        performLogin("customer01", "wrongpass", "一般顧客");
+        WebElement lockError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        Assertions.assertTrue(lockError.getText().contains("🔒 アカウントがロックされています"),
+                "After 3 failures, account should be locked");
+
+        // Attempt during lock period
+        performLogin("customer01", "pass123", "一般顧客");
+        WebElement lockDuring = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#loginError")));
+        Assertions.assertTrue(lockDuring.getText().contains("🔒 アカウントがロックされています"),
+                "Login attempts during lock period should be rejected");
+    }
+}
+```
+
+**(B) 仕様と実装の不整合・不足情報**
+
+- ロック時間（30秒）を検証するためのタイムアウト情報が不足。  
+- 役割不一致時の具体的エラーメッセージが定義されていない。  
+- MFA成功時に表示される画面要素（例：#dashboard）の詳細が不明。  
+- ログインボタンとMFA送信ボタンのセレクタが明示されていない（テキスト検索で推測）。  
+- 監査ログの確認手段（UI要素）が提供されていない。

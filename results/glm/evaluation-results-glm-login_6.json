@@ -1,0 +1,318 @@
+{
+  "evalId": "eval-KsS-2026-03-09T23:35:41",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-03-09T23:35:41.660Z",
+    "prompts": [
+      {
+        "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "label": "prompts\\split\\glm\\hybrid-test-generation-glm.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+        "id": "87d21b3eb1e22f264624b89826bf18930f951a9e8ed0bfc85b063843ea3dc4af",
+        "provider": "GLM-4.5-Air-Free",
+        "metrics": {
+          "score": 0.3333333333333333,
+          "testPassCount": 0,
+          "testFailCount": 1,
+          "testErrorCount": 0,
+          "assertPassCount": 2,
+          "assertFailCount": 4,
+          "totalLatencyMs": 31,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 5291,
+            "total": 5291,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nconst m = output.match(/@Test/g) || [];\nreturn m.length >= 2;",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.3333333333333333,
+          "reason": "Custom function returned false\nconst m = output.match(/@Test/g) || [];\nreturn m.length >= 2;",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to contain \"```java\"",
+              "assertion": {
+                "type": "contains",
+                "value": "```java"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\n/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)",
+              "assertion": {
+                "type": "javascript",
+                "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to contain all of [WebDriver, WebDriverWait, @Test, @BeforeEach, @AfterEach]. Missing: [@Test]",
+              "assertion": {
+                "type": "contains-all",
+                "value": [
+                  "WebDriver",
+                  "WebDriverWait",
+                  "@Test",
+                  "@BeforeEach",
+                  "@AfterEach"
+                ]
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nconst m = output.match(/@Test/g) || [];\nreturn m.length >= 2;",
+              "assertion": {
+                "type": "javascript",
+                "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!output.includes('assertTrue(true)')"
+              }
+            }
+          ]
+        },
+        "id": "5b948c06-dce0-494e-9d28-385dfb66eb2d",
+        "latencyMs": 31,
+        "namedScores": {},
+        "prompt": {
+          "raw": "あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n# SecureBank デモシステム テスト仕様書（ログイン機能抜粋）\r\n\r\n## 1. 対象\r\n\r\nログイン機能（基本認証、ログイン試行制限、多要素認証、監査ログ記録）\r\n\r\n## 2. テスト対象アカウント\r\n\r\n| 役割     | ユーザーID | パスワード |\r\n| -------- | ---------- | ---------- |\r\n| 一般顧客 | customer01 | pass123    |\r\n| 管理者   | admin01    | admin123   |\r\n| 監査者   | auditor01  | audit123   |\r\n\r\n## 3. 機能仕様\r\n\r\n### 3.1 基本認証\r\n\r\n- 入力項目: ユーザーID、パスワード、役割選択\r\n- 検証項目:\r\n  - ユーザーIDとパスワードの一致\r\n  - 選択した役割とアカウント役割の一致\r\n  - 空欄チェック\r\n\r\n### 3.2 ログイン試行制限\r\n\r\n- 制限回数: 3回まで\r\n- ロック時間: 30秒\r\n- 動作:\r\n  - 3回失敗後、30秒間すべてのログイン試行を拒否\r\n  - ロック中のメッセージ: \"🔒 アカウントがロックされています。残りX秒\"\r\n\r\n### 3.3 多要素認証（MFA）\r\n\r\n- タイミング: 基本認証成功後\r\n- 認証コード: 6桁の数字（テスト用: 123456）\r\n- 失敗時: エラーメッセージ表示、ログイン不可\r\n\r\n### 3.4 監査ログ記録\r\n\r\n- ログイン成功/失敗\r\n- MFA成功/失敗\r\n- ログイン試行回数超過\r\n\r\n## 4. エラーハンドリング\r\n\r\n### 4.1 主要エラーメッセージ\r\n\r\n| エラー分類       | メッセージ                                 | トリガー条件        |\r\n| ---------------- | ------------------------------------------ | ------------------- |\r\n| 入力不足         | \"ユーザーIDとパスワードを入力してください\" | ログイン時、空欄    |\r\n| 認証失敗         | \"認証失敗（残りX回）\"                      | ID/パスワード不一致 |\r\n| アカウントロック | \"アカウントがロックされています。残りX秒\"  | 3回失敗後           |\r\n| MFA失敗          | \"認証コードが正しくありません\"             | MFA不一致           |\r\n\r\n## 5. セキュリティ\r\n\r\n- パスワードは入力時に type=\"password\" でマスク\r\n- すべての認証失敗を監査ログに記録\r\n\r\n## 6. テスト観点\r\n\r\n- 正常系: 正しい資格情報 + 正しいMFAでログイン成功\r\n- 異常系: 認証失敗、MFA失敗\r\n- 境界値: 失敗3回目でロック\r\n- セキュリティ: ロック中再試行、役割不一致\n\n【UI構造コンテキスト】\n{\"app\":{\"name\":\"SecureBank Demo\",\"locale\":\"ja-JP\",\"base_assumption\":\"http://localhost:8080\",\"initial_screen\":\"#loginScreen\",\"post_login_flow\":[{\"login_success\":\"#mfaScreen を表示\"},{\"mfa_success\":\"#dashboard と #userInfo を表示\"}]},\"accounts\":{\"customer\":{\"username\":\"customer01\",\"password\":\"pass123\",\"role_value\":\"customer\",\"role_label\":\"一般顧客\",\"account_number\":\"1234567890\",\"balance\":1500000},\"admin\":{\"username\":\"admin01\",\"password\":\"admin123\",\"role_value\":\"admin\",\"role_label\":\"管理者\",\"account_number\":\"9876543210\",\"balance\":5000000},\"auditor\":{\"username\":\"auditor01\",\"password\":\"audit123\",\"role_value\":\"auditor\",\"role_label\":\"監査者\",\"account_number\":\"5555555555\",\"balance\":2000000}},\"login\":{\"screen\":\"#loginScreen\",\"fields\":{\"username\":\"#username\",\"password\":\"#password\",\"role\":\"#role\"},\"actions\":{\"submit_button_text\":\"ログイン\"},\"feedback\":{\"error_container\":\"#loginError\"},\"validations\":[{\"condition\":\"username または password が空\",\"message\":\"⚠️ ユーザーIDとパスワードを入力してください\"},{\"condition\":\"認証失敗 1〜2 回目\",\"message_pattern\":\"❌ 認証失敗（残りN回）\"},{\"condition\":\"認証失敗 3 回目\",\"message\":\"🔒 ログイン試行回数超過。30秒間ロックされます\"},{\"condition\":\"ロック中に再試行\",\"message_pattern\":\"🔒 アカウントがロックされています。残りN秒\"}],\"security_rules\":[\"username 単位で loginAttempts を保持\",\"認証失敗 3 回で 30 秒ロック\",\"ロック中のログイン試行は監査ログへ error 記録\"],\"state_transitions\":[{\"success\":\"#loginScreen hidden -> #mfaScreen visible\"}]},\"mfa\":{\"screen\":\"#mfaScreen\",\"field\":\"#mfaCode\",\"maxlength\":6,\"actions\":{\"submit_button_text\":\"認証\"},\"feedback\":{\"error_container\":\"#mfaError\"},\"rules\":{\"valid_code\":\"123456\",\"invalid_message\":\"❌ 認証コードが正しくありません\",\"success_effects\":[\"\\\"#mfaScreen\\\" を非表示\",\"\\\"#dashboard\\\" を表示\",\"\\\"#userInfo\\\" を表示\",\"ユーザー情報を画面に反映\"]}},\"navigation\":{\"tabs\":{\"overview\":\"概要\",\"transactions\":\"取引履歴\",\"transfer\":\"振込\",\"cards\":\"カード管理\",\"audit\":{\"label\":\"監査ログ\",\"selector\":\"#auditTab\",\"visible_for\":[\"admin\",\"auditor\"],\"hidden_for\":[\"customer\"]}}},\"transfer\":{\"tab_selector\":\"#tabTransfer\",\"fields\":{\"to\":\"#transferTo\",\"amount\":\"#transferAmount\",\"memo\":\"#transferMemo\"},\"feedback\":{\"message_container\":\"#transferMessage\",\"success_message\":\"✅ 振込が完了しました\"},\"validations\":[{\"condition\":\"振込先口座番号が空 または 10 桁数字でない\",\"message\":\"❌ 振込先口座番号は10桁の数字で入力してください\"},{\"condition\":\"amount が空 または 0 以下\",\"message\":\"❌ 振込金額を正しく入力してください\"},{\"condition\":\"amount > 1000000\",\"message\":\"❌ 1回の振込上限（¥1,000,000）を超えています\"},{\"condition\":\"amount > currentUser.balance\",\"message\":\"❌ 残高不足です\"},{\"condition\":\"to == currentUser.accountNumber\",\"message\":\"❌ 自分の口座には振込できません\"},{\"condition\":\"currentUser.role == customer かつ amount >= 100000\",\"message\":\"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\"}],\"success_effects\":[\"currentUser.balance から amount を減算\",\"transactionList の先頭へ振込履歴を追加\",\"\\\"#balance\\\" を更新\",\"入力欄をクリア\"],\"audit_log_events\":[\"warning: 振込上限超過\",\"warning: 承認待ち振込\",\"info: 振込実行\"]},\"rbac_audit\":{\"audit_log_container\":\"#auditLog\",\"visible_roles\":[\"admin\",\"auditor\"],\"hidden_roles\":[\"customer\"],\"audit_events_examples\":[\"システム起動\",\"ログイン失敗\",\"ロック中のログイン試行\",\"MFA失敗\",\"MFA認証成功\",\"承認待ち振込\",\"振込実行\",\"CVV表示\",\"ログアウト\"]},\"session\":{\"timer_selector\":\"#sessionTimer\",\"initial_seconds\":900,\"timeout_behavior\":[\"残り 60 秒以下で背景色変更\",\"0 秒で alert 表示後 logout()\"]},\"other_useful_elements\":{\"user_info\":{\"user_name\":\"#userName\",\"role_badge\":\"#roleBadge\",\"account_number\":\"#accountNumber\",\"balance\":\"#balance\"},\"transactions\":{\"table_body\":\"#transactionList\"},\"cards\":{\"masked_number\":\"#cardNumber\",\"full_number\":\"#fullCardNumber\",\"card_holder\":\"#cardHolder\",\"card_limit\":\"#cardLimit\",\"cvv\":\"#cvv\"}},\"known_implementation_notes\":[\"switchTab() は event.target 前提で動くため、実ブラウザ操作ベースのクリックで呼ぶこと\",\"showError() は 5 秒後に hidden を再付与する\",\"transfer success message は 3 秒後に非表示化される\",\"logout() 後も role 選択値は明示リセットしていない\"]}\n\n【対象機能】\nログイン機能（基本認証、MFA、ログイン試行制限）\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "label": "prompts\\split\\glm\\hybrid-test-generation-glm.txt: あなたはQA自動化エンジニアです。\n以下の【業務仕様】と【UI構造コンテキスト】を入力として、対象機能のJUnit 5 + Selenium E2Eテストコードを生成してください。\n\n【業務仕様】\n{{specification}}\n\n【UI構造コンテキスト】\n{{ui_context}}\n\n【対象機能】\n{{feature}}\n\n【目的】\n- 同一入力から、JUnitで実行可能なE2Eテストコードを安定して生成する\n- 仕様と実装の差分/不足情報を短く指摘する\n- 無料モデルでもタイムアウトしにくいよう、出力を最小限にする\n\n【重要方針】\n- テスト設計一覧や長い説明は不要\n- 最初からJUnitテストコードを生成する\n- UI構造コンテキストから、対象機能に関係する要素・バリデーション・遷移・エラーメッセージだけを優先して参照する\n- 不明点は推測せず「不足情報」として短く列挙する\n- Javaコードは代表的な2〜3シナリオのみ実装する\n- 1つのテストに複数観点を詰め込みすぎない\n\n【指示】\n1. 仕様書から対象機能の主要要件を把握する\n2. UI構造コンテキストから対象機能に関係するセレクタ、入力制約、状態遷移、エラーメッセージを抽出する\n3. 実行価値の高いE2Eシナリオだけを2〜3件選び、JUnitコードに直接落とし込む\n4. 仕様と実装の差分・不足情報があれば短く列挙する\n\n【必須条件（JUnitテストコード）】\n- JUnit 5（org.junit.jupiter）で実行できること\n- Selenium 4（WebDriver）を前提にする\n- ChromeDriver を使用（起動設定はコメントで可）\n- 明示待ち（WebDriverWait）を使用し、固定sleep依存は避ける\n- @BeforeEach / @AfterEach を用意し、driverの初期化/終了を行う\n- 代表的な2〜3件だけ実装する\n- 各テストは「1テスト=1シナリオ」を基本にする\n- 期待結果は assert 系で検証する\n- ベースURLは System.getenv(\"BASE_URL\") を優先し、なければ \"http://localhost:8080\" を使う\n- Page Object は導入しなくてよい。1ファイルで簡潔にまとめる\n- コードコメントは最小限にする\n- セレクタは UI構造コンテキストにある id / タブ名 / 文言を優先利用する\n\n【出力形式】\n(A) JUnit 5 + Selenium E2Eテストコード\n- Javaコードを ```java ``` ブロックで提示する\n- 1クラスにまとめる\n- 2〜3テストメソッドに絞る\n\n(B) 仕様と実装の不整合・不足情報\n- 箇条書きで3〜6件以内\n- 該当なしなら「- 特になし」とだけ書く\n\n【出力ルール】\n- (A) を先に出力する\n- 冗長な前置きや総括は禁止\n- 自己検証セクションは出力しない",
+          "config": {}
+        },
+        "promptId": "87d21b3eb1e22f264624b89826bf18930f951a9e8ed0bfc85b063843ea3dc4af",
+        "promptIdx": 0,
+        "provider": {
+          "id": "openrouter:z-ai/glm-4.5-air:free",
+          "label": "GLM-4.5-Air-Free"
+        },
+        "response": {
+          "output": "\nWe are generating JUnit 5 + Selenium E2E test code for the login functionality.\n The test will cover:\n  1. Successful login with correct credentials and MFA.\n  2. Failed login due to incorrect password (and account lock after 3 attempts).\n  3. Failed MFA after successful basic authentication.\n\n We are using:\n  - JUnit 5 (org.junit.jupiter)\n  - Selenium 4 (WebDriver)\n  - ChromeDriver (we'll set up in the code with comments)\n\n We are not using Page Object pattern to keep it simple in one file.\n\n Steps for each test:\n  - Set up the driver (in @BeforeEach)\n  - Clean up after each test (in @AfterEach)\n\n We'll use WebDriverWait for explicit waits.\n\n Important: We are using the selectors from the UI structure context.\n\n Let's extract the necessary information from the UI structure context for login:\n\n Login Screen:\n   - Screen: #loginScreen\n   - Fields:\n        username: #username\n        password: #password\n        role: #role\n   - Submit button: with text \"ログイン\"\n   - Error container: #loginError\n\n MFA Screen:\n   - Screen: #mfaScreen\n   - Field: #mfaCode (maxlength=6)\n   - Submit button: with text \"認証\"\n   - Error container: #mfaError\n\n After successful MFA, we should see:\n   - #mfaScreen hidden\n   - #dashboard visible\n   - #userInfo visible\n\n We have test accounts:\n   - customer01, pass123, role: customer (or \"一般顧客\")\n   - admin01, admin123, role: admin (or \"管理者\")\n   - auditor01, audit123, role: auditor (or \"監査者\")\n\n We'll use the customer account for the successful login test.\n\n For the failed login test, we'll try to log in with wrong password and then check the error and account lock.\n\n We'll also test MFA failure.\n\n We are going to write 3 tests:\n\n  Test 1: Successful Login (with MFA)\n    Steps:\n      1. Open the base URL.\n      2. Enter username, password, and select role (customer).\n      3. Click login.\n      4. Wait for MFA screen to appear.\n      5. Enter MFA code (123456).\n      6. Click authenticate.\n      7. Wait for dashboard and user info to appear.\n\n  Test 2: Failed Login (Account Lock)\n    Steps:\n      1. Open the base URL.\n      2. Enter username, password (wrong), and select role (customer).\n      3. Click login -> expect error message.\n      4. Repeat step 2 and 3 two more times (total 3 failures).\n      5. On the third failure, expect account lock message.\n      6. Try to log in again immediately -> expect account lock message with countdown.\n\n  Test 3: Failed MFA\n    Steps:\n      1. Open the base URL.\n      2. Enter correct username, password, and role.\n      3. Click login -> go to MFA screen.\n      4. Enter wrong MFA code (e.g., 000000).\n      5. Click authenticate -> expect error message.\n      6. Check that we are still on MFA screen.\n\n We'll use the following base URL: \n   BASE_URL = System.getenv(\"BASE_URL\") != null ? System.getenv(\"BASE_URL\") : \"http://localhost:8080\"\n\n We'll use ChromeDriver. We'll set up the driver in @BeforeEach and quit in @AfterEach.\n\n Note: We are not using any test framework for assertions other than JUnit's assertions.\n\n Let's code accordingly.\n\n However, note: The requirement says to output only 2-3 tests. We are doing 3 tests.\n\n But note: The requirement says \"代表的な2〜3件だけ実装する\", so we are doing 3.\n\n We'll write the code in one class.\n\n Also, note: We are to avoid fixed sleeps and use WebDriverWait.\n\n We'll use the following waits:\n   - For elements to be visible: ExpectedConditions.visibilityOfElementLocated\n   - For elements to be hidden: ExpectedConditions.invisibilityOfElementLocated (or we can check for presence of another element)\n\n For the account lock countdown, we might need to wait for the message to change? But we are not testing the countdown in detail.\n\n We'll write the tests.\n\n Important: We must reset the state between tests? The requirement says that after logout, the role selection is not reset. \n   But we are not logging out in the tests? We are only testing login. We are not testing logout.\n\n However, for the account lock test, we are making 3 failed attempts. We must reset the state for the next test? \n   But the requirement says that the login attempts are per username. So if we run the tests in the same browser session, \n   the state might persist. We are not using a fresh browser for each test? \n\n We are using the same driver instance for all tests in the class. So we must reset the state.\n\n How to reset? We can try to log out? But we don't have a logout button in the UI context? \n\n Alternatively, we can clear the cookies and session storage? \n\n But note: The requirement says that after logout, the role selection is not reset. So we don't have to worry about that.\n\n However, for the account lock, we are locking the account for 30 seconds. We cannot wait 30 seconds in the test.\n\n We have two options:\n   1. Use a different username for each test? But we only have one customer account in the test data.\n   2. Reset the state by clearing the browser's local storage and session storage? \n\n We'll do:\n\n   In @AfterEach, we can do:\n      driver.manage().deleteAllCookies();\n      // Also clear local storage and session storage if possible.\n\n   But note: The account lock might be stored in the server? Or in the browser? \n\n   The requirement says: \"username 単位で loginAttempts を保持\" - it doesn't specify if it's server-side or client-side.\n\n   Since we are doing E2E, we assume the server state. We cannot reset the server state from the test.\n\n   Therefore, we must use different usernames for each test? But we only have one customer account.\n\n   Alternatively, we can use the admin account for the failed login test? But then we are testing with a different role.\n\n   We are required to test with the customer account? \n\n   We have three accounts: customer, admin, auditor.\n\n   We can use:\n      Test 1: customer (successful)\n      Test 2: admin (failed login and lock) -> but then we are testing with admin, which might have different behavior?\n      Test 3: customer again? but then we have the lock from test2? \n\n   Alternatively, we can use the same account for test1 and test3? But test2 would lock it.\n\n   We need to avoid the lock affecting the next test.\n\n   We can use the auditor account for test2? Then we are testing with a different role, but the lock mechanism should be the same.\n\n   But the requirement says the lock is per username. So we can use:\n\n      Test 1: customer (successful)\n      Test 2: auditor (failed login and lock) -> then we lock the auditor account? \n      Test 3: customer (successful) -> but then we are not testing the lock on the same account? \n\n   We want to test the lock on the same account? \n\n   Alternatively, we can use the same account for test2 and then wait for the lock to expire? But we don't want to wait 30 seconds.\n\n   We can use a different approach: in the test2, we are going to lock the account and then we are going to reset the state by clearing the server state? \n   But we don't have an API to reset.\n\n   Given the constraints, we will use:\n\n      Test 1: customer (successful)\n      Test 2: customer (failed login 3 times) -> then we lock the customer account. Then we try to log in again and expect the lock message.\n      Test 3: customer (successful) -> but this will fail because the account is locked? \n\n   We cannot do that.\n\n   We must reset the state. Since we don't have an API, we can use a different account for each test? \n\n   We have three accounts. We can assign:\n\n      Test 1: customer (successful)\n      Test 2: admin (failed login and lock) -> then we lock the admin account? \n      Test 3: auditor (successful) -> but then we are not testing MFA failure? \n\n   We want to test MFA failure? We can do that with the customer account? But then we have to do it after test1? \n\n   We can do:\n\n      Test 1: customer (successful) -> then we log out? But we don't have a logout button? \n\n   We don't have a logout button in the UI context? \n\n   We are stuck.\n\n   Let me re-read the UI context: \n        \"post_login_flow\": [{\"login_success\": \"#mfaScreen を表示\"}, ...]\n        and after MFA success: \"#dashboard と #userInfo を表示\"\n\n   We don't have a logout button in the provided context? \n\n   We must assume that there is a logout button? Or we can close the browser? \n\n   We are using the same driver for all tests. We can close the browser and reopen? But that would be slow.\n\n   Alternatively, we can use the same account for test1 and test3? But test2 locks the account? \n\n   We can use the same account for test1 and test3? But then test2 must use a different account? \n\n   We'll do:\n\n      Test 1: customer (successful) -> then we don't log out, but we clear the session? \n      Test 2: admin (failed login 3 times) -> then we lock the admin account? \n      Test 3: customer (successful) -> then we do MFA failure? \n\n   But test3 is MFA failure? We can do that with the customer account? \n\n   However, after test1, the customer account is logged in? We need to log out? \n\n   We don't have a logout button. We can try to close the browser and reopen? \n\n   We are using the same driver instance? We can't close and reopen in the same test class? \n\n   We can do:\n\n      In @BeforeEach, we open the base URL and clear the cookies and session storage? \n\n   But that might not reset the server state.\n\n   Given the complexity, we will change the test design:\n\n      We will use only one test for the lock? And we will use a different account for each test? \n\n   We have three accounts. We can do:\n\n      Test 1: customer (successful login and MFA)\n      Test 2: admin (failed login 3 times and then lock) -> then we try to log in again and expect lock message.\n      Test 3: auditor (successful login and then MFA failure) -> we enter wrong MFA code.\n\n   This way, we don't have to reset the state because we are using different accounts.\n\n   But note: the lock is per username. So if we use the admin account for test2, we lock the admin account. Then in test3, we use the auditor account, which is not locked.\n\n   This is acceptable.\n\n   So we'll do:\n\n      Test 1: customer (successful)\n      Test 2: admin (failed login 3 times and then lock)\n      Test 3: auditor (successful basic auth but failed MFA)\n\n   We'll use:\n\n     ",
+          "tokenUsage": {
+            "cached": 5291,
+            "total": 5291
+          },
+          "cached": true,
+          "finishReason": "length"
+        },
+        "score": 0.3333333333333333,
+        "success": false,
+        "testCase": {
+          "description": "ログイン機能E2E（glm・単体）",
+          "vars": {
+            "specification": "file://..\\..\\..\\specs\\securebank-spec-login.md",
+            "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+            "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+          },
+          "assert": [
+            {
+              "type": "contains",
+              "value": "```java"
+            },
+            {
+              "type": "javascript",
+              "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+            },
+            {
+              "type": "contains-all",
+              "value": [
+                "WebDriver",
+                "WebDriverWait",
+                "@Test",
+                "@BeforeEach",
+                "@AfterEach"
+              ]
+            },
+            {
+              "type": "javascript",
+              "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+            },
+            {
+              "type": "javascript",
+              "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+            },
+            {
+              "type": "javascript",
+              "value": "!output.includes('assertTrue(true)')"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "specification": "file://..\\..\\..\\specs\\securebank-spec-login.md",
+          "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+          "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 0,
+      "failures": 1,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 5291,
+        "total": 5291,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 66,
+      "evaluationDurationMs": 66
+    }
+  },
+  "config": {
+    "tags": {},
+    "prompts": [
+      "file://C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\prompts\\split\\glm\\hybrid-test-generation-glm.txt"
+    ],
+    "providers": [
+      {
+        "id": "openrouter:z-ai/glm-4.5-air:free",
+        "label": "GLM-4.5-Air-Free",
+        "config": {
+          "temperature": 0.2,
+          "max_tokens": 2500
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "ログイン機能E2E（glm・単体）",
+        "vars": {
+          "specification": "file://../../../specs/securebank-spec-login.md",
+          "ui_context": "file://../../../specs/financial-demo-app-context.yaml",
+          "feature": "ログイン機能（基本認証、MFA、ログイン試行制限）"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "```java"
+          },
+          {
+            "type": "javascript",
+            "value": "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+          },
+          {
+            "type": "contains-all",
+            "value": [
+              "WebDriver",
+              "WebDriverWait",
+              "@Test",
+              "@BeforeEach",
+              "@AfterEach"
+            ]
+          },
+          {
+            "type": "javascript",
+            "value": "const m = output.match(/@Test/g) || [];\nreturn m.length >= 2;\n"
+          },
+          {
+            "type": "javascript",
+            "value": "const blocks = output.match(/```java[\\s\\S]*?```/g) || [];\nreturn !blocks.join('\\n').includes('Thread.sleep');\n"
+          },
+          {
+            "type": "javascript",
+            "value": "!output.includes('assertTrue(true)')"
+          }
+        ]
+      }
+    ],
+    "scenarios": [],
+    "env": {},
+    "outputPath": [
+      ".\\results\\glm\\evaluation-results-glm-login_6.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {
+      "maxConcurrency": 1,
+      "delay": 8000
+    }
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.121.1",
+    "nodeVersion": "v24.14.0",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-03-09T23:35:41.826Z",
+    "evaluationCreatedAt": "2026-03-09T23:35:41.660Z"
+  }
+}

@@ -1,0 +1,2708 @@
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_1\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_10\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_2\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_3\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_4\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_5\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_6\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_7\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_8\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_9\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_1\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_10\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_2\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_3\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_4\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_5\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_6\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_7\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_8\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_9\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_1\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_10\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_2\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_3\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_4\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_5\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_6\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_7\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_8\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_9\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-002\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-003\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_1\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_10\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_2\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_3\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_4\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_5\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_6\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_7\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_8\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_9\case-001\output.txt ===
+笶・Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_1\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_10\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_2\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_3\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_4\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_5\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_6\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_7\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_8\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_9\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-transfer\case-001\output.txt ===
+笶・Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-003\output.txt ===
+笶・Schema validation failed:
+- /cases/0/category must be equal to one of the allowed values
+- /cases/0/priority must be equal to one of the allowed values
+- /cases/1/category must be equal to one of the allowed values
+- /cases/1/priority must be equal to one of the allowed values
+- /cases/2/category must be equal to one of the allowed values
+- /cases/2/priority must be equal to one of the allowed values
+- /cases/3/category must be equal to one of the allowed values
+- /cases/3/priority must be equal to one of the allowed values
+- /cases/4/category must be equal to one of the allowed values
+- /cases/4/priority must be equal to one of the allowed values
+- /cases/5/category must be equal to one of the allowed values
+- /cases/5/priority must be equal to one of the allowed values
+- /cases/6/category must be equal to one of the allowed values
+- /cases/6/priority must be equal to one of the allowed values
+- /cases/7/category must be equal to one of the allowed values
+- /cases/7/priority must be equal to one of the allowed values
+- /cases/8/category must be equal to one of the allowed values
+- /cases/8/priority must be equal to one of the allowed values
+- /cases/9/category must be equal to one of the allowed values
+- /cases/9/priority must be equal to one of the allowed values
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-006\output.txt ===
+笶・Schema validation failed:
+- /cases/0/category must be equal to one of the allowed values
+- /cases/0/priority must be equal to one of the allowed values
+- /cases/1/category must be equal to one of the allowed values
+- /cases/1/priority must be equal to one of the allowed values
+- /cases/2/category must be equal to one of the allowed values
+- /cases/2/priority must be equal to one of the allowed values
+- /cases/3/category must be equal to one of the allowed values
+- /cases/3/priority must be equal to one of the allowed values
+- /cases/4/category must be equal to one of the allowed values
+- /cases/4/priority must be equal to one of the allowed values
+- /cases/5/category must be equal to one of the allowed values
+- /cases/5/priority must be equal to one of the allowed values
+- /cases/6/category must be equal to one of the allowed values
+- /cases/6/priority must be equal to one of the allowed values
+- /cases/7/category must be equal to one of the allowed values
+- /cases/7/priority must be equal to one of the allowed values
+- /cases/8/category must be equal to one of the allowed values
+- /cases/8/priority must be equal to one of the allowed values
+- /cases/9/category must be equal to one of the allowed values
+- /cases/9/priority must be equal to one of the allowed values
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-009\output.txt ===
+笨・Output structure validated OK. mode=current
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_1\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_10\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_2\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_3\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_4\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_5\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_6\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_7\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_8\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_9\case-001\output.txt ===
+笨・Output structure validated OK. mode=current
+笞・・Warnings:
+- Missing "(D) 閾ｪ蟾ｱ讀懆ｨｼ" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-002\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-003\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-transfer\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-003\output.txt ===
+❌ Schema validation failed:
+- /cases/0/category must be equal to one of the allowed values
+- /cases/0/priority must be equal to one of the allowed values
+- /cases/1/category must be equal to one of the allowed values
+- /cases/1/priority must be equal to one of the allowed values
+- /cases/2/category must be equal to one of the allowed values
+- /cases/2/priority must be equal to one of the allowed values
+- /cases/3/category must be equal to one of the allowed values
+- /cases/3/priority must be equal to one of the allowed values
+- /cases/4/category must be equal to one of the allowed values
+- /cases/4/priority must be equal to one of the allowed values
+- /cases/5/category must be equal to one of the allowed values
+- /cases/5/priority must be equal to one of the allowed values
+- /cases/6/category must be equal to one of the allowed values
+- /cases/6/priority must be equal to one of the allowed values
+- /cases/7/category must be equal to one of the allowed values
+- /cases/7/priority must be equal to one of the allowed values
+- /cases/8/category must be equal to one of the allowed values
+- /cases/8/priority must be equal to one of the allowed values
+- /cases/9/category must be equal to one of the allowed values
+- /cases/9/priority must be equal to one of the allowed values
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-006\output.txt ===
+❌ Schema validation failed:
+- /cases/0/category must be equal to one of the allowed values
+- /cases/0/priority must be equal to one of the allowed values
+- /cases/1/category must be equal to one of the allowed values
+- /cases/1/priority must be equal to one of the allowed values
+- /cases/2/category must be equal to one of the allowed values
+- /cases/2/priority must be equal to one of the allowed values
+- /cases/3/category must be equal to one of the allowed values
+- /cases/3/priority must be equal to one of the allowed values
+- /cases/4/category must be equal to one of the allowed values
+- /cases/4/priority must be equal to one of the allowed values
+- /cases/5/category must be equal to one of the allowed values
+- /cases/5/priority must be equal to one of the allowed values
+- /cases/6/category must be equal to one of the allowed values
+- /cases/6/priority must be equal to one of the allowed values
+- /cases/7/category must be equal to one of the allowed values
+- /cases/7/priority must be equal to one of the allowed values
+- /cases/8/category must be equal to one of the allowed values
+- /cases/8/priority must be equal to one of the allowed values
+- /cases/9/category must be equal to one of the allowed values
+- /cases/9/priority must be equal to one of the allowed values
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-009\output.txt ===
+✅ Output structure validated OK. mode=current
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\command-r7b-12-2024\evaluation-results-cohere-transfer_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gemma-3n-e4b-it\evaluation-results-gemma-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-login_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-rbac_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\glm-4.5-air\evaluation-results-glm-transfer_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-002\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq\case-003\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_1\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_10\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_2\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_3\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_4\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_5\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_6\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_7\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_8\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\gpt-oss-20b\evaluation-results-groq-transfer_9\case-001\output.txt ===
+❌ Missing code fence.
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-rbac_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\llama-3.3-70b-instruct\evaluation-results-llama-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_1\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_10\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_2\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_3\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_4\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_5\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_6\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_7\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_8\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-login_9\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\mistral-small-3.1-24b-instruct\evaluation-results-mistral-transfer\case-001\output.txt ===
+❌ Schema validation failed:
+- /sections/B must NOT have fewer than 1 characters
+- (root) must match "then" schema
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\qwen3-next-80b-a3b-instruct\evaluation-results-qwen-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-003\output.txt ===
+❌ Test case count too low: 10 (expected >= 15)
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-006\output.txt ===
+❌ Test case count too low: 10 (expected >= 15)
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-light\case-009\output.txt ===
+✅ Output structure validated OK. mode=current
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-login_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-rbac_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_1\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_10\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_2\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_3\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_4\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_5\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_6\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_7\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_8\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section
+=== C:\Users\juria.koga\Documents\Github\LLM-test-evaluation\results\extracted\trinity-large-preview\evaluation-results-trinity-transfer_9\case-001\output.txt ===
+✅ Output structure validated OK. mode=current
+⚠️ Warnings:
+- Missing "(D) 自己検証" section

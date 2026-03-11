@@ -1,0 +1,161 @@
+```java
+package com.example.securebank;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.expectedLocations.ExpectedLocations;
+import java.time.Duration;
+
+public class TransferTest {
+
+    private WebDriver driver;
+
+    @BeforeEach
+    public void setUp() {
+        // ChromeDriver の設定 (必要に応じてパスを指定)
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
+
+    @Test
+    public void testSuccessfulTransfer() {
+        // ログイン画面遷移
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080" + "/loginScreen");
+
+        // ログイン
+        WebElement usernameField = driver.findElement(By.id("username"));
+        usernameField.sendKeys("customer01");
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys("pass123");
+        WebElement submitButton = driver.findElement(By.id("submit_button_text"));
+        submitButton.click();
+
+        // dashboard画面遷移
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedLocations.visibilityOf(driver.findElement(By.id("dashboard"))));
+
+        // 振込タブをクリック
+        WebElement transferTab = driver.findElement(By.id("tabTransfer"));
+        transferTab.click();
+
+        // 振込先口座番号入力
+        WebElement toField = driver.findElement(By.id("transferTo"));
+        toField.sendKeys("9876543210");
+
+        // 振込金額入力
+        WebElement amountField = driver.findElement(By.id("transferAmount"));
+        amountField.sendKeys("500000");
+
+        // メモ入力
+        WebElement memoField = driver.findElement(By.id("transferMemo"));
+        memoField.sendKeys("テスト振込");
+
+        // 振込実行ボタンクリック
+        WebElement transferButton = driver.findElement(By.id("transferButton"));
+        transferButton.click();
+
+        // 成功メッセージの検証
+        WebElement successMessage = driver.findElement(By.id("transferMessage"));
+        assert successMessage.isDisplayed();
+    }
+
+    @Test
+    public void testInsufficientFunds() {
+        // ログイン画面遷移
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080" + "/loginScreen");
+
+        // ログイン
+        WebElement usernameField = driver.findElement(By.id("username"));
+        usernameField.sendKeys("customer01");
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys("pass123");
+        WebElement submitButton = driver.findElement(By.id("submit_button_text"));
+        submitButton.click();
+
+        // dashboard画面遷移
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedLocations.visibilityOf(driver.findElement(By.id("dashboard"))));
+
+        // 振込タブをクリック
+        WebElement transferTab = driver.findElement(By.id("tabTransfer"));
+        transferTab.click();
+
+        // 振込先口座番号入力
+        WebElement toField = driver.findElement(By.id("transferTo"));
+        toField.sendKeys("9876543210");
+
+        // 振込金額入力 (残高を超える金額)
+        WebElement amountField = driver.findElement(By.id("transferAmount"));
+        amountField.sendKeys("2000000");
+
+        // メモ入力
+        WebElement memoField = driver.findElement(By.id("transferMemo"));
+        memoField.sendKeys("テスト振込");
+
+        // 振込実行ボタンクリック
+        WebElement transferButton = driver.findElement(By.id("transferButton"));
+        transferButton.click();
+
+        // エラーメッセージの検証
+        WebElement errorMessage = driver.findElement(By.id("transferMessage"));
+        assert errorMessage.isDisplayed();
+    }
+
+    @Test
+    public void testInvalidAccountNumber() {
+        // ログイン画面遷移
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080" + "/loginScreen");
+
+        // ログイン
+        WebElement usernameField = driver.findElement(By.id("username"));
+        usernameField.sendKeys("customer01");
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys("pass123");
+        WebElement submitButton = driver.findElement(By.id("submit_button_text"));
+        submitButton.click();
+
+        // dashboard画面遷移
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedLocations.visibilityOf(driver.findElement(By.id("dashboard"))));
+
+        // 振込タブをクリック
+        WebElement transferTab = driver.findElement(By.id("tabTransfer"));
+        transferTab.click();
+
+        // 振込先口座番号入力 (不正な形式)
+        WebElement toField = driver.findElement(By.id("transferTo"));
+        toField.sendKeys("abc");
+
+        // 振込金額入力
+        WebElement amountField = driver.findElement(By.id("transferAmount"));
+        amountField.sendKeys("500000");
+
+        // メモ入力
+        WebElement memoField = driver.findElement(By.id("transferMemo"));
+        memoField.sendKeys("テスト振込");
+
+        // 振込実行ボタンクリック
+        WebElement transferButton = driver.findElement(By.id("transferButton"));
+        transferButton.click();
+
+        // エラーメッセージの検証
+        WebElement errorMessage = driver.findElement(By.id("transferMessage"));
+        assert errorMessage.isDisplayed();
+    }
+}
+```
+
+(B) 仕様と実装の不整合・不足情報
+
+- 特になし

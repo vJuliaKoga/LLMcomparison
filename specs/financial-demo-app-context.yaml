@@ -1,0 +1,161 @@
+app:
+  name: SecureBank Demo
+  locale: ja-JP
+  base_assumption: "http://localhost:8080"
+  initial_screen: "#loginScreen"
+  post_login_flow:
+    - login_success: "#mfaScreen を表示"
+    - mfa_success: "#dashboard と #userInfo を表示"
+
+accounts:
+  customer:
+    username: "customer01"
+    password: "pass123"
+    role_value: "customer"
+    role_label: "一般顧客"
+    account_number: "1234567890"
+    balance: 1500000
+  admin:
+    username: "admin01"
+    password: "admin123"
+    role_value: "admin"
+    role_label: "管理者"
+    account_number: "9876543210"
+    balance: 5000000
+  auditor:
+    username: "auditor01"
+    password: "audit123"
+    role_value: "auditor"
+    role_label: "監査者"
+    account_number: "5555555555"
+    balance: 2000000
+
+login:
+  screen: "#loginScreen"
+  fields:
+    username: "#username"
+    password: "#password"
+    role: "#role"
+  actions:
+    submit_button_text: "ログイン"
+  feedback:
+    error_container: "#loginError"
+  validations:
+    - condition: "username または password が空"
+      message: "⚠️ ユーザーIDとパスワードを入力してください"
+    - condition: "認証失敗 1〜2 回目"
+      message_pattern: "❌ 認証失敗（残りN回）"
+    - condition: "認証失敗 3 回目"
+      message: "🔒 ログイン試行回数超過。30秒間ロックされます"
+    - condition: "ロック中に再試行"
+      message_pattern: "🔒 アカウントがロックされています。残りN秒"
+  security_rules:
+    - "username 単位で loginAttempts を保持"
+    - "認証失敗 3 回で 30 秒ロック"
+    - "ロック中のログイン試行は監査ログへ error 記録"
+  state_transitions:
+    - success: "#loginScreen hidden -> #mfaScreen visible"
+
+mfa:
+  screen: "#mfaScreen"
+  field: "#mfaCode"
+  maxlength: 6
+  actions:
+    submit_button_text: "認証"
+  feedback:
+    error_container: "#mfaError"
+  rules:
+    valid_code: "123456"
+    invalid_message: "❌ 認証コードが正しくありません"
+    success_effects:
+      - "\"#mfaScreen\" を非表示"
+      - "\"#dashboard\" を表示"
+      - "\"#userInfo\" を表示"
+      - "ユーザー情報を画面に反映"
+
+navigation:
+  tabs:
+    overview: "概要"
+    transactions: "取引履歴"
+    transfer: "振込"
+    cards: "カード管理"
+    audit:
+      label: "監査ログ"
+      selector: "#auditTab"
+      visible_for: ["admin", "auditor"]
+      hidden_for: ["customer"]
+
+transfer:
+  tab_selector: "#tabTransfer"
+  fields:
+    to: "#transferTo"
+    amount: "#transferAmount"
+    memo: "#transferMemo"
+  feedback:
+    message_container: "#transferMessage"
+    success_message: "✅ 振込が完了しました"
+  validations:
+    - condition: "振込先口座番号が空 または 10 桁数字でない"
+      message: "❌ 振込先口座番号は10桁の数字で入力してください"
+    - condition: "amount が空 または 0 以下"
+      message: "❌ 振込金額を正しく入力してください"
+    - condition: "amount > 1000000"
+      message: "❌ 1回の振込上限（¥1,000,000）を超えています"
+    - condition: "amount > currentUser.balance"
+      message: "❌ 残高不足です"
+    - condition: "to == currentUser.accountNumber"
+      message: "❌ 自分の口座には振込できません"
+    - condition: "currentUser.role == customer かつ amount >= 100000"
+      message: "⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。"
+  success_effects:
+    - "currentUser.balance から amount を減算"
+    - "transactionList の先頭へ振込履歴を追加"
+    - "\"#balance\" を更新"
+    - "入力欄をクリア"
+  audit_log_events:
+    - "warning: 振込上限超過"
+    - "warning: 承認待ち振込"
+    - "info: 振込実行"
+
+rbac_audit:
+  audit_log_container: "#auditLog"
+  visible_roles: ["admin", "auditor"]
+  hidden_roles: ["customer"]
+  audit_events_examples:
+    - "システム起動"
+    - "ログイン失敗"
+    - "ロック中のログイン試行"
+    - "MFA失敗"
+    - "MFA認証成功"
+    - "承認待ち振込"
+    - "振込実行"
+    - "CVV表示"
+    - "ログアウト"
+
+session:
+  timer_selector: "#sessionTimer"
+  initial_seconds: 900
+  timeout_behavior:
+    - "残り 60 秒以下で背景色変更"
+    - "0 秒で alert 表示後 logout()"
+
+other_useful_elements:
+  user_info:
+    user_name: "#userName"
+    role_badge: "#roleBadge"
+    account_number: "#accountNumber"
+    balance: "#balance"
+  transactions:
+    table_body: "#transactionList"
+  cards:
+    masked_number: "#cardNumber"
+    full_number: "#fullCardNumber"
+    card_holder: "#cardHolder"
+    card_limit: "#cardLimit"
+    cvv: "#cvv"
+
+known_implementation_notes:
+  - "switchTab() は event.target 前提で動くため、実ブラウザ操作ベースのクリックで呼ぶこと"
+  - "showError() は 5 秒後に hidden を再付与する"
+  - "transfer success message は 3 秒後に非表示化される"
+  - "logout() 後も role 選択値は明示リセットしていない"

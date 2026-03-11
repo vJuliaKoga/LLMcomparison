@@ -1,0 +1,97 @@
+```java
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+public class SecureBankLoginTest {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeEach
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        String baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080";
+        driver.get(baseUrl + "#loginScreen");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Test
+    public void testSuccessfulLoginWithMFA() {
+        // 正常系：正しい資格情報 + 正しいMFAでログイン成功
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("pass123");
+        driver.findElement(By.id("role")).sendKeys("一般顧客");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        // MFA画面に遷移
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mfaScreen")));
+        driver.findElement(By.id("mfaCode")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[text()='認証']")).click();
+
+        // ダッシュボードが表示される
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard")));
+        WebElement userNameElement = driver.findElement(By.id("userName"));
+        assert userNameElement.getText().equals("customer01");
+    }
+
+    @Test
+    public void testFailedLoginDueToIncorrectCredentials() {
+        // 異常系：認証失敗
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("wrongpassword");
+        driver.findElement(By.id("role")).sendKeys("一般顧客");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        // エラーメッセージが表示される
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError")));
+        WebElement errorMessageElement = driver.findElement(By.id("loginError"));
+        assert errorMessageElement.getText().contains("❌ 認証失敗（残り2回）");
+    }
+
+    @Test
+    public void testAccountLockAfterThreeFailedAttempts() {
+        // 境界値：失敗3回目でロック
+        for (int i = 0; i < 3; i++) {
+            driver.findElement(By.id("username")).sendKeys("customer01");
+            driver.findElement(By.id("password")).sendKeys("wrongpassword");
+            driver.findElement(By.id("role")).sendKeys("一般顧客");
+            driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+            // エラーメッセージが表示される
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError")));
+            WebElement errorMessageElement = driver.findElement(By.id("loginError"));
+            assert errorMessageElement.getText().contains("❌ 認証失敗（残り" + (2 - i) + "回）");
+        }
+
+        // 4回目のログイン試行
+        driver.findElement(By.id("username")).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("wrongpassword");
+        driver.findElement(By.id("role")).sendKeys("一般顧客");
+        driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+        // アカウントロックメッセージが表示される
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginError")));
+        WebElement errorMessageElement = driver.findElement(By.id("loginError"));
+        assert errorMessageElement.getText().contains("🔒 ログイン試行回数超過。30秒間ロックされます");
+    }
+}
+```
+
+- 特になし

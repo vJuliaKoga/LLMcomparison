@@ -1,0 +1,106 @@
+prompts:
+  - file://hybrid-test-generation-mistral.txt
+
+defaultTest:
+  options:
+    provider:
+      id: openai:gpt-4o
+      config:
+        apiKey: "{{env.OPENAI_API_KEY_ENTERPRISE}}"
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 6000
+
+providers:
+  - id: openrouter:mistralai/mistral-small-3.1-24b-instruct:free
+    label: "Mistral-Small-3.1-24B"
+    config:
+      temperature: 0.2
+      max_tokens: 1800
+
+tests:
+  - description: "ログイン機能E2E（最適化版）"
+    vars:
+      specification: file://../../../specs/securebank-spec.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "ログイン機能（基本認証、MFA、ログイン試行制限）"
+
+    assert:
+      - type: contains-all
+        value:
+          - "(A) JUnit 5 + Selenium E2Eテストコード"
+          - "(B) 仕様と実装の不整合・不足情報"
+
+      - type: javascript
+        value: return /```java[\s\S]*org\.junit\.jupiter[\s\S]*```/m.test(output);
+
+      - type: contains-all
+        value:
+          - "WebDriver"
+          - "WebDriverWait"
+          - "@Test"
+          - "@BeforeEach"
+          - "@AfterEach"
+
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          return m.length >= 2;
+
+      - type: javascript
+        value: |
+          const blocks = output.match(/```java[\s\S]*?```/g) || [];
+          return !blocks.join('\n').includes('Thread.sleep');
+
+      - type: javascript
+        value: return !output.includes('assertTrue(true)');
+
+  - description: "振込機能E2E（最適化版）"
+    vars:
+      specification: file://../../../specs/securebank-spec.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "振込機能（全バリデーション、承認フロー含む）"
+
+    assert:
+      - type: javascript
+        value: return /```java[\s\S]*WebDriver[\s\S]*```/m.test(output);
+
+      - type: contains-all
+        value:
+          - "残高不足"
+          - "上限"
+
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          return m.length >= 2;
+
+      - type: javascript
+        value: |
+          const blocks = output.match(/```java[\s\S]*?```/g) || [];
+          return !blocks.join('\n').includes('Thread.sleep');
+
+      - type: javascript
+        value: return !output.includes('assertTrue(true)');
+
+  - description: "RBAC（監査ログ）E2E（最適化版）"
+    vars:
+      specification: file://../../../specs/securebank-spec.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "監査ログ機能（役割別アクセス制御）"
+
+    assert:
+      - type: contains-all
+        value:
+          - "admin"
+          - "auditor"
+          - "customer"
+
+      - type: javascript
+        value: return /```java[\s\S]*@Test[\s\S]*```/m.test(output);
+
+      - type: javascript
+        value: return !output.includes('assertTrue(true)');
+
+outputPath: ./../../../results/evaluation-results-mistral.json

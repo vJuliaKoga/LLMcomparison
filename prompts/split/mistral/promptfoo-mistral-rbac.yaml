@@ -1,0 +1,30 @@
+prompts:
+- file://hybrid-test-generation-mistral.txt
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 15000
+providers:
+- id: openrouter:mistralai/mistral-small-3.1-24b-instruct:free
+  label: Mistral-Small-3.1-24B
+  config:
+    temperature: 0.2
+    max_tokens: 1800
+tests:
+- description: RBAC（監査ログ）E2E（mistral・単体）
+  vars:
+    specification: file://../../../specs/securebank-spec-rbac.md
+    ui_context: file://../../../specs/financial-demo-app-context.yaml
+    feature: 監査ログ機能（役割別アクセス制御）
+  assert:
+  - type: contains
+    value: '```java'
+  - type: contains-all
+    value:
+    - admin
+    - auditor
+    - customer
+  - type: javascript
+    value: /```java[\s\S]*@Test[\s\S]*```/m.test(output)
+  - type: javascript
+    value: '!output.includes(''assertTrue(true)'')'
+outputPath: ./../../../results/mistral/evaluation-results-mistral-rbac.json

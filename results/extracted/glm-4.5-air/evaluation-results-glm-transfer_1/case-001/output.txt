@@ -1,0 +1,312 @@
+Thinking: 
+We are going to create a JUnit 5 + Selenium E2E test code for the transfer functionality.
+ We'll focus on 2-3 representative scenarios as per the requirements.
+
+ Steps:
+ 1. We'll set up the test class with necessary imports and annotations.
+ 2. We'll use ChromeDriver and set up the base URL from environment variable or default.
+ 3. We'll have @BeforeEach and @AfterEach for driver setup and teardown.
+ 4. We'll write test methods for:
+    a. Successful transfer (normal case, below 100,000 for a customer)
+    b. Validation error cases (we can choose one, e.g., invalid account number)
+    c. High amount transfer that requires approval (for customer, >=100,000)
+
+ However, note that the requirement says to represent 2-3 scenarios. We'll choose:
+   - Successful transfer (customer, amount < 100,000)
+   - High amount transfer (customer, amount >= 100,000) -> should go to approval pending
+   - Validation error: invalid account number
+
+ But note: the requirement says "1テスト=1シナリオ", so we'll have three test methods.
+
+ Important: We must use explicit waits (WebDriverWait) and avoid Thread.sleep.
+
+ We'll use the following from the UI structure context:
+
+ Login:
+   - username: #username
+   - password: #password
+   - role: #role
+   - submit button: with text "ログイン"
+
+ MFA:
+   - field: #mfaCode
+   - submit button: with text "認証"
+
+ Transfer tab: #tabTransfer
+   - to: #transferTo
+   - amount: #transferAmount
+   - memo: #transferMemo
+   - message container: #transferMessage
+
+ We also need to get the current user's balance and account number from the UI.
+
+ Steps for each test:
+  1. Login as the specified user (customer01 for customer tests).
+  2. Navigate to transfer tab.
+  3. Perform the transfer action (with appropriate data).
+  4. Verify the result.
+
+ For the successful transfer (customer01, amount 50,000):
+   - Expect: balance updated, transaction added, success message.
+
+ For the high amount transfer (customer01, amount 150,000):
+   - Expect: approval pending message, no balance update.
+
+ For the invalid account number:
+   - Expect: error message.
+
+ We'll also need to get the current balance before and after to verify.
+
+ Note: The UI context says that the success message disappears after 3 seconds, so we must wait for it to appear and then we can check it, but we don't have to wait for it to disappear for the test.
+
+ Implementation:
+
+ We'll create a class named `TransferFunctionalityTest`.
+
+ Let's code accordingly.
+
+ Important: We are not using Page Objects, so we'll write the selectors directly.
+
+ We'll use the following test data from the context:
+   customer01: username "customer01", password "pass123", role "customer", account number "1234567890", balance 1500000.
+
+ For the high amount test, we'll use 150000 (which is >=100000) and expect the approval pending message.
+
+ For the invalid account, we'll use "123456789" (9 digits) and expect the error message.
+
+ We'll also need to handle the MFA code. The context says the valid code is "123456".
+
+ Steps for login:
+   - Enter username, password, select role (by value? but the context doesn't specify the value for role. We'll assume the role is a dropdown and we can select by visible text? But the context says the role field is #role. We'll use the role label "一般顧客" for customer? But note: the context has a mapping for role_value and role_label. However, the login form might have the role as a dropdown with the role_label. We'll try to select by visible text.
+
+ But note: the context says the role field is #role. We'll assume it's a dropdown and we can select by the role_label.
+
+ However, the context also says: 
+   accounts.customer.role_label: "一般顧客"
+
+ So for customer, we'll select "一般顯客" in the role dropdown.
+
+ But wait: the context says the role field is #role. We'll use:
+   new Select(driver.findElement(By.id("role"))).selectByVisibleText("一般顧客");
+
+ However, the context also says the login screen has a field for role. We'll do that.
+
+ But note: the context also says the login screen has a username, password, and role. We'll fill all.
+
+ Steps for login:
+   - Find #username, sendKeys(customer01.username)
+   - Find #password, sendKeys(customer01.password)
+   - Find #role, select by visible text "一般顧客"
+   - Click the login button (which has text "ログイン")
+
+ Then MFA:
+   - Find #mfaCode, sendKeys("123456")
+   - Click the button with text "認証"
+
+ Then we should be on the dashboard.
+
+ Then we click the transfer tab: #tabTransfer
+
+ Now, we can start the transfer.
+
+ We'll write the tests accordingly.
+
+ Let's code.
+
+ Note: We are using JUnit 5 and Selenium 4.
+
+ We'll use:
+   import org.junit.jupiter.api.*;
+   import org.openqa.selenium.*;
+   import org.openqa.selenium.chrome.ChromeDriver;
+   import org.openqa.selenium.support.ui.ExpectedConditions;
+   import org.openqa.selenium.support.ui.WebDriverWait;
+
+ We'll set the base URL as:
+   String baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080";
+
+ We'll set the driver path via system property or set it in the code? We'll leave it to the user to set the driver path.
+
+ We'll use:
+   WebDriver driver = new ChromeDriver();
+
+ We'll set implicit wait? We'll use explicit waits only.
+
+ We'll write:
+
+   @BeforeEach
+   public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        baseUrl = ...;
+        driver.get(baseUrl);
+   }
+
+   @AfterEach
+   public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+   }
+
+ Now, the test methods.
+
+ We'll create:
+
+   @Test
+   public void testSuccessfulTransfer() { ... }
+
+   @Test
+   public void testHighAmountTransferApprovalPending() { ... }
+
+   @Test
+   public void testInvalidAccountNumber() { ... }
+
+ We'll also need to get the current balance. The balance is in #balance.
+
+ We'll write a helper method to get the balance as an integer.
+
+   private int getCurrentBalance() {
+        String balanceText = driver.findElement(By.id("balance")).getText();
+        // Remove non-digit characters and convert to integer
+        return Integer.parseInt(balanceText.replaceAll("[^0-9]", ""));
+   }
+
+ But note: the balance might be formatted with commas? We'll remove commas and any currency symbol.
+
+ However, the context says the balance is displayed as ¥1,500,000. We'll remove everything except digits.
+
+ We'll do: balanceText.replaceAll("[^0-9]", "") -> "1500000"
+
+ But note: the context also says the balance is updated after transfer.
+
+ We'll also need to get the current user's account number? We can get it from the UI: #accountNumber.
+
+ However, for the self-transfer validation, we need to compare the transferTo with the current account number.
+
+ We'll write a helper to get the current account number:
+
+   private String getCurrentAccountNumber() {
+        return driver.findElement(By.id("accountNumber")).getText();
+   }
+
+ But note: the context says the account number is in #accountNumber.
+
+ Now, let's write the tests.
+
+ Important: We must wait for elements to be present and visible.
+
+ We'll use WebDriverWait with a timeout (e.g., 10 seconds).
+
+ Example for login:
+
+   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+   // Login
+   driver.findElement(By.id("username")).sendKeys("customer01");
+   driver.findElement(By.id("password")).sendKeys("pass123");
+   Select roleSelect = new Select(driver.findElement(By.id("role")));
+   roleSelect.selectByVisibleText("一般顧客");
+   driver.findElement(By.xpath("//button[text()='ログイン']")).click();
+
+   // Wait for MFA screen
+   wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mfaCode")));
+   driver.findElement(By.id("mfaCode")).sendKeys("123456");
+   driver.findElement(By.xpath("//button[text()='認証']")).click();
+
+   // Wait for dashboard and transfer tab
+   wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tabTransfer")));
+
+ Then we can proceed.
+
+ We'll do similar for each test.
+
+ Let's code accordingly.
+
+ Note: We are not covering all scenarios, just 3 representative ones.
+
+ Now, the code:
+
+```java
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+public class TransferFunctionalityTest {
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private final String BASE_URL = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080";
+
+    @BeforeEach
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.get(BASE_URL + "/login");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Test
+    public void testSuccessfulTransferBelowApprovalThreshold() {
+        // Login as customer
+        login("customer01", "pass123", "一般顧客");
+        
+        // Navigate to transfer tab
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("tabTransfer"))).click();
+        
+        // Get initial balance
+        int initialBalance = getCurrentBalance();
+        
+        // Execute transfer
+        executeTransfer("9876543210", "50000", "Test transfer");
+        
+        // Verify success
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#transferMessage .success")));
+        Assertions.assertTrue(driver.findElement(By.cssSelector("#transferMessage .success")).getText().contains("振込が完了しました"));
+        
+        // Verify balance update
+        Assertions.assertEquals(initialBalance - 50000, getCurrentBalance());
+    }
+
+    @Test
+    public void testHighAmountTransferRequiresApproval() {
+        // Login as customer
+        login("customer01", "pass123", "一般顧客");
+        
+        // Navigate to transfer tab
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("tabTransfer"))).click();
+        
+        // Execute high amount transfer
+        executeTransfer("9876543210", "150000", "High amount test");
+        
+        // Verify approval pending message
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#transferMessage .warning")));
+        Assertions.assertTrue(driver.findElement(By.cssSelector("#transferMessage .warning")).getText().contains("管理者承認が必要です"));
+        
+        // Verify balance unchanged
+        Assertions.assertEquals(1500000, getCurrentBalance());
+    }
+
+    @Test
+    public void testInvalidAccountNumberValidation() {
+        // Login as customer
+        login("customer01", "pass123", "一般顧客");
+        
+        // Navigate to transfer tab
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("tabTransfer"))).click();
+        
+        // Execute transfer with invalid account
+        executeTransfer("123456789", "10000", "Invalid account test");
+        
+        // Verify error message
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#transferMessage .error")));
+        Assertions

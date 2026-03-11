@@ -1,0 +1,50 @@
+prompts:
+  - file://hybrid-test-generation-gemma.txt
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 6000
+
+providers:
+  - id: openrouter:google/gemma-3n-e4b-it:free
+    label: "Gemma-3n-4B-Free"
+    config:
+      temperature: 0.2
+      max_tokens: 1800
+
+tests:
+  - description: "ログイン機能E2E（gemma・単体）"
+    vars:
+      specification: file://../../../specs/securebank-spec-login.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "ログイン機能（基本認証、MFA、ログイン試行制限）"
+
+    assert:
+      - type: contains
+        value: "```java"
+
+      - type: javascript
+        value: "/```java[\\s\\S]*org\\.junit\\.jupiter[\\s\\S]*```/m.test(output)"
+
+      - type: contains-all
+        value:
+          - "WebDriver"
+          - "WebDriverWait"
+          - "@Test"
+          - "@BeforeEach"
+          - "@AfterEach"
+
+      - type: javascript
+        value: |
+          const m = output.match(/@Test/g) || [];
+          return m.length >= 2;
+
+      - type: javascript
+        value: |
+          const blocks = output.match(/```java[\s\S]*?```/g) || [];
+          return !blocks.join('\n').includes('Thread.sleep');
+
+      - type: javascript
+        value: "!output.includes('assertTrue(true)')"
+
+outputPath: ./../../../results/gemma/evaluation-results-gemma-login.json

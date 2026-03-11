@@ -1,0 +1,28 @@
+{
+  "source_json_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\cohere\\evaluation-results-cohere-rbac_4.json",
+  "source_json_file": "evaluation-results-cohere-rbac_4.json",
+  "source_json_stem": "evaluation-results-cohere-rbac_4",
+  "entry_index": 0,
+  "provider_id": "https://api.cohere.com/v2/chat",
+  "provider_label": null,
+  "model_dir": "command-r7b-12-2024",
+  "description": "RBAC（監査ログ）E2E（cohere・単体）",
+  "feature": "監査ログ機能（役割別アクセス制御）",
+  "specification": "file://..\\..\\..\\specs\\securebank-spec-rbac.md",
+  "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+  "output_txt_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\command-r7b-12-2024\\evaluation-results-cohere-rbac_4\\case-001\\output.txt",
+  "java_paths": [
+    "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\command-r7b-12-2024\\evaluation-results-cohere-rbac_4\\case-001\\AuditLogTest.java"
+  ],
+  "java_public_class_names": [
+    "AuditLogTest"
+  ],
+  "java_block_count": 1,
+  "summary": {
+    "hasJavaFence": true,
+    "hasAnyFence": true,
+    "hasSelfValidationSection": false,
+    "testAnnotationCount": 3
+  },
+  "extracted_at": "2026-03-11T05:55:07.550Z"
+}

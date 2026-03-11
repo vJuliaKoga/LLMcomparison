@@ -1,0 +1,38 @@
+prompts:
+  - file://hybrid-test-generation-groq.txt
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 25000
+
+providers:
+  - id: groq:openai/gpt-oss-20b
+    label: "Groq-GPT-OSS-20B"
+    config:
+      temperature: 0.2
+      max_tokens: 1200
+
+tests:
+  - description: "RBAC（監査ログ）E2E（groq・単体）"
+    vars:
+      specification: file://../../../specs/securebank-spec-rbac.md
+      ui_context: file://../../../specs/financial-demo-app-context.yaml
+      feature: "監査ログ機能（役割別アクセス制御）"
+
+    assert:
+      - type: contains
+        value: "```java"
+
+      - type: contains-all
+        value:
+          - "admin"
+          - "auditor"
+          - "customer"
+
+      - type: javascript
+        value: "/```java[\\s\\S]*@Test[\\s\\S]*```/m.test(output)"
+
+      - type: javascript
+        value: "!output.includes('assertTrue(true)')"
+
+outputPath: ./../../../results/groq/evaluation-results-groq-rbac.json

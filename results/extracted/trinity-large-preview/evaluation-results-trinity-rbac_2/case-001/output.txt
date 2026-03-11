@@ -1,0 +1,112 @@
+```java
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.*;
+
+import java.time.Duration;
+
+class SecureBankAuditLogTest {
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeEach
+    void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    }
+
+    @AfterEach
+    void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Test
+    void adminCanViewAuditLog() {
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080");
+
+        // Login as admin
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("admin01");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.id("role")).sendKeys("管理者");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+        // Wait for dashboard
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard")));
+
+        // Switch to Audit Log tab
+        driver.findElement(By.linkText("監査ログ")).click();
+
+        // Verify audit log container is visible
+        WebElement auditLog = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("auditLog")));
+        Assertions.assertTrue(auditLog.isDisplayed(), "Audit log should be visible for admin");
+
+        // Verify some audit log entries exist
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#auditLog .audit-entry")));
+        Assertions.assertTrue(driver.findElements(By.cssSelector("#auditLog .audit-entry")).size() > 0,
+                "Audit log should contain entries");
+    }
+
+    @Test
+    void customerCannotViewAuditLog() {
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080");
+
+        // Login as customer
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("customer01");
+        driver.findElement(By.id("password")).sendKeys("pass123");
+        driver.findElement(By.id("role")).sendKeys("一般顧客");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+        // Wait for dashboard
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard")));
+
+        // Verify audit log tab is NOT present
+        Assertions.assertFalse(driver.findElements(By.linkText("監査ログ")).size() > 0,
+                "Audit log tab should not be visible for customer");
+    }
+
+    @Test
+    void auditLogShowsLatestEntriesFirst() {
+        driver.get(System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") : "http://localhost:8080");
+
+        // Login as admin
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("admin01");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.id("role")).sendKeys("管理者");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+        // Wait for dashboard
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dashboard")));
+
+        // Switch to Audit Log tab
+        driver.findElement(By.linkText("監査ログ")).click();
+
+        // Verify audit log container is visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("auditLog")));
+
+        // Get all audit entries
+        var entries = driver.findElements(By.cssSelector("#auditLog .audit-entry"));
+        Assertions.assertTrue(entries.size() > 0, "Audit log should contain entries");
+
+        // Verify latest entry is first (basic check)
+        String firstTimestamp = entries.get(0).findElement(By.cssSelector(".timestamp")).getText();
+        String secondTimestamp = entries.get(1).findElement(By.cssSelector(".timestamp")).getText();
+
+        // Simple chronological check (assuming format YYYY-MM-DD HH:MM:SS)
+        Assertions.assertTrue(firstTimestamp.compareTo(secondTimestamp) >= 0,
+                "Latest audit entries should appear first");
+    }
+}
+```
+
+(B) 仕様と実装の不整合・不足情報
+- 監査ログの表示形式（色分け、左ボーダー色）のUI検証が不足
+- 監査ログの記録項目（タイムスタンプ、ログレベル、メッセージ内容）の内容検証が不足
+- 監査ログの記録対象イベントの発生と記録検証が不足
+- 監査ログの降順表示の厳密な検証ロジックが不足
+- 監査ログタブの表示/非表示の切り替えタイミングの検証が不足
+- 監査ログのページネーションやスクロール挙動の検証が不足

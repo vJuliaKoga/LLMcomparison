@@ -1,0 +1,24 @@
+{
+  "source_json_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\glm\\evaluation-results-glm-rbac_9.json",
+  "source_json_file": "evaluation-results-glm-rbac_9.json",
+  "source_json_stem": "evaluation-results-glm-rbac_9",
+  "entry_index": 0,
+  "provider_id": "openrouter:z-ai/glm-4.5-air:free",
+  "provider_label": "GLM-4.5-Air-Free",
+  "model_dir": "glm-4.5-air",
+  "description": "RBAC（監査ログ）E2E（glm・単体）",
+  "feature": "監査ログ機能（役割別アクセス制御）",
+  "specification": "file://..\\..\\..\\specs\\securebank-spec-rbac.md",
+  "ui_context": "file://..\\..\\..\\specs\\financial-demo-app-context.yaml",
+  "output_txt_path": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\results\\extracted\\glm-4.5-air\\evaluation-results-glm-rbac_9\\case-001\\output.txt",
+  "java_paths": [],
+  "java_public_class_names": [],
+  "java_block_count": 0,
+  "summary": {
+    "hasJavaFence": false,
+    "hasAnyFence": false,
+    "hasSelfValidationSection": false,
+    "testAnnotationCount": 0
+  },
+  "extracted_at": "2026-03-11T05:55:07.744Z"
+}

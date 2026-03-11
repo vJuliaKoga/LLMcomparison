@@ -1,0 +1,389 @@
+LLM-test-evaluation
+├── .deepeval
+│   └── ...
+├── .vscode
+│   └── settings.json
+├── docs
+│   ├── Automated
+│   │   └── AI自動化用プロンプト.md
+│   ├── ディレクトリ構造.md
+│   ├── 実行コマンド集.md
+│   └── 調査ログ.md
+├── libs
+│   └── ...
+├── mcp
+│   └── junit-validator
+│       ├── tools
+│       │   ├── compile.mjs
+│       │   ├── extract-actions.mjs
+│       │   ├── validate-spec.mjs
+│       │   └── validate-syntax.mjs
+│       ├── index.mjs
+│       ├── package-lock.json
+│       └── package.json
+├── prompts
+│   ├── archive
+│   │   ├── default
+│   │   │   ├── hybrid-test-generation.txt
+│   │   │   └── promptfoo.yaml
+│   │   ├── v1
+│   │   ├── hybrid-test-generation.txt
+│   │   └── promptfoo.yaml
+│   ├── split
+│   │   ├── .deepeval
+│   │   ├── cohere
+│   │   │   ├── hybrid-test-generation-cohere.txt
+│   │   │   ├── promptfoo-cohere-login.yaml
+│   │   │   ├── promptfoo-cohere-rbac.yaml
+│   │   │   ├── promptfoo-cohere-transfer.yaml
+│   │   │   └── promptfoo-cohere.yaml
+│   │   ├── gemma
+│   │   │   ├── hybrid-test-generation-gemma.txt
+│   │   │   ├── promptfoo-gemma-login.yaml
+│   │   │   ├── promptfoo-gemma-rbac.yaml
+│   │   │   └── promptfoo-gemma-transfer.yaml
+│   │   ├── glm
+│   │   │   ├── hybrid-test-generation-glm.txt
+│   │   │   ├── promptfoo-glm-login.yaml
+│   │   │   ├── promptfoo-glm-rbac.yaml
+│   │   │   └── promptfoo-glm-transfer.yaml
+│   │   ├── groq
+│   │   │   ├── hybrid-test-generation-groq.txt
+│   │   │   ├── promptfoo-groq-login.yaml
+│   │   │   ├── promptfoo-groq-rbac.yaml
+│   │   │   ├── promptfoo-groq-transfer.yaml
+│   │   │   └── promptfoo-groq.yaml
+│   │   ├── llama
+│   │   │   ├── hybrid-test-generation-llama.txt
+│   │   │   ├── promptfoo-llama-login.yaml
+│   │   │   ├── promptfoo-llama-rbac.yaml
+│   │   │   ├── promptfoo-llama-transfer.yaml
+│   │   │   └── promptfoo-llama.yaml
+│   │   ├── mistral
+│   │   │   ├── hybrid-test-generation-mistral.txt
+│   │   │   ├── promptfoo-mistral-login.yaml
+│   │   │   ├── promptfoo-mistral-rbac.yaml
+│   │   │   ├── promptfoo-mistral-transfer.yaml
+│   │   │   └── promptfoo-mistral.yaml
+│   │   ├── qwen
+│   │   │   ├── hybrid-test-generation-qwen.txt
+│   │   │   ├── promptfoo-qwen-login.yaml
+│   │   │   ├── promptfoo-qwen-rbac.yaml
+│   │   │   └── promptfoo-qwen-transfer.yaml
+│   │   ├── template
+│   │   │   ├── login_template.yaml
+│   │   │   ├── rbac_template.yaml
+│   │   │   └── transfer_template.yaml
+│   │   └── trinity
+│   │       ├── hybrid-test-generation-trinity.txt
+│   │       ├── promptfoo-trinity-login.yaml
+│   │       ├── promptfoo-trinity-rbac.yaml
+│   │       ├── promptfoo-trinity-transfer.yaml
+│   │       └── promptfoo-trinity.yaml
+│   └── promptfoo-light.yaml
+├── reports
+│   ├── compile-summary.csv
+│   ├── compile-summary.json
+│   ├── hybrid-deepeval-summary.csv
+│   ├── hybrid-deepeval-summary.json
+│   ├── validate-output-summary.csv
+│   ├── validate-output-summary.json
+│   ├── validate-spec-summary.csv
+│   ├── validate-spec-summary.json
+│   ├── validate-syntax-summary.csv
+│   └── validate-syntax-summary.json
+├── results
+│   ├── cohere
+│   │   ├── evaluation-results-cohere-login_1.json
+│   │   ├── evaluation-results-cohere-login_10.json
+│   │   ├── evaluation-results-cohere-login_2.json
+│   │   ├── evaluation-results-cohere-login_3.json
+│   │   ├── evaluation-results-cohere-login_4.json
+│   │   ├── evaluation-results-cohere-login_5.json
+│   │   ├── evaluation-results-cohere-login_6.json
+│   │   ├── evaluation-results-cohere-login_7.json
+│   │   ├── evaluation-results-cohere-login_8.json
+│   │   ├── evaluation-results-cohere-login_9.json
+│   │   ├── evaluation-results-cohere-rbac_1.json
+│   │   ├── evaluation-results-cohere-rbac_10.json
+│   │   ├── evaluation-results-cohere-rbac_2.json
+│   │   ├── evaluation-results-cohere-rbac_3.json
+│   │   ├── evaluation-results-cohere-rbac_4.json
+│   │   ├── evaluation-results-cohere-rbac_5.json
+│   │   ├── evaluation-results-cohere-rbac_6.json
+│   │   ├── evaluation-results-cohere-rbac_7.json
+│   │   ├── evaluation-results-cohere-rbac_8.json
+│   │   ├── evaluation-results-cohere-rbac_9.json
+│   │   ├── evaluation-results-cohere-transfer_1.json
+│   │   ├── evaluation-results-cohere-transfer_10.json
+│   │   ├── evaluation-results-cohere-transfer_2.json
+│   │   ├── evaluation-results-cohere-transfer_3.json
+│   │   ├── evaluation-results-cohere-transfer_4.json
+│   │   ├── evaluation-results-cohere-transfer_5.json
+│   │   ├── evaluation-results-cohere-transfer_6.json
+│   │   ├── evaluation-results-cohere-transfer_7.json
+│   │   ├── evaluation-results-cohere-transfer_8.json
+│   │   └── evaluation-results-cohere-transfer_9.json
+│   ├── extracted
+│   │   └── ...
+│   ├── gemma
+│   │   ├── evaluation-results-gemma-login_1.json
+│   │   ├── evaluation-results-gemma-login_10.json
+│   │   ├── evaluation-results-gemma-login_2.json
+│   │   ├── evaluation-results-gemma-login_3.json
+│   │   ├── evaluation-results-gemma-login_4.json
+│   │   ├── evaluation-results-gemma-login_5.json
+│   │   ├── evaluation-results-gemma-login_6.json
+│   │   ├── evaluation-results-gemma-login_7.json
+│   │   ├── evaluation-results-gemma-login_8.json
+│   │   ├── evaluation-results-gemma-login_9.json
+│   │   ├── evaluation-results-gemma-rbac_1.json
+│   │   ├── evaluation-results-gemma-rbac_10.json
+│   │   ├── evaluation-results-gemma-rbac_2.json
+│   │   ├── evaluation-results-gemma-rbac_3.json
+│   │   ├── evaluation-results-gemma-rbac_4.json
+│   │   ├── evaluation-results-gemma-rbac_5.json
+│   │   ├── evaluation-results-gemma-rbac_6.json
+│   │   ├── evaluation-results-gemma-rbac_7.json
+│   │   ├── evaluation-results-gemma-rbac_8.json
+│   │   ├── evaluation-results-gemma-rbac_9.json
+│   │   ├── evaluation-results-gemma-transfer_1.json
+│   │   ├── evaluation-results-gemma-transfer_10.json
+│   │   ├── evaluation-results-gemma-transfer_2.json
+│   │   ├── evaluation-results-gemma-transfer_3.json
+│   │   ├── evaluation-results-gemma-transfer_4.json
+│   │   ├── evaluation-results-gemma-transfer_5.json
+│   │   ├── evaluation-results-gemma-transfer_6.json
+│   │   ├── evaluation-results-gemma-transfer_7.json
+│   │   ├── evaluation-results-gemma-transfer_8.json
+│   │   └── evaluation-results-gemma-transfer_9.json
+│   ├── glm
+│   │   ├── evaluation-results-glm-login_1.json
+│   │   ├── evaluation-results-glm-login_10.json
+│   │   ├── evaluation-results-glm-login_2.json
+│   │   ├── evaluation-results-glm-login_3.json
+│   │   ├── evaluation-results-glm-login_4.json
+│   │   ├── evaluation-results-glm-login_5.json
+│   │   ├── evaluation-results-glm-login_6.json
+│   │   ├── evaluation-results-glm-login_7.json
+│   │   ├── evaluation-results-glm-login_8.json
+│   │   ├── evaluation-results-glm-login_9.json
+│   │   ├── evaluation-results-glm-rbac_1.json
+│   │   ├── evaluation-results-glm-rbac_10.json
+│   │   ├── evaluation-results-glm-rbac_2.json
+│   │   ├── evaluation-results-glm-rbac_3.json
+│   │   ├── evaluation-results-glm-rbac_4.json
+│   │   ├── evaluation-results-glm-rbac_5.json
+│   │   ├── evaluation-results-glm-rbac_6.json
+│   │   ├── evaluation-results-glm-rbac_7.json
+│   │   ├── evaluation-results-glm-rbac_8.json
+│   │   ├── evaluation-results-glm-rbac_9.json
+│   │   ├── evaluation-results-glm-transfer_1.json
+│   │   ├── evaluation-results-glm-transfer_10.json
+│   │   ├── evaluation-results-glm-transfer_2.json
+│   │   ├── evaluation-results-glm-transfer_3.json
+│   │   ├── evaluation-results-glm-transfer_4.json
+│   │   ├── evaluation-results-glm-transfer_5.json
+│   │   ├── evaluation-results-glm-transfer_6.json
+│   │   ├── evaluation-results-glm-transfer_7.json
+│   │   ├── evaluation-results-glm-transfer_8.json
+│   │   └── evaluation-results-glm-transfer_9.json
+│   ├── groq
+│   │   ├── evaluation-results-groq-login_1.json
+│   │   ├── evaluation-results-groq-login_10.json
+│   │   ├── evaluation-results-groq-login_2.json
+│   │   ├── evaluation-results-groq-login_3.json
+│   │   ├── evaluation-results-groq-login_4.json
+│   │   ├── evaluation-results-groq-login_5.json
+│   │   ├── evaluation-results-groq-login_6.json
+│   │   ├── evaluation-results-groq-login_7.json
+│   │   ├── evaluation-results-groq-login_8.json
+│   │   ├── evaluation-results-groq-login_9.json
+│   │   ├── evaluation-results-groq-rbac_1.json
+│   │   ├── evaluation-results-groq-rbac_10.json
+│   │   ├── evaluation-results-groq-rbac_2.json
+│   │   ├── evaluation-results-groq-rbac_3.json
+│   │   ├── evaluation-results-groq-rbac_4.json
+│   │   ├── evaluation-results-groq-rbac_5.json
+│   │   ├── evaluation-results-groq-rbac_6.json
+│   │   ├── evaluation-results-groq-rbac_7.json
+│   │   ├── evaluation-results-groq-rbac_8.json
+│   │   ├── evaluation-results-groq-rbac_9.json
+│   │   ├── evaluation-results-groq-transfer_1.json
+│   │   ├── evaluation-results-groq-transfer_10.json
+│   │   ├── evaluation-results-groq-transfer_2.json
+│   │   ├── evaluation-results-groq-transfer_3.json
+│   │   ├── evaluation-results-groq-transfer_4.json
+│   │   ├── evaluation-results-groq-transfer_5.json
+│   │   ├── evaluation-results-groq-transfer_6.json
+│   │   ├── evaluation-results-groq-transfer_7.json
+│   │   ├── evaluation-results-groq-transfer_8.json
+│   │   └── evaluation-results-groq-transfer_9.json
+│   ├── llama
+│   │   ├── evaluation-results-llama-login_1.json
+│   │   ├── evaluation-results-llama-login_10.json
+│   │   ├── evaluation-results-llama-login_2.json
+│   │   ├── evaluation-results-llama-login_3.json
+│   │   ├── evaluation-results-llama-login_4.json
+│   │   ├── evaluation-results-llama-login_5.json
+│   │   ├── evaluation-results-llama-login_6.json
+│   │   ├── evaluation-results-llama-login_7.json
+│   │   ├── evaluation-results-llama-login_8.json
+│   │   ├── evaluation-results-llama-login_9.json
+│   │   ├── evaluation-results-llama-rbac_1.json
+│   │   ├── evaluation-results-llama-rbac_10.json
+│   │   ├── evaluation-results-llama-rbac_2.json
+│   │   ├── evaluation-results-llama-rbac_3.json
+│   │   ├── evaluation-results-llama-rbac_4.json
+│   │   ├── evaluation-results-llama-rbac_5.json
+│   │   ├── evaluation-results-llama-rbac_6.json
+│   │   ├── evaluation-results-llama-rbac_7.json
+│   │   ├── evaluation-results-llama-rbac_8.json
+│   │   ├── evaluation-results-llama-rbac_9.json
+│   │   ├── evaluation-results-llama-transfer_1.json
+│   │   ├── evaluation-results-llama-transfer_10.json
+│   │   ├── evaluation-results-llama-transfer_2.json
+│   │   ├── evaluation-results-llama-transfer_3.json
+│   │   ├── evaluation-results-llama-transfer_4.json
+│   │   ├── evaluation-results-llama-transfer_5.json
+│   │   ├── evaluation-results-llama-transfer_6.json
+│   │   ├── evaluation-results-llama-transfer_7.json
+│   │   ├── evaluation-results-llama-transfer_8.json
+│   │   └── evaluation-results-llama-transfer_9.json
+│   ├── mistral
+│   │   ├── evaluation-results-mistral-login_1.json
+│   │   ├── evaluation-results-mistral-login_10.json
+│   │   ├── evaluation-results-mistral-login_2.json
+│   │   ├── evaluation-results-mistral-login_3.json
+│   │   ├── evaluation-results-mistral-login_4.json
+│   │   ├── evaluation-results-mistral-login_5.json
+│   │   ├── evaluation-results-mistral-login_6.json
+│   │   ├── evaluation-results-mistral-login_7.json
+│   │   ├── evaluation-results-mistral-login_8.json
+│   │   ├── evaluation-results-mistral-login_9.json
+│   │   ├── evaluation-results-mistral-rbac_10.json
+│   │   ├── evaluation-results-mistral-rbac_8.json
+│   │   └── evaluation-results-mistral-rbac_9.json
+│   ├── qwen
+│   │   ├── evaluation-results-qwen-login_1.json
+│   │   ├── evaluation-results-qwen-login_10.json
+│   │   ├── evaluation-results-qwen-login_2.json
+│   │   ├── evaluation-results-qwen-login_3.json
+│   │   ├── evaluation-results-qwen-login_4.json
+│   │   ├── evaluation-results-qwen-login_5.json
+│   │   ├── evaluation-results-qwen-login_6.json
+│   │   ├── evaluation-results-qwen-login_7.json
+│   │   ├── evaluation-results-qwen-login_8.json
+│   │   ├── evaluation-results-qwen-login_9.json
+│   │   ├── evaluation-results-qwen-rbac_1.json
+│   │   ├── evaluation-results-qwen-rbac_10.json
+│   │   ├── evaluation-results-qwen-rbac_2.json
+│   │   ├── evaluation-results-qwen-rbac_3.json
+│   │   ├── evaluation-results-qwen-rbac_4.json
+│   │   ├── evaluation-results-qwen-rbac_5.json
+│   │   ├── evaluation-results-qwen-rbac_6.json
+│   │   ├── evaluation-results-qwen-rbac_7.json
+│   │   ├── evaluation-results-qwen-rbac_8.json
+│   │   ├── evaluation-results-qwen-rbac_9.json
+│   │   ├── evaluation-results-qwen-transfer_1.json
+│   │   ├── evaluation-results-qwen-transfer_10.json
+│   │   ├── evaluation-results-qwen-transfer_2.json
+│   │   ├── evaluation-results-qwen-transfer_3.json
+│   │   ├── evaluation-results-qwen-transfer_4.json
+│   │   ├── evaluation-results-qwen-transfer_5.json
+│   │   ├── evaluation-results-qwen-transfer_6.json
+│   │   ├── evaluation-results-qwen-transfer_7.json
+│   │   ├── evaluation-results-qwen-transfer_8.json
+│   │   └── evaluation-results-qwen-transfer_9.json
+│   └── trinity
+│       ├── evaluation-results-trinity-login_1.json
+│       ├── evaluation-results-trinity-login_10.json
+│       ├── evaluation-results-trinity-login_2.json
+│       ├── evaluation-results-trinity-login_3.json
+│       ├── evaluation-results-trinity-login_4.json
+│       ├── evaluation-results-trinity-login_5.json
+│       ├── evaluation-results-trinity-login_6.json
+│       ├── evaluation-results-trinity-login_7.json
+│       ├── evaluation-results-trinity-login_8.json
+│       ├── evaluation-results-trinity-login_9.json
+│       ├── evaluation-results-trinity-rbac_1.json
+│       ├── evaluation-results-trinity-rbac_10.json
+│       ├── evaluation-results-trinity-rbac_2.json
+│       ├── evaluation-results-trinity-rbac_3.json
+│       ├── evaluation-results-trinity-rbac_4.json
+│       ├── evaluation-results-trinity-rbac_5.json
+│       ├── evaluation-results-trinity-rbac_6.json
+│       ├── evaluation-results-trinity-rbac_7.json
+│       ├── evaluation-results-trinity-rbac_8.json
+│       ├── evaluation-results-trinity-rbac_9.json
+│       ├── evaluation-results-trinity-transfer_1.json
+│       ├── evaluation-results-trinity-transfer_10.json
+│       ├── evaluation-results-trinity-transfer_2.json
+│       ├── evaluation-results-trinity-transfer_3.json
+│       ├── evaluation-results-trinity-transfer_4.json
+│       ├── evaluation-results-trinity-transfer_5.json
+│       ├── evaluation-results-trinity-transfer_6.json
+│       ├── evaluation-results-trinity-transfer_7.json
+│       ├── evaluation-results-trinity-transfer_8.json
+│       └── evaluation-results-trinity-transfer_9.json
+├── scripts
+│   ├── prompt-runs
+│   │   ├── run-login-cohere-repeat.ps1
+│   │   ├── run-login-gemma-repeat.ps1
+│   │   ├── run-login-glm-overwrite.ps1
+│   │   ├── run-login-glm-repeat.ps1
+│   │   ├── run-login-groq-repeat.ps1
+│   │   ├── run-login-llama-repeat.ps1
+│   │   ├── run-login-mistral-repeat.ps1
+│   │   ├── run-login-qwen-repeat.ps1
+│   │   ├── run-login-trinity-repeat.ps1
+│   │   ├── run-rbac-cohere-repeat.ps1
+│   │   ├── run-rbac-gemma-repeat.ps1
+│   │   ├── run-rbac-glm-repeat.ps1
+│   │   ├── run-rbac-groq-repeat.ps1
+│   │   ├── run-rbac-llama-repeat.ps1
+│   │   ├── run-rbac-mistral-repeat.ps1
+│   │   ├── run-rbac-qwen-repeat.ps1
+│   │   ├── run-rbac-trinity-repeat.ps1
+│   │   ├── run-transfer-cohere-repeat.ps1
+│   │   ├── run-transfer-gemma-repeat.ps1
+│   │   ├── run-transfer-glm-repeat.ps1
+│   │   ├── run-transfer-groq-repeat.ps1
+│   │   ├── run-transfer-llama-repeat.ps1
+│   │   ├── run-transfer-mistral-repeat.ps1
+│   │   ├── run-transfer-qwen-repeat.ps1
+│   │   └── run-transfer-trinity-repeat.ps1
+│   ├── extract-outputs.mjs
+│   ├── playwright-bridge.mjs
+│   ├── run_hybrid_deepeval.py
+│   ├── run-compile.ps1
+│   ├── run-extract-outputs.ps1
+│   ├── run-pipeline.sh
+│   ├── run-validate-output.ps1
+│   ├── run-validate-spec.ps1
+│   └── run-validate-syntax.ps1
+├── specs
+│   ├── original
+│   │   └── securebank-spec.md
+│   ├── financial-demo-app-context.yaml
+│   ├── securebank-spec-login.md
+│   ├── securebank-spec-rbac.md
+│   └── securebank-spec-transfer.md
+├── target
+│   └── ...
+├── tools
+│   ├── README.md
+│   └── redact_openai_keys.py
+├── validation
+│   ├── schema.json
+│   └── validate-output.mjs
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── .mcp.json
+├── financial-demo-app.html
+├── memo.txt
+├── package-lock.json
+├── package.json
+├── pom.xml
+└── validate-output-log.txt
