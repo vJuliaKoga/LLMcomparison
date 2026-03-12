@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "model": "trinity-large-preview",
+    "source_stem": "evaluation-results-trinity-rbac_9",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/trinity-large-preview/evaluation-results-trinity-rbac_9/case-001/ExtractedTest01.playwright-plan.json",
+    "executed_at": "2026-03-12T02:48:13.231Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "ExtractedTest01",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 35,
+    "executed_steps": 33,
+    "passed_steps": 30,
+    "failed_steps": 3,
+    "blocked_steps": 2
+  },
+  "method_results": [
+    {
+      "name": "adminCanViewAuditLog",
+      "status": "fail",
+      "total_steps": 13,
+      "executed_steps": 12,
+      "failed_step_seq": 12,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "customerCannotViewAuditLog",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 9,
+      "failed_step_seq": 9,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "auditLogShowsLatestEntriesFirst",
+      "status": "fail",
+      "total_steps": 13,
+      "executed_steps": 12,
+      "failed_step_seq": 12,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_evaluate"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "model": "gemma-3n-e4b-it",
+    "source_stem": "evaluation-results-gemma-login_3",
+    "case": "case-001",
+    "feature": "ログイン",
+    "plan_path": "reports/playwright-plans/gemma-3n-e4b-it/evaluation-results-gemma-login_3/case-001/SecureBankLoginTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:43:22.997Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "SecureBankLoginTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 30,
+    "executed_steps": 17,
+    "passed_steps": 14,
+    "failed_steps": 3,
+    "blocked_steps": 13
+  },
+  "method_results": [
+    {
+      "name": "testSuccessfulLogin",
+      "status": "fail",
+      "total_steps": 14,
+      "executed_steps": 7,
+      "failed_step_seq": 7,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button"
+      ],
+      "notes": "要素が見つかりません: #submit_button"
+    },
+    {
+      "name": "testLoginAttemptLimit",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button"
+      ],
+      "notes": "要素が見つかりません: #submit_button"
+    },
+    {
+      "name": "testInvalidCredentials",
+      "status": "fail",
+      "total_steps": 7,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button"
+      ],
+      "notes": "要素が見つかりません: #submit_button"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_click"
+    ],
+    "locator_failures": [
+      "#submit_button"
+    ]
+  },
+  "notes": ""
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "model": "command-r7b-12-2024",
+    "source_stem": "evaluation-results-cohere-transfer_8",
+    "case": "case-001",
+    "feature": "振込",
+    "plan_path": "reports/playwright-plans/command-r7b-12-2024/evaluation-results-cohere-transfer_8/case-001/TransferTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:41:42.064Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "TransferTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 2,
+    "pass_methods": 0,
+    "fail_methods": 2,
+    "blocked_methods": 0,
+    "total_steps": 15,
+    "executed_steps": 8,
+    "passed_steps": 6,
+    "failed_steps": 2,
+    "blocked_steps": 7
+  },
+  "method_results": [
+    {
+      "name": "testNormalTransfer",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 4,
+      "failed_step_seq": 4,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#transferTo').first()\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"text\" maxlength=\"10\" id=\"transferTo\" placeholder=\"1234567890\"/>\u001b[22m\n\u001b[2m    - fill(\"1234567890\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "name": "testInvalidAccountNumber",
+      "status": "fail",
+      "total_steps": 6,
+      "executed_steps": 4,
+      "failed_step_seq": 4,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#transferTo').first()\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"text\" maxlength=\"10\" id=\"transferTo\" placeholder=\"1234567890\"/>\u001b[22m\n\u001b[2m    - fill(\"123456789\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_fill_form"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

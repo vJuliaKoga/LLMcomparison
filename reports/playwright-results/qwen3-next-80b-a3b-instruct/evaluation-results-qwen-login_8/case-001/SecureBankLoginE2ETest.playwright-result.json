@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "model": "qwen3-next-80b-a3b-instruct",
+    "source_stem": "evaluation-results-qwen-login_8",
+    "case": "case-001",
+    "feature": "ログイン",
+    "plan_path": "reports/playwright-plans/qwen3-next-80b-a3b-instruct/evaluation-results-qwen-login_8/case-001/SecureBankLoginE2ETest.playwright-plan.json",
+    "executed_at": "2026-03-12T02:15:29.752Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "SecureBankLoginE2ETest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 43,
+    "executed_steps": 19,
+    "passed_steps": 16,
+    "failed_steps": 3,
+    "blocked_steps": 24
+  },
+  "method_results": [
+    {
+      "name": "正常系_一般顧客が正しい認証情報とMFAでログイン成功する",
+      "status": "fail",
+      "total_steps": 13,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "/* unknown */",
+      "locator_failures": [],
+      "notes": "未対応ツールのため失敗: /* unknown */"
+    },
+    {
+      "name": "異常系_認証失敗3回でアカウントがロックされる",
+      "status": "fail",
+      "total_steps": 18,
+      "executed_steps": 9,
+      "failed_step_seq": 9,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "異常系_MFA認証コードが不正でログイン失敗する",
+      "status": "fail",
+      "total_steps": 12,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "/* unknown */",
+      "locator_failures": [],
+      "notes": "未対応ツールのため失敗: /* unknown */"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "/* unknown */",
+      "browser_evaluate"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

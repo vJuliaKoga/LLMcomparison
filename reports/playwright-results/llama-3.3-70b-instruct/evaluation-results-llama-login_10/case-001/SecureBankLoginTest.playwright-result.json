@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "model": "llama-3.3-70b-instruct",
+    "source_stem": "evaluation-results-llama-login_10",
+    "case": "case-001",
+    "feature": "ログイン",
+    "plan_path": "reports/playwright-plans/llama-3.3-70b-instruct/evaluation-results-llama-login_10/case-001/SecureBankLoginTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:51:37.157Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "SecureBankLoginTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 1,
+    "fail_methods": 2,
+    "blocked_methods": 0,
+    "total_steps": 32,
+    "executed_steps": 32,
+    "passed_steps": 30,
+    "failed_steps": 2,
+    "blocked_steps": 0
+  },
+  "method_results": [
+    {
+      "name": "testSuccessfulLogin",
+      "status": "fail",
+      "total_steps": 13,
+      "executed_steps": 13,
+      "failed_step_seq": 13,
+      "failed_tool": "browser_verify_text_visible",
+      "locator_failures": [],
+      "notes": "テキストが見つかりません: ダッシュボード"
+    },
+    {
+      "name": "testFailedLogin",
+      "status": "pass",
+      "total_steps": 9,
+      "executed_steps": 9,
+      "failed_step_seq": null,
+      "failed_tool": "",
+      "locator_failures": [],
+      "notes": ""
+    },
+    {
+      "name": "testAccountLock",
+      "status": "fail",
+      "total_steps": 10,
+      "executed_steps": 10,
+      "failed_step_seq": 10,
+      "failed_tool": "browser_verify_text_visible",
+      "locator_failures": [],
+      "notes": "テキストが見つかりません: アカウントがロックされています。残り30秒"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_verify_text_visible"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

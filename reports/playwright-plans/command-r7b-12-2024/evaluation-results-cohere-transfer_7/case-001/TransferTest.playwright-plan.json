@@ -1,0 +1,246 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:44.604Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\command-r7b-12-2024\\evaluation-results-cohere-transfer_7\\case-001\\TransferTest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testNormalTransfer",
+      "total_steps": 9,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "1234567890"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "1234567890"
+          },
+          "note": "Fill \"#transferTo\" with \"1234567890\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "100000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "100000"
+          },
+          "note": "Fill \"#transferAmount\" with \"100000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "テスト振込"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "テスト振込"
+          },
+          "note": "Fill \"#transferMemo\" with \"テスト振込\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='振込']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='振込']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='振込']"
+          },
+          "note": "Click \"xpath=//button[text()='振込']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "✅ 振込が完了しました"
+          },
+          "note": "Assert text visible: \"✅ 振込が完了しました\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "#transferMessage",
+            "expected": "✅ 振込が完了しました"
+          },
+          "locator_status": "pending"
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "¥1,400,000"
+          },
+          "note": "Assert text visible: \"¥1,400,000\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "#balance",
+            "expected": "¥1,400,000"
+          },
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testInvalidAccountNumber",
+      "total_steps": 6,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456789"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "123456789"
+          },
+          "note": "Fill \"#transferTo\" with \"123456789\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='振込']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='振込']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='振込']"
+          },
+          "note": "Click \"xpath=//button[text()='振込']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "❌ 振込先口座番号は10桁の数字で入力してください"
+          },
+          "note": "Assert text visible: \"❌ 振込先口座番号は10桁の数字で入力してください\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "#transferMessage",
+            "expected": "❌ 振込先口座番号は10桁の数字で入力してください"
+          },
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 2,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

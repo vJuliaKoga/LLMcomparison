@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "model": "gpt-oss-20b",
+    "source_stem": "evaluation-results-groq-rbac_6",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/gpt-oss-20b/evaluation-results-groq-rbac_6/case-001/AuditLogRBACTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:51:04.373Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "AuditLogRBACTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 4,
+    "pass_methods": 1,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 21,
+    "executed_steps": 19,
+    "passed_steps": 16,
+    "failed_steps": 3,
+    "blocked_steps": 2
+  },
+  "method_results": [
+    {
+      "name": "setUp",
+      "status": "pass",
+      "total_steps": 2,
+      "executed_steps": 2,
+      "failed_step_seq": null,
+      "failed_tool": "",
+      "locator_failures": [],
+      "notes": ""
+    },
+    {
+      "name": "adminCanViewAuditLog",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 7,
+      "failed_step_seq": 7,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "customerCannotSeeAuditTab",
+      "status": "fail",
+      "total_steps": 3,
+      "executed_steps": 3,
+      "failed_step_seq": 3,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "auditorCanViewAuditLog",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 7,
+      "failed_step_seq": 7,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: Unexpected end of input\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_evaluate"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

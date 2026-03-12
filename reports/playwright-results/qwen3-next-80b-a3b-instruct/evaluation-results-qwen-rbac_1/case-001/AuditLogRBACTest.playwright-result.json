@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "model": "qwen3-next-80b-a3b-instruct",
+    "source_stem": "evaluation-results-qwen-rbac_1",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/qwen3-next-80b-a3b-instruct/evaluation-results-qwen-rbac_1/case-001/AuditLogRBACTest.playwright-plan.json",
+    "executed_at": "2026-03-12T02:16:40.338Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "AuditLogRBACTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 36,
+    "executed_steps": 28,
+    "passed_steps": 25,
+    "failed_steps": 3,
+    "blocked_steps": 8
+  },
+  "method_results": [
+    {
+      "name": "admin_can_access_audit_log_tab",
+      "status": "fail",
+      "total_steps": 12,
+      "executed_steps": 9,
+      "failed_step_seq": 9,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#mfaCode').first()\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"text\" id=\"mfaCode\" maxlength=\"6\" class=\"mfa-code\" placeholder=\"000000\"/>\u001b[22m\n\u001b[2m    - fill(\"123456\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "name": "customer_cannot_see_audit_log_tab",
+      "status": "fail",
+      "total_steps": 12,
+      "executed_steps": 10,
+      "failed_step_seq": 10,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#mfaScreen button[type='submit']"
+      ],
+      "notes": "要素が見つかりません: #mfaScreen button[type='submit']"
+    },
+    {
+      "name": "auditor_can_access_audit_log_tab",
+      "status": "fail",
+      "total_steps": 12,
+      "executed_steps": 9,
+      "failed_step_seq": 9,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#mfaCode').first()\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"text\" id=\"mfaCode\" maxlength=\"6\" class=\"mfa-code\" placeholder=\"000000\"/>\u001b[22m\n\u001b[2m    - fill(\"123456\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_click",
+      "browser_fill_form"
+    ],
+    "locator_failures": [
+      "#mfaScreen button[type='submit']"
+    ]
+  },
+  "notes": ""
+}

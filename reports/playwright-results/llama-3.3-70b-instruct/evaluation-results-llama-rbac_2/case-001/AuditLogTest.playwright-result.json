@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "model": "llama-3.3-70b-instruct",
+    "source_stem": "evaluation-results-llama-rbac_2",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/llama-3.3-70b-instruct/evaluation-results-llama-rbac_2/case-001/AuditLogTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:54:14.765Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "AuditLogTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 24,
+    "executed_steps": 23,
+    "passed_steps": 20,
+    "failed_steps": 3,
+    "blocked_steps": 1
+  },
+  "method_results": [
+    {
+      "name": "testAdminCanSeeAuditLog",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 8,
+      "failed_step_seq": 8,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "testCustomerCannotSeeAuditLog",
+      "status": "fail",
+      "total_steps": 7,
+      "executed_steps": 7,
+      "failed_step_seq": 7,
+      "failed_tool": "browser_evaluate",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:290:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "name": "testAuditLogIsSortedByTimestamp",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 8,
+      "failed_step_seq": 8,
+      "failed_tool": "browser_click",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#auditTab').first()\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"tab\" id=\"auditTab\" onclick=\"switchTab('audit')\">監査ログ</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_click",
+      "browser_evaluate"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

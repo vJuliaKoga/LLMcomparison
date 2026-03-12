@@ -1,0 +1,594 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:47.226Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\gemma-3n-e4b-it\\evaluation-results-gemma-transfer_3\\case-001\\TransferTest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testSuccessfulTransfer",
+      "total_steps": 12,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"submit_button_text\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#submit_button_text",
+          "original_action": {
+            "type": "click",
+            "selector": "#submit_button_text"
+          },
+          "note": "Click \"#submit_button_text\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "500000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "500000"
+          },
+          "note": "Fill \"#transferAmount\" with \"500000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "テスト振込"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "テスト振込"
+          },
+          "note": "Fill \"#transferMemo\" with \"テスト振込\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"transferButton\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#transferButton",
+          "original_action": {
+            "type": "click",
+            "selector": "#transferButton"
+          },
+          "note": "Click \"#transferButton\"",
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testInsufficientFunds",
+      "total_steps": 12,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"submit_button_text\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#submit_button_text",
+          "original_action": {
+            "type": "click",
+            "selector": "#submit_button_text"
+          },
+          "note": "Click \"#submit_button_text\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "2000000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "2000000"
+          },
+          "note": "Fill \"#transferAmount\" with \"2000000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "テスト振込"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "テスト振込"
+          },
+          "note": "Fill \"#transferMemo\" with \"テスト振込\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"transferButton\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#transferButton",
+          "original_action": {
+            "type": "click",
+            "selector": "#transferButton"
+          },
+          "note": "Click \"#transferButton\"",
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testInvalidAccountNumber",
+      "total_steps": 12,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"submit_button_text\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#submit_button_text",
+          "original_action": {
+            "type": "click",
+            "selector": "#submit_button_text"
+          },
+          "note": "Click \"#submit_button_text\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "abc"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "abc"
+          },
+          "note": "Fill \"#transferTo\" with \"abc\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "500000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "500000"
+          },
+          "note": "Fill \"#transferAmount\" with \"500000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "テスト振込"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "テスト振込"
+          },
+          "note": "Fill \"#transferMemo\" with \"テスト振込\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"transferButton\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#transferButton",
+          "original_action": {
+            "type": "click",
+            "selector": "#transferButton"
+          },
+          "note": "Click \"#transferButton\"",
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

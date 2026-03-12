@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "model": "qwen3-next-80b-a3b-instruct",
+    "source_stem": "evaluation-results-qwen-transfer_4",
+    "case": "case-001",
+    "feature": "振込",
+    "plan_path": "reports/playwright-plans/qwen3-next-80b-a3b-instruct/evaluation-results-qwen-transfer_4/case-001/TransferE2ETest.playwright-plan.json",
+    "executed_at": "2026-03-12T02:33:26.832Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "TransferE2ETest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 66,
+    "executed_steps": 42,
+    "passed_steps": 39,
+    "failed_steps": 3,
+    "blocked_steps": 24
+  },
+  "method_results": [
+    {
+      "name": "正常系_100000円未満の振込が成功する",
+      "status": "fail",
+      "total_steps": 23,
+      "executed_steps": 14,
+      "failed_step_seq": 14,
+      "failed_tool": "browser_click",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#tabTransfer').first()\u001b[22m\n\u001b[2m    - locator resolved to <div id=\"tabTransfer\" class=\"tab-content\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "name": "異常系_自己振込が拒否される",
+      "status": "fail",
+      "total_steps": 21,
+      "executed_steps": 14,
+      "failed_step_seq": 14,
+      "failed_tool": "browser_click",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#tabTransfer').first()\u001b[22m\n\u001b[2m    - locator resolved to <div id=\"tabTransfer\" class=\"tab-content\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "name": "承認フロー_100000円以上で一般顧客は承認待ちになる",
+      "status": "fail",
+      "total_steps": 22,
+      "executed_steps": 14,
+      "failed_step_seq": 14,
+      "failed_tool": "browser_click",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#tabTransfer').first()\u001b[22m\n\u001b[2m    - locator resolved to <div id=\"tabTransfer\" class=\"tab-content\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_click"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

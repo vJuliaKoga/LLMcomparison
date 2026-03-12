@@ -120,8 +120,13 @@ function sanitizeForStructure(code) {
 function splitTestMethods(code) {
   const methods = [];
   const sanitized = sanitizeForStructure(code);
+  // NOTE:
+  // - Java の識別子は Unicode を許容するため `\w` だけでは @Test メソッド名を拾えない。
+  //   (例: `void 正常系_100000円未満の振込が成功する() { ... }`)
+  // - `throws ...` が付くパターンも許容する。
+  // - JS の Unicode property escapes を使うため `u` フラグが必須。
   const testMethodRe =
-    /@Test[\s\S]*?(?:public\s+|protected\s+|private\s+)?(?:static\s+)?(?:final\s+)?[\w<>\[\], ?]+\s+(\w+)\s*\([^)]*\)\s*\{/g;
+    /@Test[\s\S]*?(?:public\s+|protected\s+|private\s+)?(?:static\s+)?(?:final\s+)?[\w<>\[\], ?.]+\s+([\p{L}_$][\p{L}\p{N}_$]*)\s*\([^)]*\)\s*(?:throws\s+[^{]+)?\{/gu;
 
   let match;
   while ((match = testMethodRe.exec(code)) !== null) {

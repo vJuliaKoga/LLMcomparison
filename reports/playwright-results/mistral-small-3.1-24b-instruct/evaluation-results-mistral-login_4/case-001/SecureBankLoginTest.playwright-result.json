@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "model": "mistral-small-3.1-24b-instruct",
+    "source_stem": "evaluation-results-mistral-login_4",
+    "case": "case-001",
+    "feature": "ログイン",
+    "plan_path": "reports/playwright-plans/mistral-small-3.1-24b-instruct/evaluation-results-mistral-login_4/case-001/SecureBankLoginTest.playwright-plan.json",
+    "executed_at": "2026-03-12T02:14:17.528Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "SecureBankLoginTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "pass",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 3,
+    "fail_methods": 0,
+    "blocked_methods": 0,
+    "total_steps": 34,
+    "executed_steps": 34,
+    "passed_steps": 34,
+    "failed_steps": 0,
+    "blocked_steps": 0
+  },
+  "method_results": [
+    {
+      "name": "testSuccessfulLoginWithMFA",
+      "status": "pass",
+      "total_steps": 12,
+      "executed_steps": 12,
+      "failed_step_seq": null,
+      "failed_tool": "",
+      "locator_failures": [],
+      "notes": ""
+    },
+    {
+      "name": "testFailedLoginDueToIncorrectCredentials",
+      "status": "pass",
+      "total_steps": 8,
+      "executed_steps": 8,
+      "failed_step_seq": null,
+      "failed_tool": "",
+      "locator_failures": [],
+      "notes": ""
+    },
+    {
+      "name": "testAccountLockAfterThreeFailedAttempts",
+      "status": "pass",
+      "total_steps": 14,
+      "executed_steps": 14,
+      "failed_step_seq": null,
+      "failed_tool": "",
+      "locator_failures": [],
+      "notes": ""
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [],
+    "locator_failures": []
+  },
+  "notes": ""
+}

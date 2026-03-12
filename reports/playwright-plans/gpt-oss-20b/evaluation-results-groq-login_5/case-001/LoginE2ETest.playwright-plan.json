@@ -1,0 +1,337 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:48.435Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\gpt-oss-20b\\evaluation-results-groq-login_5\\case-001\\LoginE2ETest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "setUp",
+      "total_steps": 2,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testSuccessfulLoginWithMFA",
+      "total_steps": 9,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#mfaScreen\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#mfaScreen\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#mfaScreen\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before clear (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "clear",
+            "selector": "#mfaCode"
+          },
+          "note": "Clear \"#mfaCode\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "123456"
+          },
+          "note": "Fill \"#mfaCode\" with \"123456\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[contains(text(),'認証",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[contains(text(),'認証",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[contains(text(),'認証"
+          },
+          "note": "Click \"xpath=//button[contains(text(),'認証\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#dashboard\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#dashboard\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#dashboard\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElement(By.cssSelector(\"#dashboard\")"
+          },
+          "note": "assert_true: driver.findElement(By.cssSelector(\"#dashboard\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElement(By.cssSelector(\"#dashboard\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testLoginFailureWrongPassword",
+      "total_steps": 4,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#loginError\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#loginError\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(error.getText()"
+          },
+          "note": "assert_true: error.getText(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "error.getText("
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testAccountLockAfterThreeFailures",
+      "total_steps": 8,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#loginError\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#loginError\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#loginError\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#loginError\""
+          }
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#loginError\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#loginError\""
+          }
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(lockError.getText()"
+          },
+          "note": "assert_true: lockError.getText(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "lockError.getText("
+          }
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.cssSelector(\"#loginError\"\" to appear",
+          "selector_hint": "By.cssSelector(\"#loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.cssSelector(\"#loginError\""
+          }
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(lockDuring.getText()"
+          },
+          "note": "assert_true: lockDuring.getText(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "lockDuring.getText("
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 4,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

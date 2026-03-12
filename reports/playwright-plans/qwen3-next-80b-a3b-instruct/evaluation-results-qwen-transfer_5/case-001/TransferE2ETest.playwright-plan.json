@@ -1,0 +1,1017 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:56.683Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\qwen3-next-80b-a3b-instruct\\evaluation-results-qwen-transfer_5\\case-001\\TransferE2ETest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "正常系_100000円未満の振込が成功する",
+      "total_steps": 23,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "customer"
+          },
+          "note": "Fill \"#role\" with \"customer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaCode\"\" to appear",
+          "selector_hint": "By.id(\"mfaCode\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaCode\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "123456"
+          },
+          "note": "Fill \"#mfaCode\" with \"123456\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='認証']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='認証']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='認証']"
+          },
+          "note": "Click \"xpath=//button[text()='認証']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"tabTransfer\"\" to appear",
+          "selector_hint": "By.id(\"tabTransfer\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"tabTransfer\""
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 15,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 16,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 17,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "1"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "1"
+          },
+          "note": "Fill \"#transferAmount\" with \"1\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 18,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "テスト振込"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "テスト振込"
+          },
+          "note": "Fill \"#transferMemo\" with \"テスト振込\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 19,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='振込実行']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='振込実行']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='振込実行']"
+          },
+          "note": "Click \"xpath=//button[text()='振込実行']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 20,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"transferMessage\"\" to appear",
+          "selector_hint": "By.id(\"transferMessage\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"transferMessage\""
+          }
+        },
+        {
+          "seq": 21,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "✅ 振込が完了しました"
+          },
+          "note": "Assert text visible: \"✅ 振込が完了しました\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "message",
+            "expected": "✅ 振込が完了しました"
+          },
+          "locator_status": "pending"
+        },
+        {
+          "seq": 22,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"balance\"\" to appear",
+          "selector_hint": "By.id(\"balance\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "presenceOfElementLocated",
+            "selector": "By.id(\"balance\""
+          }
+        },
+        {
+          "seq": 23,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "¥1,499,999"
+          },
+          "note": "Assert text visible: \"¥1,499,999\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "balance",
+            "expected": "¥1,499,999"
+          },
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "異常系_自己振込が拒否される",
+      "total_steps": 21,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "customer"
+          },
+          "note": "Fill \"#role\" with \"customer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaCode\"\" to appear",
+          "selector_hint": "By.id(\"mfaCode\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaCode\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "123456"
+          },
+          "note": "Fill \"#mfaCode\" with \"123456\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='認証']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='認証']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='認証']"
+          },
+          "note": "Click \"xpath=//button[text()='認証']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"tabTransfer\"\" to appear",
+          "selector_hint": "By.id(\"tabTransfer\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"tabTransfer\""
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 15,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 16,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "1234567890"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "1234567890"
+          },
+          "note": "Fill \"#transferTo\" with \"1234567890\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 17,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "10000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "10000"
+          },
+          "note": "Fill \"#transferAmount\" with \"10000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 18,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": ""
+          },
+          "note": "Fill \"#transferMemo\" with \"\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 19,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='振込実行']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='振込実行']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='振込実行']"
+          },
+          "note": "Click \"xpath=//button[text()='振込実行']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 20,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"transferMessage\"\" to appear",
+          "selector_hint": "By.id(\"transferMessage\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"transferMessage\""
+          }
+        },
+        {
+          "seq": 21,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "❌ 自分の口座には振込できません"
+          },
+          "note": "Assert text visible: \"❌ 自分の口座には振込できません\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "error",
+            "expected": "❌ 自分の口座には振込できません"
+          },
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "承認フロー_100000円以上で一般顧客は承認待ちになる",
+      "total_steps": 22,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "customer"
+          },
+          "note": "Fill \"#role\" with \"customer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaCode\"\" to appear",
+          "selector_hint": "By.id(\"mfaCode\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaCode\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "123456"
+          },
+          "note": "Fill \"#mfaCode\" with \"123456\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='認証']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='認証']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='認証']"
+          },
+          "note": "Click \"xpath=//button[text()='認証']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"tabTransfer\"\" to appear",
+          "selector_hint": "By.id(\"tabTransfer\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"tabTransfer\""
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"tabTransfer\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#tabTransfer",
+          "original_action": {
+            "type": "click",
+            "selector": "#tabTransfer"
+          },
+          "note": "Click \"#tabTransfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 15,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 16,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 17,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "100000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "100000"
+          },
+          "note": "Fill \"#transferAmount\" with \"100000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 18,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": ""
+          },
+          "note": "Fill \"#transferMemo\" with \"\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 19,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='振込実行']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='振込実行']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='振込実行']"
+          },
+          "note": "Click \"xpath=//button[text()='振込実行']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 20,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"transferMessage\"\" to appear",
+          "selector_hint": "By.id(\"transferMessage\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"transferMessage\""
+          }
+        },
+        {
+          "seq": 21,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。"
+          },
+          "note": "Assert text visible: \"⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "message",
+            "expected": "⚠️ ¥100,000以上の振込は管理者承認が必要です。承認待ちに追加されました。"
+          },
+          "locator_status": "pending"
+        },
+        {
+          "seq": 22,
+          "mcp_tool": "browser_verify_text_visible",
+          "args": {
+            "text": "¥1,500,000"
+          },
+          "note": "Assert text visible: \"¥1,500,000\"",
+          "original_action": {
+            "type": "assert_text",
+            "selector": "#balance",
+            "expected": "¥1,500,000"
+          },
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

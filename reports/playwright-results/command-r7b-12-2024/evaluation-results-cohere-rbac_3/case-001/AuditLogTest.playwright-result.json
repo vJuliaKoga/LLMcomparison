@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "model": "command-r7b-12-2024",
+    "source_stem": "evaluation-results-cohere-rbac_3",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/command-r7b-12-2024/evaluation-results-cohere-rbac_3/case-001/AuditLogTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:33:21.003Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "AuditLogTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 25,
+    "executed_steps": 18,
+    "passed_steps": 15,
+    "failed_steps": 3,
+    "blocked_steps": 7
+  },
+  "method_results": [
+    {
+      "name": "testAdminAuditLog",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 6,
+      "failed_step_seq": 6,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for getByLabel('役割').first()\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"role\">…</select>\u001b[22m\n\u001b[2m    - fill(\"admin\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n"
+    },
+    {
+      "name": "testCustomerAuditLog",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 6,
+      "failed_step_seq": 6,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for getByLabel('役割').first()\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"role\">…</select>\u001b[22m\n\u001b[2m    - fill(\"customer\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n"
+    },
+    {
+      "name": "testAuditorAuditLog",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 6,
+      "failed_step_seq": 6,
+      "failed_tool": "browser_fill_form",
+      "locator_failures": [],
+      "notes": "ステップ実行エラー: locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element\nCall log:\n\u001b[2m  - waiting for getByLabel('役割').first()\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"role\">…</select>\u001b[22m\n\u001b[2m    - fill(\"auditor\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_fill_form"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

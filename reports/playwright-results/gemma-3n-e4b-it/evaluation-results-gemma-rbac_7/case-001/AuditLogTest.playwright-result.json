@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "model": "gemma-3n-e4b-it",
+    "source_stem": "evaluation-results-gemma-rbac_7",
+    "case": "case-001",
+    "feature": "監査ログ",
+    "plan_path": "reports/playwright-plans/gemma-3n-e4b-it/evaluation-results-gemma-rbac_7/case-001/AuditLogTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:43:24.814Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "AuditLogTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 15,
+    "executed_steps": 15,
+    "passed_steps": 12,
+    "failed_steps": 3,
+    "blocked_steps": 0
+  },
+  "method_results": [
+    {
+      "name": "testAdminCanViewAuditLog",
+      "status": "fail",
+      "total_steps": 5,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button_text"
+      ],
+      "notes": "要素が見つかりません: #submit_button_text"
+    },
+    {
+      "name": "testCustomerCannotViewAuditLog",
+      "status": "fail",
+      "total_steps": 5,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button_text"
+      ],
+      "notes": "要素が見つかりません: #submit_button_text"
+    },
+    {
+      "name": "testAuditLogDisplayFormat",
+      "status": "fail",
+      "total_steps": 5,
+      "executed_steps": 5,
+      "failed_step_seq": 5,
+      "failed_tool": "browser_click",
+      "locator_failures": [
+        "#submit_button_text"
+      ],
+      "notes": "要素が見つかりません: #submit_button_text"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_click"
+    ],
+    "locator_failures": [
+      "#submit_button_text"
+    ]
+  },
+  "notes": ""
+}

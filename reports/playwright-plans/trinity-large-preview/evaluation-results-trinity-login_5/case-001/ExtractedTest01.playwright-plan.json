@@ -1,0 +1,831 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:57.737Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\trinity-large-preview\\evaluation-results-trinity-login_5\\case-001\\ExtractedTest01.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testLoginSuccessWithMFA",
+      "total_steps": 14,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"loginScreen\"\" to appear",
+          "selector_hint": "By.id(\"loginScreen\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"loginScreen\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "一般顧客"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "一般顧客"
+          },
+          "note": "Fill \"#role\" with \"一般顧客\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaScreen\"\" to appear",
+          "selector_hint": "By.id(\"mfaScreen\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaScreen\""
+          }
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "123456"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "123456"
+          },
+          "note": "Fill \"#mfaCode\" with \"123456\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"dashboard\"\" to appear",
+          "selector_hint": "By.id(\"dashboard\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"dashboard\""
+          }
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElement(By.id(\"userInfo\")"
+          },
+          "note": "assert_true: driver.findElement(By.id(\"userInfo\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElement(By.id(\"userInfo\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testLoginFailureWithLockout",
+      "total_steps": 26,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "clear",
+            "selector": "#username"
+          },
+          "note": "Clear \"#username\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "clear",
+            "selector": "#password"
+          },
+          "note": "Clear \"#password\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "wrongpass"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "wrongpass"
+          },
+          "note": "Fill \"#password\" with \"wrongpass\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "一般顧客"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "一般顧客"
+          },
+          "note": "Fill \"#role\" with \"一般顧客\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"loginError\"\" to appear",
+          "selector_hint": "By.id(\"loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"loginError\""
+          }
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot to read text content (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Read text from \"#loginError\" — verify in snapshot output",
+          "selector_hint": "#loginError",
+          "original_action": {
+            "type": "get_text",
+            "selector": "#loginError"
+          }
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(error.contains(\"認証失敗\")"
+          },
+          "note": "assert_true: error.contains(\"認証失敗\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "error.contains(\"認証失敗\""
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"loginError\"\" to appear",
+          "selector_hint": "By.id(\"loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"loginError\""
+          }
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot to read text content (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 15,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Read text from \"#loginError\" — verify in snapshot output",
+          "selector_hint": "#loginError",
+          "original_action": {
+            "type": "get_text",
+            "selector": "#loginError"
+          }
+        },
+        {
+          "seq": 16,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(lockError.contains(\"ログイン試行回数超過\")"
+          },
+          "note": "assert_true: lockError.contains(\"ログイン試行回数超過\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "lockError.contains(\"ログイン試行回数超過\""
+          }
+        },
+        {
+          "seq": 17,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "clear",
+            "selector": "#username"
+          },
+          "note": "Clear \"#username\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 18,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "clear",
+            "selector": "#password"
+          },
+          "note": "Clear \"#password\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 19,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 20,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 21,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "一般顧客"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "一般顧客"
+          },
+          "note": "Fill \"#role\" with \"一般顧客\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 22,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 23,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"loginError\"\" to appear",
+          "selector_hint": "By.id(\"loginError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"loginError\""
+          }
+        },
+        {
+          "seq": 24,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot to read text content (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 25,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Read text from \"#loginError\" — verify in snapshot output",
+          "selector_hint": "#loginError",
+          "original_action": {
+            "type": "get_text",
+            "selector": "#loginError"
+          }
+        },
+        {
+          "seq": 26,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(retryError.contains(\"アカウントがロックされています\")"
+          },
+          "note": "assert_true: retryError.contains(\"アカウントがロックされています\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "retryError.contains(\"アカウントがロックされています\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testMFAFailure",
+      "total_steps": 14,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "一般顧客"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "一般顧客"
+          },
+          "note": "Fill \"#role\" with \"一般顧客\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaScreen\"\" to appear",
+          "selector_hint": "By.id(\"mfaScreen\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaScreen\""
+          }
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"mfaCode\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "654321"
+              }
+            ]
+          },
+          "selector_hint": "#mfaCode",
+          "original_action": {
+            "type": "fill",
+            "selector": "#mfaCode",
+            "value": "654321"
+          },
+          "note": "Fill \"#mfaCode\" with \"654321\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"mfaError\"\" to appear",
+          "selector_hint": "By.id(\"mfaError\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"mfaError\""
+          }
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot to read text content (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Read text from \"#mfaError\" — verify in snapshot output",
+          "selector_hint": "#mfaError",
+          "original_action": {
+            "type": "get_text",
+            "selector": "#mfaError"
+          }
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(mfaError.contains(\"認証コードが正しくありません\")"
+          },
+          "note": "assert_true: mfaError.contains(\"認証コードが正しくありません\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "mfaError.contains(\"認証コードが正しくありません\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

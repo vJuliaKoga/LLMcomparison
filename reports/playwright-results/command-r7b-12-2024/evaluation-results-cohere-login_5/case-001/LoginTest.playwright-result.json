@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "model": "command-r7b-12-2024",
+    "source_stem": "evaluation-results-cohere-login_5",
+    "case": "case-001",
+    "feature": "ログイン",
+    "plan_path": "reports/playwright-plans/command-r7b-12-2024/evaluation-results-cohere-login_5/case-001/LoginTest.playwright-plan.json",
+    "executed_at": "2026-03-12T01:33:19.349Z",
+    "base_url": "http://localhost:8080",
+    "plan_base": "LoginTest",
+    "actual_base_url": "http://localhost:8080/financial-demo-app.html"
+  },
+  "overall_status": "fail",
+  "summary": {
+    "total_methods": 3,
+    "pass_methods": 0,
+    "fail_methods": 3,
+    "blocked_methods": 0,
+    "total_steps": 28,
+    "executed_steps": 27,
+    "passed_steps": 24,
+    "failed_steps": 3,
+    "blocked_steps": 1
+  },
+  "method_results": [
+    {
+      "name": "testNormalLogin",
+      "status": "fail",
+      "total_steps": 8,
+      "executed_steps": 8,
+      "failed_step_seq": 8,
+      "failed_tool": "browser_verify_text_visible",
+      "locator_failures": [],
+      "notes": "テキストが見つかりません: dashboard"
+    },
+    {
+      "name": "testLoginWithMFA",
+      "status": "fail",
+      "total_steps": 11,
+      "executed_steps": 11,
+      "failed_step_seq": 11,
+      "failed_tool": "browser_verify_text_visible",
+      "locator_failures": [],
+      "notes": "テキストが見つかりません: dashboard"
+    },
+    {
+      "name": "testLoginWithFailedAttempts",
+      "status": "fail",
+      "total_steps": 9,
+      "executed_steps": 8,
+      "failed_step_seq": 8,
+      "failed_tool": "browser_verify_text_visible",
+      "locator_failures": [],
+      "notes": "テキストが見つかりません: 認証失敗（残り1回）"
+    }
+  ],
+  "common_failures": {
+    "failed_tools": [
+      "browser_verify_text_visible"
+    ],
+    "locator_failures": []
+  },
+  "notes": ""
+}

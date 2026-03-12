@@ -1,0 +1,403 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:43.569Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\command-r7b-12-2024\\evaluation-results-cohere-rbac_6\\case-001\\AuditLogTest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testAdminAuditLog",
+      "total_steps": 9,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"username\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin01"
+              }
+            ]
+          },
+          "selector_hint": "id(\"username\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"username\")",
+            "value": "admin01"
+          },
+          "note": "Fill \"id(\"username\")\" with \"admin01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"password\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin123"
+              }
+            ]
+          },
+          "selector_hint": "id(\"password\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"password\")",
+            "value": "admin123"
+          },
+          "note": "Fill \"id(\"password\")\" with \"admin123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"role\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin"
+              }
+            ]
+          },
+          "selector_hint": "id(\"role\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"role\")",
+            "value": "admin"
+          },
+          "note": "Fill \"id(\"role\")\" with \"admin\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "id(\"login\")",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "id(\"login\")",
+          "original_action": {
+            "type": "click",
+            "selector": "id(\"login\")"
+          },
+          "note": "Click \"id(\"login\")\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "xpath(\"//a[text()='監査ログ']\")",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath(\"//a[text()='監査ログ']\")",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath(\"//a[text()='監査ログ']\")"
+          },
+          "note": "Click \"xpath(\"//a[text()='監査ログ']\")\"",
+          "locator_status": "pending"
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testCustomerAuditLog",
+      "total_steps": 8,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"username\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "id(\"username\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"username\")",
+            "value": "customer01"
+          },
+          "note": "Fill \"id(\"username\")\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"password\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "id(\"password\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"password\")",
+            "value": "pass123"
+          },
+          "note": "Fill \"id(\"password\")\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"role\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer"
+              }
+            ]
+          },
+          "selector_hint": "id(\"role\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"role\")",
+            "value": "customer"
+          },
+          "note": "Fill \"id(\"role\")\" with \"customer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "id(\"login\")",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "id(\"login\")",
+          "original_action": {
+            "type": "click",
+            "selector": "id(\"login\")"
+          },
+          "note": "Click \"id(\"login\")\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElement(id(\"auditTab\")"
+          },
+          "note": "assert_false: driver.findElement(id(\"auditTab\"",
+          "original_action": {
+            "type": "assert_false",
+            "expression": "driver.findElement(id(\"auditTab\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testAuditorAuditLog",
+      "total_steps": 8,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"username\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "auditor01"
+              }
+            ]
+          },
+          "selector_hint": "id(\"username\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"username\")",
+            "value": "auditor01"
+          },
+          "note": "Fill \"id(\"username\")\" with \"auditor01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"password\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "audit123"
+              }
+            ]
+          },
+          "selector_hint": "id(\"password\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"password\")",
+            "value": "audit123"
+          },
+          "note": "Fill \"id(\"password\")\" with \"audit123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "id(\"role\")",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "auditor"
+              }
+            ]
+          },
+          "selector_hint": "id(\"role\")",
+          "original_action": {
+            "type": "fill",
+            "selector": "id(\"role\")",
+            "value": "auditor"
+          },
+          "note": "Fill \"id(\"role\")\" with \"auditor\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "id(\"login\")",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "id(\"login\")",
+          "original_action": {
+            "type": "click",
+            "selector": "id(\"login\")"
+          },
+          "note": "Click \"id(\"login\")\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElement(id(\"auditTab\")"
+          },
+          "note": "assert_true: driver.findElement(id(\"auditTab\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElement(id(\"auditTab\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

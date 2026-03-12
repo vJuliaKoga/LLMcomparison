@@ -1,0 +1,366 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:51.830Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\llama-3.3-70b-instruct\\evaluation-results-llama-rbac_8\\case-001\\AuditLogTest.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testAdminCanSeeAuditLog",
+      "total_steps": 8,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "admin01"
+          },
+          "note": "Fill \"#username\" with \"admin01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "admin123"
+          },
+          "note": "Fill \"#password\" with \"admin123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"auditTab\"\" to appear",
+          "selector_hint": "By.id(\"auditTab\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"auditTab\""
+          }
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElement(By.id(\"auditTab\")"
+          },
+          "note": "assert_true: driver.findElement(By.id(\"auditTab\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElement(By.id(\"auditTab\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testCustomerCannotSeeAuditLog",
+      "total_steps": 7,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "customer01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "customer01"
+          },
+          "note": "Fill \"#username\" with \"customer01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElements(By.id(\"auditTab\")"
+          },
+          "note": "assert_true: driver.findElements(By.id(\"auditTab\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElements(By.id(\"auditTab\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testAuditLogIsSortedByTimestamp",
+      "total_steps": 9,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"username\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin01"
+              }
+            ]
+          },
+          "selector_hint": "#username",
+          "original_action": {
+            "type": "fill",
+            "selector": "#username",
+            "value": "admin01"
+          },
+          "note": "Fill \"#username\" with \"admin01\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "admin123"
+          },
+          "note": "Fill \"#password\" with \"admin123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element at xpath //button[text()='ログイン']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "xpath=//button[text()='ログイン']",
+          "original_action": {
+            "type": "click",
+            "selector": "xpath=//button[text()='ログイン']"
+          },
+          "note": "Click \"xpath=//button[text()='ログイン']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with id=\"auditTab\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "#auditTab",
+          "original_action": {
+            "type": "click",
+            "selector": "#auditTab"
+          },
+          "note": "Click \"#auditTab\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(firstLog.findElement(By.cssSelector(\"td:first-child\")"
+          },
+          "note": "assert_true: firstLog.findElement(By.cssSelector(\"td:first-child\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "firstLog.findElement(By.cssSelector(\"td:first-child\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

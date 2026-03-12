@@ -8,16 +8,18 @@
  * 設計のポイント:
  *   - browser_click / browser_fill_form は browser_snapshot で得た ref が必要
  *   - そのため「navigate → snapshot → element操作」の3段構造を各ページ単位で挿入
- *   - Claude Code がこの plan を読んで Playwright MCP ツールを順番に呼べるよう設計
+ *   - Claude Code / Cline がこの plan を読んで Playwright MCP ツールを順番に呼べるよう設計
  *
  * Usage:
- *   node scripts/playwright-bridge.mjs <extract-actions-output.json> [base_url]
+ *   node playwright-bridge.mjs <extract-actions-output.json> [base_url] [output_dir]
  *
- *   extract-actions-output.json: MCP tool "extract_actions" の出力を保存したファイル
+ *   extract-actions-output.json: extract-actions.mjs の出力 JSON
  *   base_url: テスト対象の URL (default: http://localhost:8080)
+ *   output_dir: plan の出力先ディレクトリ
  *
  * Output:
- *   results/{model}/<test>.playwright-plan.json
+ *   <output_dir>/<input_base>.playwright-plan.json
+ *   output_dir 未指定時は input JSON と同じディレクトリ
  */
 
 import fs from "node:fs";
@@ -25,24 +27,25 @@ import path from "node:path";
 
 // 引数 ────────────────────────────────────────────────────────────────────
 const inputPath = process.argv[2];
-const baseUrl   = process.argv[3] ?? "http://localhost:8080";
+const baseUrl = process.argv[3] ?? "http://localhost:8080";
+const outputDirArg = process.argv[4] ?? null;
 
 if (!inputPath) {
   console.error(
-    "Usage: node scripts/playwright-bridge.mjs <extract-actions-output.json> [base_url]"
+    "Usage: node playwright-bridge.mjs <extract-actions-output.json> [base_url] [output_dir]"
   );
   process.exit(1);
 }
 
 if (!fs.existsSync(inputPath)) {
-  console.error(`❌ File not found: ${inputPath}`);
+  console.error(`File not found: ${inputPath}`);
   process.exit(1);
 }
 
 const { testMethods } = JSON.parse(fs.readFileSync(inputPath, "utf8"));
 
 if (!Array.isArray(testMethods) || testMethods.length === 0) {
-  console.error("❌ No testMethods found in input JSON.");
+  console.error("No testMethods found in input JSON.");
   process.exit(1);
 }
 
@@ -69,22 +72,18 @@ function selectorToDescription(selector) {
 
 // 1アクション → Playwright MCP ステップ群 ────────────────────────────────
 /**
- * @param {object} action   extractActionsFromBody の出力1件
- * @param {number} seq      連番（変更される）
- * @param {Set}    snapshotted  現在スナップショット済みページの URL 集合
- * @param {string} currentUrl  最後に navigate した URL
+ * @param {object} action
+ * @param {number} seq
+ * @param {Set<string>} snapshotted
+ * @param {string} currentUrl
  * @returns {{ steps: object[], nextSeq: number, currentUrl: string }}
  */
 function actionToSteps(action, seq, snapshotted, currentUrl) {
   const steps = [];
 
   switch (action.type) {
-
-    // navigate ──────────────────────────────────────────────────────────
     case "navigate": {
-      const url = action.url.startsWith("{{")
-        ? baseUrl  // 変数参照はデフォルト URL に置換
-        : action.url;
+      const url = action.url.startsWith("{{") ? baseUrl : action.url;
 
       steps.push({
         seq: seq++,
@@ -92,7 +91,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         args: { url },
         note: `Navigate to ${url}`,
       });
-      // navigate 後は必ずスナップショットを取る
+
       steps.push({
         seq: seq++,
         mcp_tool: "browser_snapshot",
@@ -100,14 +99,13 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         note: "Capture accessibility snapshot to resolve element refs",
         _snapshot_marker: true,
       });
+
       snapshotted.add(url);
       currentUrl = url;
       break;
     }
 
-    // fill ──────────────────────────────────────────────────────────────
     case "fill": {
-      // スナップショットがまだなら挿入
       if (!snapshotted.has(currentUrl)) {
         steps.push({
           seq: seq++,
@@ -118,6 +116,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         });
         snapshotted.add(currentUrl);
       }
+
       steps.push({
         seq: seq++,
         mcp_tool: "browser_fill_form",
@@ -138,7 +137,6 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
       break;
     }
 
-    // click ──────────────────────────────────────────────────────────────
     case "click": {
       if (!snapshotted.has(currentUrl)) {
         steps.push({
@@ -150,6 +148,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         });
         snapshotted.add(currentUrl);
       }
+
       steps.push({
         seq: seq++,
         mcp_tool: "browser_click",
@@ -162,12 +161,11 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         note: `Click "${action.selector}"`,
         locator_status: "pending",
       });
-      // クリック後はページ状態が変わる可能性があるのでスナップショットを無効化
+
       snapshotted.delete(currentUrl);
       break;
     }
 
-    // clear ──────────────────────────────────────────────────────────────
     case "clear": {
       if (!snapshotted.has(currentUrl)) {
         steps.push({
@@ -179,6 +177,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         });
         snapshotted.add(currentUrl);
       }
+
       steps.push({
         seq: seq++,
         mcp_tool: "browser_fill_form",
@@ -199,26 +198,22 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
       break;
     }
 
-    // wait (WebDriverWait) ───────────────────────────────────────────────
     case "wait": {
-      // セレクタが解決できる要素の出現待ち → browser_wait_for { text } or snapshot
       steps.push({
         seq: seq++,
         mcp_tool: "browser_wait_for",
         args: {
-          // text が得られない場合は短い固定待ち
           time: 2000,
         },
         note: `Wait for "${action.selector}" to appear`,
         selector_hint: action.selector,
         original_action: action,
       });
-      // 待機後は再スナップショット
+
       snapshotted.delete(currentUrl);
       break;
     }
 
-    // assert_text ───────────────────────────────────────────────────────
     case "assert_text": {
       steps.push({
         seq: seq++,
@@ -231,9 +226,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
       break;
     }
 
-    // get_text ──────────────────────────────────────────────────────────
     case "get_text": {
-      // snapshot を取り、テキストが含まれているか目視確認
       if (!snapshotted.has(currentUrl)) {
         steps.push({
           seq: seq++,
@@ -244,6 +237,7 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
         });
         snapshotted.add(currentUrl);
       }
+
       steps.push({
         seq: seq++,
         mcp_tool: "browser_snapshot",
@@ -255,7 +249,6 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
       break;
     }
 
-    // assert_true / assert_false ─────────────────────────────────────────
     case "assert_true":
     case "assert_false": {
       steps.push({
@@ -270,7 +263,6 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
       break;
     }
 
-    // count_elements ─────────────────────────────────────────────────────
     case "count_elements": {
       steps.push({
         seq: seq++,
@@ -286,7 +278,6 @@ function actionToSteps(action, seq, snapshotted, currentUrl) {
     }
 
     default:
-      // 未知のアクションはスキップし記録のみ
       steps.push({
         seq: seq++,
         mcp_tool: "/* unknown */",
@@ -308,10 +299,6 @@ const plan = {
     playwright_mcp: "@playwright/mcp",
   },
 
-  /**
-   * Claude Code 向け実行ガイド
-   * （このフィールドを読んで各ステップを Playwright MCP で実行してください）
-   */
   execution_guide: [
     "1. 各 test_method を順番に実行してください",
     "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
@@ -340,7 +327,6 @@ const plan = {
       currentUrl = nextUrl;
     }
 
-    // アクションが0件 or navigate が1つもない場合は最初に navigate を挿入
     const hasNavigate = method.actions.some((a) => a.type === "navigate");
     if (!hasNavigate && method.actions.length > 0) {
       playwrightSteps.unshift(
@@ -348,7 +334,7 @@ const plan = {
           seq: 0.1,
           mcp_tool: "browser_navigate",
           args: { url: baseUrl },
-          note: `Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)`,
+          note: "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)",
         },
         {
           seq: 0.2,
@@ -358,7 +344,6 @@ const plan = {
           _snapshot_marker: true,
         }
       );
-      // seq を振り直し
       playwrightSteps.forEach((s, i) => (s.seq = i + 1));
     }
 
@@ -367,7 +352,7 @@ const plan = {
       total_steps: playwrightSteps.length,
       playwright_steps: playwrightSteps,
       result: {
-        status: "pending",  // "pass" | "fail" | "partial" — Claude が更新
+        status: "pending",
         locator_failures: [],
         notes: "",
       },
@@ -377,21 +362,26 @@ const plan = {
   summary: {
     total_methods: testMethods.length,
     status: "pending",
-    locator_resolution_rate: null, // Claude が実行後に記入
+    locator_resolution_rate: null,
   },
 };
 
 // 出力 ────────────────────────────────────────────────────────────────────
-// 入力ファイルと同じディレクトリに保存
-const outDir  = path.dirname(path.resolve(inputPath));
-const outBase = path.basename(inputPath).replace(/\.json$/, "");
-const outPath = path.join(outDir, `${outBase}.playwright-plan.json`);
+const resolvedOutDir = outputDirArg
+  ? path.resolve(outputDirArg)
+  : path.dirname(path.resolve(inputPath));
+
+fs.mkdirSync(resolvedOutDir, { recursive: true });
+
+const outBase = path.basename(inputPath).replace(/\.json$/i, "");
+const outPath = path.join(resolvedOutDir, `${outBase}.playwright-plan.json`);
 
 fs.writeFileSync(outPath, JSON.stringify(plan, null, 2), "utf8");
 
-console.log(`✅ Playwright validation plan generated:`);
-console.log(`   ${outPath}`);
-console.log(`   Methods: ${plan.test_methods.length}`);
-console.log(`   Total steps: ${plan.test_methods.reduce((s, m) => s + m.total_steps, 0)}`);
-console.log(`\nNext: Claude Code で以下を実行してください`);
-console.log(`  "playwright-plan.json を読んで Playwright MCP で検証して"`);
+console.log("Playwright validation plan generated:");
+console.log(`  ${outPath}`);
+console.log(`  Methods: ${plan.test_methods.length}`);
+console.log(`  Total steps: ${plan.test_methods.reduce((s, m) => s + m.total_steps, 0)}`);
+console.log("");
+console.log("Next: Clineで以下のように指示してください");
+console.log('  "playwright-plan.json を読んで Playwright MCP で検証して"');

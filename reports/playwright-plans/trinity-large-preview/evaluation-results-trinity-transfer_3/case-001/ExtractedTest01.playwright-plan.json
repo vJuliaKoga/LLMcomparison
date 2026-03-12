@@ -1,0 +1,489 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:59.665Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\trinity-large-preview\\evaluation-results-trinity-transfer_3\\case-001\\ExtractedTest01.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "testSuccessfulTransfer",
+      "total_steps": 10,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "50000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "50000"
+          },
+          "note": "Fill \"#transferAmount\" with \"50000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferMemo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "Test transfer"
+              }
+            ]
+          },
+          "selector_hint": "#transferMemo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferMemo",
+            "value": "Test transfer"
+          },
+          "note": "Fill \"#transferMemo\" with \"Test transfer\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot to read text content (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Read text from \"#balance\" — verify in snapshot output",
+          "selector_hint": "#balance",
+          "original_action": {
+            "type": "get_text",
+            "selector": "#balance"
+          }
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(balanceText.contains(\"¥1,450,000\")"
+          },
+          "note": "assert_true: balanceText.contains(\"¥1,450,000\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "balanceText.contains(\"¥1,450,000\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testTransferValidationErrors",
+      "total_steps": 14,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "12345"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "12345"
+          },
+          "note": "Fill \"#transferTo\" with \"12345\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "1000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "1000"
+          },
+          "note": "Fill \"#transferAmount\" with \"1000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"xpath=//div[contains(text(), '振込先口座番号は10桁の数字で入力してください\" to appear",
+          "selector_hint": "xpath=//div[contains(text(), '振込先口座番号は10桁の数字で入力してください",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "xpath=//div[contains(text(), '振込先口座番号は10桁の数字で入力してください"
+          }
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before clear (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "clear",
+            "selector": "#transferTo"
+          },
+          "note": "Clear \"#transferTo\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": ""
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "clear",
+            "selector": "#transferAmount"
+          },
+          "note": "Clear \"#transferAmount\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "1000001"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "1000001"
+          },
+          "note": "Fill \"#transferAmount\" with \"1000001\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 14,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"xpath=//div[contains(text(), '1回の振込上限（¥1,000,000）を超えています\" to appear",
+          "selector_hint": "xpath=//div[contains(text(), '1回の振込上限（¥1,000,000）を超えています",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "xpath=//div[contains(text(), '1回の振込上限（¥1,000,000）を超えています"
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "testHighAmountTransferRequiresApproval",
+      "total_steps": 7,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Auto-inserted: Navigate to base URL (no explicit navigate in Selenium code)"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Auto-inserted: Initial snapshot",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferTo\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "9876543210"
+              }
+            ]
+          },
+          "selector_hint": "#transferTo",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferTo",
+            "value": "9876543210"
+          },
+          "note": "Fill \"#transferTo\" with \"9876543210\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"transferAmount\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "100000"
+              }
+            ]
+          },
+          "selector_hint": "#transferAmount",
+          "original_action": {
+            "type": "fill",
+            "selector": "#transferAmount",
+            "value": "100000"
+          },
+          "note": "Fill \"#transferAmount\" with \"100000\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(warningMsg.isDisplayed()"
+          },
+          "note": "assert_true: warningMsg.isDisplayed(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "warningMsg.isDisplayed("
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}

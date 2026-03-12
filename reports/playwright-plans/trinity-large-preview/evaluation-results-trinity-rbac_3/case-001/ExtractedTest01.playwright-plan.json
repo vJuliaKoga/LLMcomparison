@@ -1,0 +1,510 @@
+{
+  "_meta": {
+    "generated_at": "2026-03-11T23:50:58.588Z",
+    "source_file": "C:\\Users\\juria.koga\\Documents\\Github\\LLM-test-evaluation\\reports\\playwright-plans\\trinity-large-preview\\evaluation-results-trinity-rbac_3\\case-001\\ExtractedTest01.json",
+    "base_url": "http://localhost:8080",
+    "playwright_mcp": "@playwright/mcp"
+  },
+  "execution_guide": [
+    "1. 各 test_method を順番に実行してください",
+    "2. mcp_tool が 'browser_snapshot' のステップでは snapshot を取得し、",
+    "   次のステップの ref 解決に使用してください",
+    "3. args_template 内の '{{ resolve ref from latest snapshot }}' は",
+    "   直前の snapshot から selector_hint に一致する要素の ref に置き換えてください",
+    "4. locator_status フィールドは実行後に 'resolved' / 'not_found' で更新してください",
+    "5. 全テストメソッドの実行後に summary を報告してください"
+  ],
+  "test_methods": [
+    {
+      "name": "adminCanViewAuditLog",
+      "total_steps": 13,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"username\"\" to appear",
+          "selector_hint": "By.id(\"username\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"username\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "admin123"
+          },
+          "note": "Fill \"#password\" with \"admin123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "管理者"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "管理者"
+          },
+          "note": "Fill \"#role\" with \"管理者\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"dashboard\"\" to appear",
+          "selector_hint": "By.id(\"dashboard\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"dashboard\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with text \"\"監査ログ\"\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "text=\"監査ログ\"",
+          "original_action": {
+            "type": "click",
+            "selector": "text=\"監査ログ\""
+          },
+          "note": "Click \"text=\"監査ログ\"\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"auditLog\"\" to appear",
+          "selector_hint": "By.id(\"auditLog\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"auditLog\""
+          }
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(auditLog.isDisplayed()"
+          },
+          "note": "assert_true: auditLog.isDisplayed(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "auditLog.isDisplayed("
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElements(By.cssSelector(\"#auditLog .audit-entry\")"
+          },
+          "note": "assert_true: driver.findElements(By.cssSelector(\"#auditLog .audit-entry\"",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "driver.findElements(By.cssSelector(\"#auditLog .audit-entry\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "customerCannotViewAuditLog",
+      "total_steps": 9,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"username\"\" to appear",
+          "selector_hint": "By.id(\"username\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"username\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "pass123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "pass123"
+          },
+          "note": "Fill \"#password\" with \"pass123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "一般顧客"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "一般顧客"
+          },
+          "note": "Fill \"#role\" with \"一般顧客\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"dashboard\"\" to appear",
+          "selector_hint": "By.id(\"dashboard\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"dashboard\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(driver.findElements(By.linkText(\"監査ログ\")"
+          },
+          "note": "assert_false: driver.findElements(By.linkText(\"監査ログ\"",
+          "original_action": {
+            "type": "assert_false",
+            "expression": "driver.findElements(By.linkText(\"監査ログ\""
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    },
+    {
+      "name": "auditLogShowsLatestEntriesFirst",
+      "total_steps": 13,
+      "playwright_steps": [
+        {
+          "seq": 1,
+          "mcp_tool": "browser_navigate",
+          "args": {
+            "url": "http://localhost:8080"
+          },
+          "note": "Navigate to http://localhost:8080"
+        },
+        {
+          "seq": 2,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Capture accessibility snapshot to resolve element refs",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 3,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"username\"\" to appear",
+          "selector_hint": "By.id(\"username\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"username\""
+          }
+        },
+        {
+          "seq": 4,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before fill (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 5,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"password\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "admin123"
+              }
+            ]
+          },
+          "selector_hint": "#password",
+          "original_action": {
+            "type": "fill",
+            "selector": "#password",
+            "value": "admin123"
+          },
+          "note": "Fill \"#password\" with \"admin123\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 6,
+          "mcp_tool": "browser_fill_form",
+          "args_template": {
+            "fields": [
+              {
+                "element": "element with id=\"role\"",
+                "ref": "{{ resolve ref from latest snapshot }}",
+                "value": "管理者"
+              }
+            ]
+          },
+          "selector_hint": "#role",
+          "original_action": {
+            "type": "fill",
+            "selector": "#role",
+            "value": "管理者"
+          },
+          "note": "Fill \"#role\" with \"管理者\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 7,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "button[type='submit']",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "button[type='submit']",
+          "original_action": {
+            "type": "click",
+            "selector": "button[type='submit']"
+          },
+          "note": "Click \"button[type='submit']\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 8,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"dashboard\"\" to appear",
+          "selector_hint": "By.id(\"dashboard\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"dashboard\""
+          }
+        },
+        {
+          "seq": 9,
+          "mcp_tool": "browser_snapshot",
+          "args": {},
+          "note": "Snapshot before click (auto-inserted)",
+          "_snapshot_marker": true
+        },
+        {
+          "seq": 10,
+          "mcp_tool": "browser_click",
+          "args_template": {
+            "element": "element with text \"\"監査ログ\"\"",
+            "ref": "{{ resolve ref from latest snapshot }}"
+          },
+          "selector_hint": "text=\"監査ログ\"",
+          "original_action": {
+            "type": "click",
+            "selector": "text=\"監査ログ\""
+          },
+          "note": "Click \"text=\"監査ログ\"\"",
+          "locator_status": "pending"
+        },
+        {
+          "seq": 11,
+          "mcp_tool": "browser_wait_for",
+          "args": {
+            "time": 2000
+          },
+          "note": "Wait for \"By.id(\"auditLog\"\" to appear",
+          "selector_hint": "By.id(\"auditLog\"",
+          "original_action": {
+            "type": "wait",
+            "condition": "visibilityOfElementLocated",
+            "selector": "By.id(\"auditLog\""
+          }
+        },
+        {
+          "seq": 12,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(entries.size()"
+          },
+          "note": "assert_true: entries.size(",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "entries.size("
+          }
+        },
+        {
+          "seq": 13,
+          "mcp_tool": "browser_evaluate",
+          "args": {
+            "function": "() => !!(firstTimestamp.compareTo(secondTimestamp)"
+          },
+          "note": "assert_true: firstTimestamp.compareTo(secondTimestamp",
+          "original_action": {
+            "type": "assert_true",
+            "expression": "firstTimestamp.compareTo(secondTimestamp"
+          }
+        }
+      ],
+      "result": {
+        "status": "pending",
+        "locator_failures": [],
+        "notes": ""
+      }
+    }
+  ],
+  "summary": {
+    "total_methods": 3,
+    "status": "pending",
+    "locator_resolution_rate": null
+  }
+}
